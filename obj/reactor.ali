@@ -1,0 +1,60 @@
+V "GNAT Lib v2019"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U reactor%b		reactor.adb		fd2846de NE OO PK
+
+U reactor%s		reactor.ads		59a5b0c7 EE NE OO PK
+
+D reactor.ads		20200502223138 59a5b0c7 reactor%s
+D reactor.adb		20200502223840 a48df619 reactor%b
+D system.ads		20190518041258 32a08138 system%s
+G a e
+G c Z s s [reactorcheck reactor 18 13 none]
+G c Z s b [removecontrolrod reactor 21 14 none]
+G c Z s b [addcontrolrod reactor 26 14 none]
+G c Z s b [increasetemperature reactor 31 14 none]
+G c Z s b [decreasetemperature reactor 36 14 none]
+G c Z s b [increaseelectricity reactor 41 14 none]
+G c Z s b [decreasewatersupply reactor 46 14 none]
+G c Z s b [fillwatersupply reactor 51 14 none]
+X 1 reactor.ads
+1K9*Reactor 55l5 55e12 2|1b14 67l5 67t12
+3I12*ControlRods{integer} 10r18 10r33
+4I12*WaterSupply{integer} 11r25 11r40
+5I12*Temperature{integer} 12r25 12r40
+6I12*TemperatureIncrease{integer} 13r33 13r56
+7I12*ReactorPower{integer} 14r26 14r42
+8I12*Electricity{integer} 15r33 15r48
+10i4*currentRods{3I12} 22r28 23r13 24r14 24r28 27r28 28r13 29r14 29r28 2|5m7
+. 5r22 16m7 16r22
+11i4*currentWaterSupply{4I12} 19r37 22r104 37r56 47r27 48r13 49r14 49r35
+. 52r27 2|34r10 35r39 58m7 58r29 63m7
+12i4*currentTemperature{5I12} 19r8 22r123 32r27 33r13 34r14 34r35 37r27 38r13
+. 39r14 39r35 2|23r15 25m10 27m10 35r18 37m13 39m13 42m10 42r32
+13i4*currentTemperatureIncrease{6I12} 22r41 23r33 27r41 28r33 32r56 2|6m7
+. 6r37 17m7 17r37 23r36
+14i4*currentReactorPower{7I12} 22r69 23r68 27r69 28r68 42r64 2|7r10 8m10
+. 8r33 10m10 18m7 18r30 48r44
+15i4*currentElectricityProduced{8I12} 42r27 43r13 44r14 44r43 2|48r15 50m10
+. 52m10
+16i4*InputConst{integer}
+18V13*ReactorCheck{boolean} 23s97 24s46
+21U14*removeControlRod 2|3b14 12l8 12t24
+26U14*addControlRod 2|14b14 19l8 19t21
+31U14*increaseTemperature 31<35 2|21b14 29l8 29t27
+31i35 temp{integer} 2|21b35 23m7 24r10 27r32
+36U14*decreaseTemperature 36<35 2|31b14 44l8 44t27
+36i35 temp{integer} 2|31b35 33m7 35m10 36r13 39r35
+41U14*increaseElectricity 41<35 2|46b14 54l8 54t27
+41i35 elec{integer} 2|46b35 48m7 49r10 52r40
+46U14*decreaseWaterSupply 2|56b14 59l8 59t27
+51U14*fillWaterSupply 2|61b14 64l8 64t23
+

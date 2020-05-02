@@ -1,7 +1,7 @@
 package Train with SPARK_Mode
 is
-   type Carriage is range 1..20;
-   type Speed is range 0..500;
+   subtype Carriage is Integer range 1..20;
+   subtype Speed is Integer range 0..500;
 
    currentCarriages : Carriage := Carriage'First;
    currentSpeed : Speed := Speed'First;
