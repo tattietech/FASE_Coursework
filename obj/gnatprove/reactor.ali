@@ -11,48 +11,53 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U reactor%b		reactor.adb		35843e86 OO PK
+U reactor%b		reactor.adb		67cd5135 OO PK
 
-U reactor%s		reactor.ads		50dc4317 OO PK
+U reactor%s		reactor.ads		ec61a97b OO PK
 
-D reactor.ads		20200502204704 50dc4317 reactor%s
-D reactor.adb		20200502204718 65587d91 reactor%b
+D reactor.ads		20200502210228 ec61a97b reactor%s
+D reactor.adb		20200502210232 8bacf84e reactor%b
 D system.ads		20190518041256 32a08138 system%s
 G a Z
 X 1 reactor.ads
-1K9*Reactor 34l5 34e12 2|1b14 25l5 25t12
+1K9*Reactor 39l5 39e12 2|1b14 41l5 41t12
 3I12*ControlRods{integer} 9r18 9r33
 4I12*WaterSupply{integer} 10r25 10r40
 5I12*Temperature{integer} 11r25 11r40
-6I12*TemperatureIncrease{integer} 12r33 12r56
+6I12*ReactorPower{integer} 12r26 12r42
 7I12*Electricity{integer} 13r33 13r48
 9i4*currentRods{3I12} 19r28 20r13 21r14 21r28 24r28 25r13 26r14 26r28 2|5m7
 . 5r22 11m7 11r22
-10i4*currentWaterSupply{4I12} 16r37 19r103
-11i4*currentTemperature{5I12} 16r8 19r83 29r27 30r13 31r14 31r36 2|17r15
-. 19m10 21m10
-12i4*currentTemperatureIncrease{6I12} 19r41 20r33 24r41 25r33 29r56 2|6m7
-. 6r37 12m7 12r37 17r36
+10i4*currentWaterSupply{4I12} 16r37 19r96 34r56 2|28r10 29r39
+11i4*currentTemperature{5I12} 16r8 19r76 29r27 30r13 31r14 31r35 34r27 35r13
+. 36r14 36r35 2|17r15 19m10 21m10 29r18 31m13 33m13 36m10 36r32
+12i4*currentReactorPower{6I12} 19r41 20r33 24r41 25r33 29r56 2|6m7 6r30 12m7
+. 12r30 17r36
 13i4*currentElectricityProduced{7I12}
-15V13*ReactorCheck{boolean} 20s68 21s46
+15V13*ReactorCheck{boolean} 20s61 21s46
 18U14*removeControlRod 2|3b14 7l8 7t24
 23U14*addControlRod 2|9b14 13l8 13t21
-28U14*increaseTemperature 28<35 2|15b14 24l8 24t27
+28U14*increaseTemperature 28<35 2|15b14 23l8 23t27
 28i35 temp{integer} 2|15b35 17m7 18r10 21r32
+33U14*decreaseTemperature 33<35 2|25b14 39l8 39t27
+33i35 temp{integer} 2|25b35 27m7 29m10 30r13 33r35
 
 QQ SPARKVERSION 2019 (20190517)
 GG EK_DIRECT_CALLS reactor__reactorcheck 0
 GG EK_GLOBALS reactor__reactorcheck local FALSE E_FUNCTION FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currentwatersupply reactor__currenttemperature proper_output 0 refined_proof_in 0 refined_input 2 reactor__currentwatersupply reactor__currenttemperature refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentwatersupply reactor__currenttemperature LOCKS 0
 GG EK_DIRECT_CALLS reactor__removecontrolrod 1 reactor__reactorcheck
-GG EK_GLOBALS reactor__removecontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 2 reactor__currentwatersupply reactor__currenttemperature proper_input 2 reactor__currentrods reactor__currenttemperatureincrease proper_output 2 reactor__currentrods reactor__currenttemperatureincrease refined_proof_in 2 reactor__currentwatersupply reactor__currenttemperature refined_input 2 reactor__currentrods reactor__currenttemperatureincrease refined_output 2 reactor__currentrods reactor__currenttemperatureincrease calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentrods reactor__currenttemperatureincrease LOCKS 0
+GG EK_GLOBALS reactor__removecontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 2 reactor__currentwatersupply reactor__currenttemperature proper_input 2 reactor__currentrods reactor__currentreactorpower proper_output 2 reactor__currentrods reactor__currentreactorpower refined_proof_in 2 reactor__currentwatersupply reactor__currenttemperature refined_input 2 reactor__currentrods reactor__currentreactorpower refined_output 2 reactor__currentrods reactor__currentreactorpower calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentrods reactor__currentreactorpower LOCKS 0
 GG EK_DIRECT_CALLS reactor__addcontrolrod 0
-GG EK_GLOBALS reactor__addcontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currentrods reactor__currenttemperatureincrease proper_output 2 reactor__currentrods reactor__currenttemperatureincrease refined_proof_in 0 refined_input 2 reactor__currentrods reactor__currenttemperatureincrease refined_output 2 reactor__currentrods reactor__currenttemperatureincrease calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentrods reactor__currenttemperatureincrease LOCKS 0
+GG EK_GLOBALS reactor__addcontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currentrods reactor__currentreactorpower proper_output 2 reactor__currentrods reactor__currentreactorpower refined_proof_in 0 refined_input 2 reactor__currentrods reactor__currentreactorpower refined_output 2 reactor__currentrods reactor__currentreactorpower calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentrods reactor__currentreactorpower LOCKS 0
 GG EK_DIRECT_CALLS reactor__increasetemperature 0
-GG EK_GLOBALS reactor__increasetemperature local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currenttemperature reactor__currenttemperatureincrease proper_output 1 reactor__currenttemperature refined_proof_in 0 refined_input 2 reactor__currenttemperature reactor__currenttemperatureincrease refined_output 1 reactor__currenttemperature calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currenttemperature reactor__currenttemperatureincrease LOCKS 0
+GG EK_GLOBALS reactor__increasetemperature local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currenttemperature reactor__currentreactorpower proper_output 1 reactor__currenttemperature refined_proof_in 0 refined_input 2 reactor__currenttemperature reactor__currentreactorpower refined_output 1 reactor__currenttemperature calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currenttemperature reactor__currentreactorpower LOCKS 0
+GG EK_DIRECT_CALLS reactor__decreasetemperature 0
+GG EK_GLOBALS reactor__decreasetemperature local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currentwatersupply reactor__currenttemperature proper_output 1 reactor__currenttemperature refined_proof_in 0 refined_input 2 reactor__currentwatersupply reactor__currenttemperature refined_output 1 reactor__currenttemperature calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentwatersupply reactor__currenttemperature LOCKS 0
 GG EK_DIRECT_CALLS reactor 0
-GG EK_GLOBALS reactor local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 5 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currenttemperatureincrease reactor__currentelectricityproduced calls_proof 0 calls 0 calls_conditional 0 local_var 5 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currenttemperatureincrease reactor__currentelectricityproduced FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_GLOBALS reactor local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 5 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currentreactorpower reactor__currentelectricityproduced calls_proof 0 calls 0 calls_conditional 0 local_var 5 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currentreactorpower reactor__currentelectricityproduced FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
 GG EK_FLOW_SCOPE reactor__removecontrolrod FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE reactor TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE reactor__decreasetemperature FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__increasetemperature FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__reactorcheck FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__addcontrolrod FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
