@@ -1,0 +1,50 @@
+V "GNAT Lib v2019"
+A -x
+A ada
+A -gnatA
+A -gnatc
+P GP FX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U reactor%b		reactor.adb		e2653b07 OO PK
+
+U reactor%s		reactor.ads		eb96fe38 OO PK
+
+D reactor.ads		20200502182104 eb96fe38 reactor%s
+D reactor.adb		20200502182042 09f3c53f reactor%b
+D system.ads		20190518041256 32a08138 system%s
+G a Z
+X 1 reactor.ads
+1K9*Reactor 27l5 27e12 2|1b14 12l5 12t12
+3I9*ControlRods<short_short_integer> 8r18 8r33
+4I9*WaterSupply<short_short_integer> 9r25 9r40
+5I9*Temperature<short_short_integer> 10r25 10r40
+6I9*Electricity<short_integer> 11r33 11r48
+8i4*currentRods{3I9} 17r27 18r13 19r14 19r28 22r27 23r13 24r14 24r28 2|5m7
+. 5r22 10m7 10r22
+9i4*currentWaterSupply{4I9} 14r36 17r73
+10i4*currentTemperature{5I9} 14r8 17r53
+11i4*currentElectricityProduced{6I9}
+13V13*ReactorCheck{boolean} 18s33 19s46
+16U14*RemoveControlRod 2|3b14 6l8 6t24
+21U14*AddControlRod 2|8b14 11l8 11t21
+
+QQ SPARKVERSION 2019 (20190517)
+GG EK_DIRECT_CALLS reactor__reactorcheck 0
+GG EK_GLOBALS reactor__reactorcheck local FALSE E_FUNCTION FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 2 reactor__currentwatersupply reactor__currenttemperature proper_output 0 refined_proof_in 0 refined_input 2 reactor__currentwatersupply reactor__currenttemperature refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentwatersupply reactor__currenttemperature LOCKS 0
+GG EK_DIRECT_CALLS reactor__removecontrolrod 1 reactor__reactorcheck
+GG EK_GLOBALS reactor__removecontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 2 reactor__currentwatersupply reactor__currenttemperature proper_input 1 reactor__currentrods proper_output 1 reactor__currentrods refined_proof_in 2 reactor__currentwatersupply reactor__currenttemperature refined_input 1 reactor__currentrods refined_output 1 reactor__currentrods calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 reactor__currentrods LOCKS 0
+GG EK_DIRECT_CALLS reactor__addcontrolrod 0
+GG EK_GLOBALS reactor__addcontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 1 reactor__currentrods proper_output 1 reactor__currentrods refined_proof_in 0 refined_input 1 reactor__currentrods refined_output 1 reactor__currentrods calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 reactor__currentrods LOCKS 0
+GG EK_DIRECT_CALLS reactor 0
+GG EK_GLOBALS reactor local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 4 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currentelectricityproduced calls_proof 0 calls 0 calls_conditional 0 local_var 4 reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currentelectricityproduced FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE reactor__reactorcheck FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
+GG EK_FLOW_SCOPE reactor TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE reactor__addcontrolrod FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
+GG EK_FLOW_SCOPE reactor__removecontrolrod FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
+GG EK_END_MARKER
