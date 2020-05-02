@@ -1,0 +1,17 @@
+package Reactor with SPARK_mode
+is
+   type ControlRods is range 0..5;
+   type WaterSupply is range 0..100;
+   type Temperature is range 0..100;
+   type Electricity is range 0..100;
+
+   currentRods : ControlRods := ControlRods'Last;
+   currentWaterSupply : WaterSupply := WaterSupply'Last;
+   currentTemperature : Temperature := Temperature'First;
+   currentElectricityProduced : Electricity := Electricity'First;
+
+   procedure RemoveControlRod with
+     Global => (In_Out => currentRods)
+
+
+end Reactor;
