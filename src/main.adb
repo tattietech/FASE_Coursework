@@ -10,6 +10,7 @@ procedure Main is
    task Heat;
    task Power;
    task Water;
+   task Speed;
 
   task body EntryGuard is
    begin
@@ -20,7 +21,9 @@ procedure Main is
          when '1' => addControlRod;
          when '2' => removeControlRod;
          when '3' => fillWaterSupply;
-         when others => abort Heat; exit;
+         when '4' => addCarriage;
+         when '5' => removeCarriage;
+         when others => abort Heat; abort Power; abort Water; abort Speed; exit;
          end case;
       end loop;
       delay 0.1;
@@ -31,7 +34,9 @@ procedure Main is
       loop
          increaseTemperature(InputConst);
          decreaseTemperature(InputConst);
-         Put_Line("Rods: " & Integer'Image(currentRods) & " Water: " & Integer'Image(currentWaterSupply) & " Temp: " & Integer'Image(currentTemperature) & " Power " & Integer'Image(currentElectricityProduced));
+         Put_Line("Rods: " & Integer'Image(currentRods) & " Water: " & Integer'Image(currentWaterSupply) & " Temp: " & Integer'Image(currentTemperature) & " Power " & Integer'Image(currentElectricityProduced)
+                & " Speed: " & Integer'Image(currentSpeed) & " Carriages " & Integer'Image(currentCarriages)
+                 );
          delay 1.0;
       end loop;
    end Heat;
@@ -51,6 +56,15 @@ procedure Main is
          delay 1.0;
       end loop;
    end Power;
+
+     task body Speed is
+   begin
+      loop
+         increaseSpeed;
+         decreaseSpeed;
+         delay 1.0;
+      end loop;
+   end Speed;
 
 
 

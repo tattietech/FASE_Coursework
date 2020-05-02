@@ -9,12 +9,12 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U reactor%b		reactor.adb		fd2846de NE OO PK
+U reactor%b		reactor.adb		06c1db5a NE OO PK
 
-U reactor%s		reactor.ads		59a5b0c7 EE NE OO PK
+U reactor%s		reactor.ads		464981c8 EE NE OO PK
 
-D reactor.ads		20200502223138 59a5b0c7 reactor%s
-D reactor.adb		20200502223840 a48df619 reactor%b
+D reactor.ads		20200502225018 464981c8 reactor%s
+D reactor.adb		20200502225018 40885a92 reactor%b
 D system.ads		20190518041258 32a08138 system%s
 G a e
 G c Z s s [reactorcheck reactor 18 13 none]
@@ -30,8 +30,8 @@ X 1 reactor.ads
 3I12*ControlRods{integer} 10r18 10r33
 4I12*WaterSupply{integer} 11r25 11r40
 5I12*Temperature{integer} 12r25 12r40
-6I12*TemperatureIncrease{integer} 13r33 13r56
-7I12*ReactorPower{integer} 14r26 14r42
+6I12*TemperatureIncrease{integer} 13r33
+7I12*ReactorPower{integer} 14r26
 8I12*Electricity{integer} 15r33 15r48
 10i4*currentRods{3I12} 22r28 23r13 24r14 24r28 27r28 28r13 29r14 29r28 2|5m7
 . 5r22 16m7 16r22

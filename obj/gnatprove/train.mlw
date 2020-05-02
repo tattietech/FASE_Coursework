@@ -1788,82 +1788,14 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for axiomatizing type "TcarriageB" defined at train.ads:3, created in Gnat2Why.Types.Translate_Type *)
-module Train__TcarriageB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type tcarriageB =
-  < range -128 127 >
- 
- val constant first 
-   : int
-  ensures { result =  (( -128) : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (127 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = tcarriageB, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type tcarriageB__ref =
-  { mutable tcarriageB__content : tcarriageB }
- 
- function tcarriageB__ref_tcarriageB__content__projection 
-   (a : tcarriageB__ref) : tcarriageB =
-  a.tcarriageB__content
- 
- meta "model_projection" function tcarriageB__ref_tcarriageB__content__projection
- 
- meta "inline:no" function tcarriageB__ref_tcarriageB__content__projection
- 
- val tcarriageB__havoc 
-   (x : tcarriageB__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "TcarriageB" defined at train.ads:3, created in Gnat2Why.Types.Translate_Type *)
-module Train__TcarriageB__rep
- use        Train__TcarriageB as Train__TcarriageB
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Train__TcarriageB.tcarriageB) : int =
-  (Train__TcarriageB.tcarriageB'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Train__TcarriageB.tcarriageB, 
- predicate in_range = Train__TcarriageB.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "carriage" defined at train.ads:3, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "carriage" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
 module Train__carriage
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
 
  type carriage =
-  < range 1 20 >
+  < range 1 21 >
  
  val constant first 
    : int
@@ -1871,7 +1803,7 @@ module Train__carriage
  
  val constant last 
    : int
-  ensures { result =  (20 : int) }
+  ensures { result =  (21 : int) }
  
  predicate in_range 
    (x : int) =
@@ -1903,7 +1835,7 @@ module Train__carriage
 
 end
 
-(* Module defining to_rep/of_rep for type "carriage" defined at train.ads:3, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "carriage" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
 module Train__carriage__rep
  use        Train__carriage as Train__carriage
  use        "_gnatprove_standard".Main
@@ -1924,82 +1856,14 @@ module Train__carriage__rep
 
 end
 
-(* Module for axiomatizing type "TspeedB" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
-module Train__TspeedB
- use        "_gnatprove_standard".Main
- use        "int".Int
- use        "int".Int
-
- type tspeedB =
-  < range -32768 32767 >
- 
- val constant first 
-   : int
-  ensures { result =  (( -32768) : int) }
- 
- val constant last 
-   : int
-  ensures { result =  (32767 : int) }
- 
- predicate in_range 
-   (x : int) =
-  ( (first <= x) /\ (x <= last) )
- val in_range 
-   (x : int) : bool
-  ensures { result <-> in_range (x : int) }
- 
- clone export "ada__model".Static_Discrete with axiom .,
- type t = tspeedB, 
- function first = first, 
- function last = last, 
- predicate in_range = in_range
- 
- type tspeedB__ref =
-  { mutable tspeedB__content : tspeedB }
- 
- function tspeedB__ref_tspeedB__content__projection 
-   (a : tspeedB__ref) : tspeedB =
-  a.tspeedB__content
- 
- meta "model_projection" function tspeedB__ref_tspeedB__content__projection
- 
- meta "inline:no" function tspeedB__ref_tspeedB__content__projection
- 
- val tspeedB__havoc 
-   (x : tspeedB__ref) : unit
-  writes {x}
-
-end
-
-(* Module defining to_rep/of_rep for type "TspeedB" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
-module Train__TspeedB__rep
- use        Train__TspeedB as Train__TspeedB
- use        "_gnatprove_standard".Main
- use        "int".Int
-
- function to_rep 
-   (x : Train__TspeedB.tspeedB) : int =
-  (Train__TspeedB.tspeedB'int x)
- 
- clone export "ada__model".Rep_Proj_Int with axiom .,
- type t = Train__TspeedB.tspeedB, 
- predicate in_range = Train__TspeedB.in_range, 
- function to_rep = to_rep
- 
- meta "model_projection" function to_rep
- 
- meta "inline:no" function to_rep
-
-end
-
-(* Module for axiomatizing type "speed" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "speed" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
 module Train__speed
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
 
  type speed =
-  < range 0 500 >
+  < range 0 200 >
  
  val constant first 
    : int
@@ -2007,7 +1871,7 @@ module Train__speed
  
  val constant last 
    : int
-  ensures { result =  (500 : int) }
+  ensures { result =  (200 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2039,7 +1903,7 @@ module Train__speed
 
 end
 
-(* Module defining to_rep/of_rep for type "speed" defined at train.ads:4, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "speed" defined at train.ads:5, created in Gnat2Why.Types.Translate_Type *)
 module Train__speed__rep
  use        Train__speed as Train__speed
  use        "_gnatprove_standard".Main
@@ -2195,12 +2059,80 @@ module Ada__text_io__count__rep
  meta "inline:no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "currentcarriages" defined at train.ads:6, created in Gnat2Why.Decls.Translate_Variable *)
+
+(* Module for axiomatizing type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__electricity
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type electricity =
+  < range 0 100 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (100 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = electricity, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type electricity__ref =
+  { mutable electricity__content : electricity }
+ 
+ function electricity__ref_electricity__content__projection 
+   (a : electricity__ref) : electricity =
+  a.electricity__content
+ 
+ meta "model_projection" function electricity__ref_electricity__content__projection
+ 
+ meta "inline:no" function electricity__ref_electricity__content__projection
+ 
+ val electricity__havoc 
+   (x : electricity__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__electricity__rep
+ use        Reactor__electricity as Reactor__electricity
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Reactor__electricity.electricity) : int =
+  (Reactor__electricity.electricity'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__electricity.electricity, 
+ predicate in_range = Reactor__electricity.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+(* Module for defining a ref holding the value of variable "currentcarriages" defined at train.ads:7, created in Gnat2Why.Decls.Translate_Variable *)
 module Train__currentcarriages
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentcarriages [#"train.ads" 6 0 0][@model_projected] [@model_trace:2389] [@name:currentCarriages]  : int__ref 
+ val currentcarriages [#"train.ads" 7 0 0][@model_trace:2441] [@model_projected] [@name:currentCarriages]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2208,7 +2140,7 @@ module Train__currentcarriages
 
 end
 
-(* Module giving an empty axiom for the entity "currentcarriages" defined at train.ads:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentcarriages" defined at train.ads:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Train__currentcarriages___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2216,12 +2148,12 @@ module Train__currentcarriages___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currentspeed" defined at train.ads:7, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currentspeed" defined at train.ads:8, created in Gnat2Why.Decls.Translate_Variable *)
 module Train__currentspeed
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentspeed [#"train.ads" 7 0 0][@model_trace:2401] [@model_projected] [@name:currentSpeed]  : int__ref 
+ val currentspeed [#"train.ads" 8 0 0][@model_projected] [@model_trace:2453] [@name:currentSpeed]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2229,8 +2161,29 @@ module Train__currentspeed
 
 end
 
-(* Module giving an empty axiom for the entity "currentspeed" defined at train.ads:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentspeed" defined at train.ads:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Train__currentspeed___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for defining a ref holding the value of variable "currentelectricityproduced" defined at reactor.ads:15, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__currentelectricityproduced
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val currentelectricityproduced [#"reactor.ads" 15 0 0][@name:currentElectricityProduced] [@model_projected] [@model_trace:2779]  : int__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "currentelectricityproduced" defined at reactor.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Reactor__currentelectricityproduced___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
@@ -2810,7 +2763,7 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "trainstopped" defined at train.ads:9, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "trainstopped" defined at train.ads:10, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Train__trainstopped
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2823,7 +2776,7 @@ module Train__trainstopped
 
 end
 
-(* Module for possibly declaring a logic function for "addcarriage" defined at train.ads:12, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "addcarriage" defined at train.ads:13, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Train__addcarriage
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2831,8 +2784,24 @@ module Train__addcarriage
 
 end
 
-(* Module for possibly declaring a logic function for "removecarriage" defined at train.ads:17, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "removecarriage" defined at train.ads:18, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Train__removecarriage
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "increasespeed" defined at train.ads:23, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__increasespeed
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "decreasespeed" defined at train.ads:28, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__decreasespeed
  use        "_gnatprove_standard".Main
  use        "int".Int
 
@@ -2867,15 +2836,7 @@ module Ada__text_io__page_length__2
 
 end
 
-(* Module giving axioms for type "TcarriageB" defined at train.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Train__TcarriageB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "carriage" defined at train.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "carriage" defined at train.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Train__carriage___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2899,15 +2860,7 @@ module Train__carriage___axiom
 
 end
 
-(* Module giving axioms for type "TspeedB" defined at train.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
-module Train__TspeedB___axiom
- use        "_gnatprove_standard".Main
- use        "int".Int
-
-
-end
-
-(* Module giving axioms for type "speed" defined at train.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "speed" defined at train.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Train__speed___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2962,7 +2915,31 @@ module Ada__text_io__count___axiom
   ensures { result <-> default_initial_assumption (temp___expr_180 : int) (temp___skip_top_level_181 : bool) }
 
 end
-(* Module giving a program function and a defining axiom for the expression function "trainstopped" defined at train.ads:9, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+
+(* Module giving axioms for type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__electricity___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__electricity as Reactor__electricity
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) =
+  (if (( temp___is_init_182 \/ (Reactor__electricity.first <= Reactor__electricity.last) )) then (
+   (Reactor__electricity.dynamic_property Reactor__electricity.first Reactor__electricity.last temp___expr_186)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_187 : int) (temp___skip_top_level_188 : bool) }
+
+end
+(* Module giving a program function and a defining axiom for the expression function "trainstopped" defined at train.ads:10, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
 module Train__trainstopped___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2992,7 +2969,7 @@ module Train__trainstopped___axiom
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "addcarriage" defined at train.ads:12, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "addcarriage" defined at train.ads:13, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Train__addcarriage___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3004,16 +2981,16 @@ module Train__addcarriage___axiom
 
  val addcarriage 
    (__void_param : unit) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2450] (Train__currentcarriages.currentcarriages.int__content < (20 : int)) ) /\ ( [@GP_Pretty_Ada:2451] ((epsilon temp___result_171 : bool.
+  requires {  ( ( [@GP_Pretty_Ada:2502] (Train__currentcarriages.currentcarriages.int__content < (21 : int)) ) /\ ( [@GP_Pretty_Ada:2503] ((epsilon temp___result_171 : bool.
    ( (temp___result_171 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_171 Train__currentspeed.currentspeed.int__content) )) = True) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2458] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) /\ ( [@GP_Pretty_Ada:2461] ((epsilon temp___result_172 : bool.
+  ensures {  ( ( ( [@GP_Pretty_Ada:2510] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) /\ ( [@GP_Pretty_Ada:2513] ((epsilon temp___result_172 : bool.
    ( (temp___result_172 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_172 Train__currentspeed.currentspeed.int__content) )) = True) ) ) /\ (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) ) }
   reads {Train__currentcarriages.currentcarriages, Train__currentspeed.currentspeed}
   writes {Train__currentcarriages.currentcarriages}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "removecarriage" defined at train.ads:17, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "removecarriage" defined at train.ads:18, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Train__removecarriage___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3025,12 +3002,48 @@ module Train__removecarriage___axiom
 
  val removecarriage 
    (__void_param : unit) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2487] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2488] ((epsilon temp___result_173 : bool.
+  requires {  ( ( [@GP_Pretty_Ada:2539] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2540] ((epsilon temp___result_173 : bool.
    ( (temp___result_173 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_173 Train__currentspeed.currentspeed.int__content) )) = True) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2495] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2498] ((epsilon temp___result_174 : bool.
+  ensures {  ( ( ( [@GP_Pretty_Ada:2547] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2550] ((epsilon temp___result_174 : bool.
    ( (temp___result_174 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_174 Train__currentspeed.currentspeed.int__content) )) = True) ) ) /\ (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) ) }
   reads {Train__currentcarriages.currentcarriages, Train__currentspeed.currentspeed}
   writes {Train__currentcarriages.currentcarriages}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "increasespeed" defined at train.ads:23, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__increasespeed___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__currentspeed as Train__currentspeed
+ use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
+ use        Train__speed___axiom as Train__speed___axiom
+
+ val increasespeed 
+   (__void_param : unit) : unit
+  requires {  ( [@GP_Pretty_Ada:18781] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18793] (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) ) /\ (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True True True True) ) }
+  reads {Train__currentspeed.currentspeed, Reactor__currentelectricityproduced.currentelectricityproduced}
+  writes {Train__currentspeed.currentspeed}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "decreasespeed" defined at train.ads:28, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__decreasespeed___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__currentcarriages as Train__currentcarriages
+ use        Train__currentspeed as Train__currentspeed
+ use        Train__speed___axiom as Train__speed___axiom
+
+ val decreasespeed 
+   (__void_param : unit) : unit
+  requires {  ( [@GP_Pretty_Ada:18831] (Train__currentspeed.currentspeed.int__content > (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18843] (Train__currentspeed.currentspeed.int__content <= (Train__currentspeed.currentspeed.int__content + (2 : int))) ) /\ (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True True True True) ) }
+  reads {Train__currentcarriages.currentcarriages, Train__currentspeed.currentspeed}
+  writes {Train__currentspeed.currentspeed}
 
 end
 
@@ -3106,7 +3119,7 @@ module Ada__text_io__page_length__2___axiom
 
 end
 
-(* Module for checking absence of run-time errors and package initial condition on package elaboration of "train" defined at train.ads:1, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
+(* Module for checking absence of run-time errors and package initial condition on package elaboration of "train" defined at train.ads:2, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
 module Train__package_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3140,42 +3153,48 @@ module Train__package_def
  use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
  use        Ada__text_io__page_length__2___axiom as Ada__text_io__page_length__2___axiom
 
- let def [#"train.ads" 1 0 0][@GP_Subp:train.ads:1] 
+ let def [#"train.ads" 2 0 0][@GP_Subp:train.ads:2] 
    (__void_param : unit)
-  requires { [#"train.ads" 1 0 0] true }
+  requires { [#"train.ads" 2 0 0] true }
    = [@vc:divergent]
   ( ();
-  ([#"train.ads" 1 0 0] ());
-  ([#"train.ads" 3 0 0] ());
+  ([#"train.ads" 2 0 0] ());
   ([#"train.ads" 4 0 0] ());
-  ([#"train.ads" 6 0 0] ());
-  ([#"train.ads" 6 0 0] ());
-  ([#"train.ads" 6 0 0] ( [#"train.ads" 6 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( (1 : int) ));
-  [#"train.ads" 6 0 0] assume { [#"train.ads" 6 0 0] (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True False True True) } ));
-  ([#"train.ads" 7 0 0] ());
-  ([#"train.ads" 7 0 0] ());
-  ([#"train.ads" 7 0 0] ( [#"train.ads" 7 0 0] (Train__currentspeed.currentspeed.int__content <- ( (0 : int) ));
-  [#"train.ads" 7 0 0] assume { [#"train.ads" 7 0 0] (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) } ));
-  ([#"train.ads" 9 0 0] ());
-  ([#"train.ads" 12 0 0] ());
+  ([#"train.ads" 5 0 0] ());
+  ([#"train.ads" 7 0 0] ( [#"train.ads" 7 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( (1 : int) ));
+  [#"train.ads" 7 0 0] assume { [#"train.ads" 7 0 0] (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True False True True) } ));
+  ([#"train.ads" 8 0 0] ( [#"train.ads" 8 0 0] (Train__currentspeed.currentspeed.int__content <- ( (0 : int) ));
+  [#"train.ads" 8 0 0] assume { [#"train.ads" 8 0 0] (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) } ));
+  ([#"train.ads" 10 0 0] ());
+  ([#"train.ads" 13 0 0] ());
+  ([#"train.ads" 16 0 0] ());
   ([#"train.ads" 15 0 0] ());
   ([#"train.ads" 14 0 0] ());
-  ([#"train.ads" 13 0 0] ());
-  ([#"train.ads" 17 0 0] ());
+  ([#"train.ads" 18 0 0] ());
+  ([#"train.ads" 21 0 0] ());
   ([#"train.ads" 20 0 0] ());
   ([#"train.ads" 19 0 0] ());
-  ([#"train.ads" 18 0 0] ());
-  ([#"train.ads" 9 0 0] ());
+  ([#"train.ads" 23 0 0] ());
+  ([#"train.ads" 26 0 0] ());
+  ([#"train.ads" 25 0 0] ());
+  ([#"train.ads" 24 0 0] ());
+  ([#"train.ads" 28 0 0] ());
+  ([#"train.ads" 31 0 0] ());
+  ([#"train.ads" 30 0 0] ());
+  ([#"train.ads" 29 0 0] ());
+  ([#"train.ads" 10 0 0] ());
    assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
   ();
-  ([#"train.adb" 2 0 0] ());
-  ([#"train.adb" 5 0 0] ());
-  ([#"train.adb" 10 0 0] ());
+  ([#"train.adb" 3 0 0] ());
+  ([#"train.adb" 6 0 0] ());
+  ([#"train.adb" 11 0 0] ());
+  ([#"train.adb" 16 0 0] ());
+  ([#"train.adb" 21 0 0] ());
   ();
-  ( [@GP_Sloc:train.adb:14:1] ([#"train.adb" 14 0 0] ()) ) )
+  ( [@GP_Sloc:train.adb:27:1] ([#"train.adb" 27 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "trainstopped" defined at train.ads:9, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "trainstopped" defined at train.ads:10, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Train__trainstopped__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3185,28 +3204,28 @@ module Train__trainstopped__subprogram_def
  use        Train__speed___axiom as Train__speed___axiom
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
 
- val train__trainstopped__result [@model_trace:2413@result] [@name:TrainStopped] [@model_projected]  : bool__ref 
+ val train__trainstopped__result [@model_trace:2465@result] [@name:TrainStopped] [@model_projected]  : bool__ref 
  
- let def [#"train.ads" 9 0 0][@GP_Subp:train.ads:9] 
+ let def [#"train.ads" 10 0 0][@GP_Subp:train.ads:10] 
    (__void_param : unit)
-  requires { [#"train.ads" 9 0 0] true }
+  requires { [#"train.ads" 10 0 0] true }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:9 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:10 *)
   ;
-  [#"train.ads" 9 0 0] assume { [#"train.ads" 9 0 0] (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:9 *)
+  [#"train.ads" 10 0 0] assume { [#"train.ads" 10 0 0] (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:10 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram train.ads:9 *)
+  () (* Check for RTE in the Pre of the subprogram train.ads:10 *)
   ;
-  [#"train.ads" 9 0 0] begin ensures {true} let _ = (let _ = True in (
+  [#"train.ads" 10 0 0] begin ensures {true} let _ = (let _ = True in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram train.ads:9 *)
+  () (* Assume Pre of the subprogram train.ads:10 *)
   ;
-  [#"train.ads" 9 0 0] try
+  [#"train.ads" 10 0 0] try
    ( ();
-   ( [@GP_Sloc:train.ads:10:21] ([#"train.ads" 10 0 0] ( [#"train.ads" 10 0 0] (train__trainstopped__result.bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) ));
-   [#"train.ads" 10 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:train.ads:11:21] ([#"train.ads" 11 0 0] ( [#"train.ads" 11 0 0] (train__trainstopped__result.bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) ));
+   [#"train.ads" 11 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3217,7 +3236,7 @@ module Train__trainstopped__subprogram_def
   train__trainstopped__result.bool__content )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "addcarriage" defined at train.ads:12, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "addcarriage" defined at train.ads:13, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Train__addcarriage__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3236,32 +3255,32 @@ module Train__addcarriage__subprogram_def
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
  use        Train__trainstopped___axiom as Train__trainstopped___axiom
 
- let def [#"train.ads" 12 0 0][@GP_Subp:train.ads:12] 
+ let def [#"train.ads" 13 0 0][@GP_Subp:train.ads:13] 
    (__void_param : unit)
-  requires { [#"train.ads" 12 0 0] true }
-  ensures { [#"train.ads" 12 0 0] ([#"train.ads" 15 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentCarriages > currentCarriages-1 and TrainStopped;              ^ train.ads:15:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:1] [@GP_Shape:pragargs__and] [@GP_Sloc:train.ads:15:14] ( ( [@GP_Pretty_Ada:2458] [@GP_Sloc:train.ads:15:14] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) /\ ( [@GP_Pretty_Ada:2461] [@GP_Sloc:train.ads:15:56] ((epsilon temp___result_183 : bool.
-   ( (temp___result_183 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_183 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
+  requires { [#"train.ads" 13 0 0] true }
+  ensures { [#"train.ads" 13 0 0] ([#"train.ads" 16 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:train.ads:16:14] [@comment:     Post => currentCarriages > currentCarriages-1 and TrainStopped;              ^ train.ads:16:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:1] [@GP_Shape:pragargs__and] ( ( [@GP_Pretty_Ada:2510] [@GP_Sloc:train.ads:16:14] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) /\ ( [@GP_Sloc:train.ads:16:56] [@GP_Pretty_Ada:2513] ((epsilon temp___result_190 : bool.
+   ( (temp___result_190 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_190 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:12 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:13 *)
   ;
    assume {  (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True False True True) };
    assume {  (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:12 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:13 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram train.ads:12 *)
+  () (* Check for RTE in the Pre of the subprogram train.ads:13 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content < (20 : int))) ((Train__trainstopped___axiom.trainstopped(())))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content < (21 : int))) ((Train__trainstopped___axiom.trainstopped(())))) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram train.ads:12 *)
+  () (* Assume Pre of the subprogram train.ads:13 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2450] (Train__currentcarriages.currentcarriages.int__content < (20 : int)) ) /\ ( [@GP_Pretty_Ada:2451] ((epsilon temp___result_182 : bool.
-   ( (temp___result_182 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_182 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2502] (Train__currentcarriages.currentcarriages.int__content < (21 : int)) ) /\ ( [@GP_Pretty_Ada:2503] ((epsilon temp___result_189 : bool.
+   ( (temp___result_189 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_189 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:train.adb:7:7] ([#"train.adb" 7 0 0] ()) );
-   ( [@GP_Sloc:train.adb:7:27] ([#"train.adb" 7 0 0] ()) );
-   ( [@GP_Sloc:train.adb:7:24] ([#"train.adb" 7 0 0] [#"train.adb" 7 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 7 0 0] ( [@comment:      currentCarriages := currentCarriages+1;                                           ^ train.adb:7:43:VC_RANGE_CHECK] [@vc:annotation] [@GP_Shape:currentcarriages_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] [@GP_Sloc:train.adb:7:43] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content + (1 : int)))) )) ))) );
+   ( [@GP_Sloc:train.adb:8:7] ([#"train.adb" 8 0 0] ()) );
+   ( [@GP_Sloc:train.adb:8:27] ([#"train.adb" 8 0 0] ()) );
+   ( [@GP_Sloc:train.adb:8:24] ([#"train.adb" 8 0 0] [#"train.adb" 8 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 8 0 0] ( [@comment:      currentCarriages := currentCarriages+1;                                           ^ train.adb:8:43:VC_RANGE_CHECK] [@GP_Sloc:train.adb:8:43] [@vc:annotation] [@GP_Shape:currentcarriages_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content + (1 : int)))) )) ))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3271,7 +3290,7 @@ module Train__addcarriage__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "removecarriage" defined at train.ads:17, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "removecarriage" defined at train.ads:18, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Train__removecarriage__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3290,37 +3309,143 @@ module Train__removecarriage__subprogram_def
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
  use        Train__trainstopped___axiom as Train__trainstopped___axiom
 
- let def [#"train.ads" 17 0 0][@GP_Subp:train.ads:17] 
+ let def [#"train.ads" 18 0 0][@GP_Subp:train.ads:18] 
    (__void_param : unit)
-  requires { [#"train.ads" 17 0 0] true }
-  ensures { [#"train.ads" 17 0 0] ([#"train.ads" 20 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:train.ads:20:14] [@model_vc_post] [@comment:     Post => currentCarriages < currentCarriages+1 and TrainStopped;              ^ train.ads:20:14:VC_POSTCONDITION] [@GP_Id:3] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:train.ads:20:14] [@GP_Pretty_Ada:2495] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) /\ ( [@GP_Sloc:train.ads:20:56] [@GP_Pretty_Ada:2498] ((epsilon temp___result_185 : bool.
-   ( (temp___result_185 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_185 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
+  requires { [#"train.ads" 18 0 0] true }
+  ensures { [#"train.ads" 18 0 0] ([#"train.ads" 21 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentCarriages < currentCarriages+1 and TrainStopped;              ^ train.ads:21:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:21:14] [@model_vc_post] [@GP_Id:3] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:train.ads:21:14] [@GP_Pretty_Ada:2547] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2550] [@GP_Sloc:train.ads:21:56] ((epsilon temp___result_192 : bool.
+   ( (temp___result_192 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_192 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:17 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:18 *)
   ;
    assume {  (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True False True True) };
    assume {  (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:17 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:18 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram train.ads:17 *)
+  () (* Check for RTE in the Pre of the subprogram train.ads:18 *)
   ;
    begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content > (1 : int))) ((Train__trainstopped___axiom.trainstopped(())))) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram train.ads:17 *)
+  () (* Assume Pre of the subprogram train.ads:18 *)
   ;
-   assume {  ( ( [@GP_Pretty_Ada:2487] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2488] ((epsilon temp___result_184 : bool.
-   ( (temp___result_184 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_184 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
+   assume {  ( ( [@GP_Pretty_Ada:2539] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2540] ((epsilon temp___result_191 : bool.
+   ( (temp___result_191 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_191 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:train.adb:12:7] ([#"train.adb" 12 0 0] ()) );
-   ( [@GP_Sloc:train.adb:12:27] ([#"train.adb" 12 0 0] ()) );
-   ( [@GP_Sloc:train.adb:12:24] ([#"train.adb" 12 0 0] [#"train.adb" 12 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 12 0 0] ( [@comment:      currentCarriages := currentCarriages-1;                                           ^ train.adb:12:43:VC_RANGE_CHECK] [@GP_Sloc:train.adb:12:43] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentcarriages_assign__sub] [@GP_Id:2] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:train.adb:13:7] ([#"train.adb" 13 0 0] ()) );
+   ( [@GP_Sloc:train.adb:13:27] ([#"train.adb" 13 0 0] ()) );
+   ( [@GP_Sloc:train.adb:13:24] ([#"train.adb" 13 0 0] [#"train.adb" 13 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 13 0 0] ( [@comment:      currentCarriages := currentCarriages-1;                                           ^ train.adb:13:43:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:train.adb:13:43] [@GP_Shape:currentcarriages_assign__sub] [@GP_Id:2] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content - (1 : int)))) )) ))) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
    begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int)))) ((Train__trainstopped___axiom.trainstopped(())))) in (
+   ()))
+   in () end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "increasespeed" defined at train.ads:23, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__increasespeed__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Standard__integer as Standard__integer
+ use        Train__currentspeed as Train__currentspeed
+ use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
+ use        Train__speed as Train__speed
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Standard__integer___axiom as Standard__integer___axiom
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__currentspeed___axiom as Train__currentspeed___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__currentelectricityproduced___axiom as Reactor__currentelectricityproduced___axiom
+
+ let def [#"train.ads" 23 0 0][@GP_Subp:train.ads:23] 
+   (__void_param : unit)
+  requires { [#"train.ads" 23 0 0] true }
+  ensures { [#"train.ads" 23 0 0] ([#"train.ads" 26 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentSpeed >= currentSpeed-2;              ^ train.ads:26:14:VC_POSTCONDITION] [@GP_Sloc:train.ads:26:14] [@model_vc_post] [@GP_Id:6] ( [@GP_Sloc:train.ads:26:14] [@GP_Pretty_Ada:18793] (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:23 *)
+  ;
+   assume {  (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
+   assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:23 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:23 *)
+  ;
+   begin ensures {true} let _ = (let _ = (Train__currentspeed.currentspeed.int__content < (200 : int)) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:23 *)
+  ;
+   assume {  ( [@GP_Pretty_Ada:18781] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) };
+   try
+   ( ();
+   ( [@GP_Sloc:train.adb:18:7] ([#"train.adb" 18 0 0] ()) );
+   ( [@GP_Sloc:train.adb:18:23] ([#"train.adb" 18 0 0] ()) );
+   ( [@GP_Sloc:train.adb:18:20] ([#"train.adb" 18 0 0] [#"train.adb" 18 0 0] (Train__currentspeed.currentspeed.int__content <- ( ([#"train.adb" 18 0 0] ( [@comment:      currentSpeed := currentElectricityProduced*2;                                                 ^ train.adb:18:49:VC_RANGE_CHECK] [@vc:annotation] [@GP_Shape:currentspeed_assign__mult] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:train.adb:18:49] [@GP_Id:5] (Train__speed.range_check_(([#"train.adb" 18 0 0] ( [@comment:      currentSpeed := currentElectricityProduced*2;                                                 ^ train.adb:18:49:VC_OVERFLOW_CHECK] [@vc:annotation] [@GP_Reason:VC_OVERFLOW_CHECK] [@GP_Shape:currentspeed_assign__mult] [@GP_Sloc:train.adb:18:49] [@GP_Id:4] (Standard__integer.range_check_((Reactor__currentelectricityproduced.currentelectricityproduced.int__content * (2 : int)))) )))) )) ))) );
+    raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+   begin ensures {true} let _ = (let _ = (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) in (
+   ()))
+   in () end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "decreasespeed" defined at train.ads:28, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__decreasespeed__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Int_Division as Int_Division
+ use        Train__currentcarriages as Train__currentcarriages
+ use        Train__currentspeed as Train__currentspeed
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__speed as Train__speed
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__carriage___axiom as Train__carriage___axiom
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__currentcarriages___axiom as Train__currentcarriages___axiom
+ use        Train__currentspeed___axiom as Train__currentspeed___axiom
+
+ let def [#"train.ads" 28 0 0][@GP_Subp:train.ads:28] 
+   (__void_param : unit)
+  requires { [#"train.ads" 28 0 0] true }
+  ensures { [#"train.ads" 28 0 0] ([#"train.ads" 31 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentSpeed <= currentSpeed+2;              ^ train.ads:31:14:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:train.ads:31:14] [@model_vc_post] [@GP_Id:9] ( [@GP_Sloc:train.ads:31:14] [@GP_Pretty_Ada:18843] (Train__currentspeed.currentspeed.int__content <= (Train__currentspeed.currentspeed.int__content + (2 : int))) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:28 *)
+  ;
+   assume {  (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True False True True) };
+   assume {  (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:28 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:28 *)
+  ;
+   begin ensures {true} let _ = (let _ = (Train__currentspeed.currentspeed.int__content > (0 : int)) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:28 *)
+  ;
+   assume {  ( [@GP_Pretty_Ada:18831] (Train__currentspeed.currentspeed.int__content > (0 : int)) ) };
+   try
+   ( ();
+   ( [@GP_Sloc:train.adb:23:10] ([#"train.adb" 23 0 0] ()) );
+   ( [@GP_Sloc:train.adb:23:7] ([#"train.adb" 23 0 0] (if (( ([#"train.adb" 23 0 0] [#"train.adb" 23 0 0] (([@branch_id=2376] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content > (1 : int)) )));
+   ( [@branch_id=2376] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:train.adb:24:10] ([#"train.adb" 24 0 0] ()) );
+    ( [@GP_Sloc:train.adb:24:26] ([#"train.adb" 24 0 0] ()) );
+    ( [@GP_Sloc:train.adb:24:41] ([#"train.adb" 24 0 0] ()) );
+    ( [@GP_Sloc:train.adb:24:23] ([#"train.adb" 24 0 0] [#"train.adb" 24 0 0] (Train__currentspeed.currentspeed.int__content <- ( ([#"train.adb" 24 0 0] ( [@GP_Shape:if__currentspeed_assign__sub] [@vc:annotation] [@GP_Sloc:train.adb:24:39] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentSpeed := currentSpeed - currentCarriages/10;                                       ^ train.adb:24:39:VC_RANGE_CHECK] [@GP_Id:8] (Train__speed.range_check_((Train__currentspeed.currentspeed.int__content - ([#"train.adb" 24 0 0] ( [@GP_Shape:if__currentspeed_assign__sub__div] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         currentSpeed := currentSpeed - currentCarriages/10;                                                         ^ train.adb:24:57:VC_DIVISION_CHECK] [@GP_Sloc:train.adb:24:57] [@GP_Id:7] (Int_Division.div_(Train__currentcarriages.currentcarriages.int__content) ((10 : int))) ))))) )) ))) ) )) else (
+    ()))) );
+    raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+   begin ensures {true} let _ = (let _ = (Train__currentspeed.currentspeed.int__content <= (Train__currentspeed.currentspeed.int__content + (2 : int))) in (
    ()))
    in () end  )
 end

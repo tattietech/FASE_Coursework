@@ -20,7 +20,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 RV MAX_TASKS=1+
 
-U main%b		main.adb		da029a81 NE OO SU
+U main%b		main.adb		50b5f844 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -28,7 +28,6 @@ Z ada.tags%s		a-tags.adb		a-tags.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
 Z system%s		system.ads		system.ali
-Z system.concat_8%s	s-conca8.adb		s-conca8.ali
 Z system.img_int%s	s-imgint.adb		s-imgint.ali
 Z system.parameters%s	s-parame.adb		s-parame.ali
 Z system.soft_links%s	s-soflin.adb		s-soflin.ali
@@ -51,11 +50,10 @@ D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-c.ads		20190518041256 5421119b interfaces.c%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D main.adb		20200502224526 2aa23e7d main%b
-D reactor.ads		20200502223138 59a5b0c7 reactor%s
+D main.adb		20200502234212 1d930090 main%b
+D reactor.ads		20200502225018 464981c8 reactor%s
 D system.ads		20190518041258 32a08138 system%s
 D s-atacco.ads		20190518041258 4c36d12f system.address_to_access_conversions%s
-D s-conca8.ads		20190518041256 e3074dd7 system.concat_8%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
 D s-ficobl.ads		20190518041258 078245e4 system.file_control_block%s
@@ -78,51 +76,64 @@ D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
 D s-win32.ads		20190518041256 90ecf4e6 system.win32%s
-D train.ads		20200502213504 07f1c156 train%s
+D train.ads		20200502233146 a59bac71 train%s
 G a e
 G c Z b b [main standard 5 11 none]
 G r c none [main standard 5 11 none] [addcontrolrod reactor 26 14 none]
 G r c none [main standard 5 11 none] [removecontrolrod reactor 21 14 none]
 G r c none [main standard 5 11 none] [fillwatersupply reactor 51 14 none]
+G r c none [main standard 5 11 none] [addcarriage train 13 14 none]
+G r c none [main standard 5 11 none] [removecarriage train 18 14 none]
 G r c none [main standard 5 11 none] [increasetemperature reactor 31 14 none]
 G r c none [main standard 5 11 none] [decreasetemperature reactor 36 14 none]
 G r c none [main standard 5 11 none] [increaseelectricity reactor 41 14 none]
 G r c none [main standard 5 11 none] [decreasewatersupply reactor 46 14 none]
+G r c none [main standard 5 11 none] [increasespeed train 23 14 none]
+G r c none [main standard 5 11 none] [decreasespeed train 28 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 15|3r6 3r23
 X 9 a-textio.ads
 57K13*Text_IO 727e16 15|3w10 3r27
-481U14*Get_Line 15|18s10
-508U14*Put_Line 15|17s10 34s10
+481U14*Get_Line 15|19s10
+508U14*Put_Line 15|18s10 37s10
 X 15 main.adb
-5U11*Main 5b11 60l5 60t9
-6a4 Str{string} 18m19 19r15
-7i4 Last{natural} 18m23
-9t9 EntryGuard 14b13 27l8 27t18
-10t9 Heat 23r31 29b13 37l8 37t12
-11t9 Power 47b14 53l8 53t13
-12t9 Water 39b14 45l8 45t13
+5U11*Main 5b11 74l5 74t9
+6a4 Str{string} 19m19 20r15
+7i4 Last{natural} 19m23
+9t9 EntryGuard 15b13 30l8 30t18
+10t9 Heat 26r31 32b13 42l8 42t12
+11t9 Power 26r43 52b14 58l8 58t13
+12t9 Water 26r56 44b14 50l8 50t13
+13t9 Speed 26r69 60b16 67l8 67t13
 X 16 reactor.ads
 1K9*Reactor 15|1w6 1r19 16|55e12
 3I12*ControlRods{integer}
 4I12*WaterSupply{integer}
 5I12*Temperature{integer}
 8I12*Electricity{integer}
-10i4*currentRods{3I12} 15|34r44
-11i4*currentWaterSupply{4I12} 15|34r86
-12i4*currentTemperature{5I12} 15|34r134
-15i4*currentElectricityProduced{8I12} 15|34r182
-16i4*InputConst{integer} 15|32m30 33m30 50m30
-21U14*removeControlRod 15|21s22
-26U14*addControlRod 15|20s22
-31U14*increaseTemperature 15|32s10
-36U14*decreaseTemperature 15|33s10
-41U14*increaseElectricity 15|50s10
-46U14*decreaseWaterSupply 15|42s10
-51U14*fillWaterSupply 15|22s22
-X 30 s-stausa.ads
+10i4*currentRods{3I12} 15|37r44
+11i4*currentWaterSupply{4I12} 15|37r86
+12i4*currentTemperature{5I12} 15|37r134
+15i4*currentElectricityProduced{8I12} 15|37r182
+16i4*InputConst{integer} 15|35m30 36m30 55m30
+21U14*removeControlRod 15|22s22
+26U14*addControlRod 15|21s22
+31U14*increaseTemperature 15|35s10
+36U14*decreaseTemperature 15|36s10
+41U14*increaseElectricity 15|55s10
+46U14*decreaseWaterSupply 15|47s10
+51U14*fillWaterSupply 15|23s22
+X 29 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
-X 42 train.ads
-1K9*Train 15|2w6 2r17 42|22e10
+X 41 train.ads
+2K9*Train 15|2w6 2r17 41|33e10
+4I12*Carriage{integer}
+5I12*Speed{integer}
+7i4*currentCarriages{4I12} 15|38r92
+8i4*currentSpeed{5I12} 15|38r46
+13U14*addCarriage 15|24s22
+18U14*removeCarriage 15|25s22
+23U14*increaseSpeed 15|63s10
+28U14*decreaseSpeed 15|64s10
 
