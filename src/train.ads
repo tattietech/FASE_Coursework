@@ -2,8 +2,21 @@ package Train with SPARK_Mode
 is
    type Carriage is range 1..20;
    type Speed is range 0..500;
-   type Status is (Start, Stop);
 
    currentCarriages : Carriage := Carriage'First;
    currentSpeed : Speed := Speed'First;
+
+   function TrainStopped return Boolean is
+      (currentSpeed = 0);
+
+   procedure addCarriage with
+     Global => (In_Out => currentCarriages, Proof_In => currentSpeed),
+     Pre => currentCarriages < 20 and TrainStopped,
+     Post => currentCarriages > currentCarriages-1 and TrainStopped;
+
+   procedure removeCarriage with
+     Global => (In_Out => currentCarriages, Proof_In => currentSpeed),
+     Pre => currentCarriages > 1 and TrainStopped,
+     Post => currentCarriages < currentCarriages+1 and TrainStopped;
+
 end Train;
