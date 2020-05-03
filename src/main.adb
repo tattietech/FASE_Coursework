@@ -26,10 +26,10 @@ procedure Main is
          when '5' => removeCarriage;
          when '6' => stopReactor;
          when '7' => startReactor;
-         when others => abort Heat; abort Power; abort Water; abort Speed; exit;
+         when others => abort Display; abort Heat; abort Power; abort Water; abort Speed; abort EntryGuard; exit;
          end case;
-      end loop;
       delay 0.1;
+      end loop;
    end EntryGuard;
 
    task body Display is

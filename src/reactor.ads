@@ -20,7 +20,7 @@ is
    InputConst : Integer := 0;
 
    function ReactorCheck return Boolean is
-     (currentTemperature < 100 and currentWaterSupply > 0);
+     (currentTemperature < Temperature'Last and currentWaterSupply > WaterSupply'First);
 
    function ReactorOn return Boolean is
       (currentPowerStatus = On);
