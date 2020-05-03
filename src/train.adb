@@ -5,17 +5,21 @@ is
 
    procedure addCarriage is
    begin
-      currentCarriages := currentCarriages+1;
-      if currentMaxSpeed >=Speed'First+10 then
-         currentMaxSpeed := currentMaxSpeed-10;
+      if currentSpeed = 0 then
+         currentCarriages := currentCarriages+1;
+         if currentMaxSpeed >=Speed'First+10 then
+            currentMaxSpeed := currentMaxSpeed-10;
+         end if;
       end if;
    end addCarriage;
 
    procedure removeCarriage is
    begin
-      currentCarriages := currentCarriages-1;
-      if currentMaxSpeed <=Speed'Last-10 then
-         currentMaxSpeed := currentMaxSpeed+10;
+      if currentSpeed = 0 then
+         currentCarriages := currentCarriages-1;
+         if currentMaxSpeed <=Speed'Last-10 then
+            currentMaxSpeed := currentMaxSpeed+10;
+         end if;
       end if;
    end removeCarriage;
 

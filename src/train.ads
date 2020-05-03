@@ -12,14 +12,14 @@ is
       (currentSpeed = 0);
 
    procedure addCarriage with
-     Global => (In_Out => (currentCarriages, currentMaxSpeed), Proof_In => currentSpeed),
-     Pre => currentCarriages < 19 and TrainStopped,
-     Post => currentCarriages > currentCarriages-1 and TrainStopped;
+     Global => (In_Out => (currentCarriages, currentMaxSpeed), Input => currentSpeed),
+     Pre => currentCarriages < 19,
+     Post => currentCarriages > currentCarriages-1;
 
    procedure removeCarriage with
-     Global => (In_Out => (currentCarriages, currentMaxSpeed), Proof_In => currentSpeed),
-     Pre => currentCarriages > 1 and TrainStopped,
-     Post => currentCarriages < currentCarriages+1 and TrainStopped;
+     Global => (In_Out => (currentCarriages, currentMaxSpeed), Input => currentSpeed),
+     Pre => currentCarriages > 1,
+     Post => currentCarriages < currentCarriages+1;
 
    procedure increaseSpeed with
      Global => (In_out => currentSpeed, Input => (currentElectricityProduced, currentMaxSpeed)),

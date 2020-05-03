@@ -113,8 +113,8 @@
   "proof": [
     {
       "file": "train.adb",
-      "line": 8,
-      "col": 43,
+      "line": 9,
+      "col": 46,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
@@ -131,7 +131,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 20,
+              "steps": 19,
               "time": 0
             }
           },
@@ -140,8 +140,8 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 8,
-      "check_col": 43,
+      "check_line": 9,
+      "check_col": 46,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -153,8 +153,8 @@
     },
     {
       "file": "train.adb",
-      "line": 10,
-      "col": 44,
+      "line": 11,
+      "col": 47,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
@@ -171,7 +171,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 20,
+              "steps": 19,
               "time": 0
             }
           },
@@ -180,8 +180,8 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 10,
-      "check_col": 44,
+      "check_line": 11,
+      "check_col": 47,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -217,62 +217,11 @@
           },
           "transformations": {
           }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 5,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
         }
       ],
       "check_file": "train.ads",
       "check_line": 17,
       "check_col": 14,
-      "how_proved": "prover",
-      "stats": {
-        "CVC4": {
-          "count": 2,
-          "max_steps": 1,
-          "max_time": 0.00000000000000E+00
-        }
-      }
-    },
-    {
-      "file": "train.adb",
-      "line": 16,
-      "col": 43,
-      "rule": "VC_RANGE_CHECK",
-      "severity": "info",
-      "entity": {
-        "name": "Train.removeCarriage",
-        "sloc": [
-          {
-            "file": "train.ads",
-            "line": 19
-          }
-        ]
-      },
-      "check_tree": [
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 20,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
-        }
-      ],
-      "check_file": "train.adb",
-      "check_line": 16,
-      "check_col": 43,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -284,8 +233,8 @@
     },
     {
       "file": "train.adb",
-      "line": 18,
-      "col": 44,
+      "line": 19,
+      "col": 46,
       "rule": "VC_RANGE_CHECK",
       "severity": "info",
       "entity": {
@@ -302,7 +251,7 @@
           "proof_attempts": {
             "CVC4": {
               "result": "Valid",
-              "steps": 20,
+              "steps": 19,
               "time": 0
             }
           },
@@ -311,8 +260,48 @@
         }
       ],
       "check_file": "train.adb",
-      "check_line": 18,
-      "check_col": 44,
+      "check_line": 19,
+      "check_col": 46,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 0.00000000000000E+00
+        }
+      }
+    },
+    {
+      "file": "train.adb",
+      "line": 21,
+      "col": 47,
+      "rule": "VC_RANGE_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Train.removeCarriage",
+        "sloc": [
+          {
+            "file": "train.ads",
+            "line": 19
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 0
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "train.adb",
+      "check_line": 21,
+      "check_col": 47,
       "how_proved": "prover",
       "stats": {
         "CVC4": {
@@ -348,17 +337,6 @@
           },
           "transformations": {
           }
-        },
-        {
-          "proof_attempts": {
-            "CVC4": {
-              "result": "Valid",
-              "steps": 5,
-              "time": 0
-            }
-          },
-          "transformations": {
-          }
         }
       ],
       "check_file": "train.ads",
@@ -367,7 +345,7 @@
       "how_proved": "prover",
       "stats": {
         "CVC4": {
-          "count": 2,
+          "count": 1,
           "max_steps": 1,
           "max_time": 0.00000000000000E+00
         }
@@ -421,186 +399,6 @@
       "claim": {
         "predicate": "CLAIM_POST",
         "arg": {
-          "name": "Train.increaseSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 24
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Train.increaseSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 24
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Train.increaseSpeed",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 24
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Train.removeCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 19
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Train.removeCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 19
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Train.removeCarriage",
-          "sloc": [
-            {
-              "file": "train.ads",
-              "line": 19
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
           "name": "Train.addCarriage",
           "sloc": [
             {
@@ -613,18 +411,6 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_EFFECTS",
@@ -641,30 +427,6 @@
     },
     {
       "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Train.TrainStopped",
-            "sloc": [
-              {
-                "file": "train.ads",
-                "line": 11
-              }
-            ]
-          }
-        }
       ],
       "claim": {
         "predicate": "CLAIM_AORTE",
@@ -706,6 +468,54 @@
             {
               "file": "train.ads",
               "line": 11
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Train.increaseSpeed",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 24
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Train.increaseSpeed",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 24
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Train.increaseSpeed",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 24
             }
           ]
         }
@@ -726,17 +536,65 @@
           ]
         }
       }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Train.removeCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 19
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Train.removeCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 19
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Train.removeCarriage",
+          "sloc": [
+            {
+              "file": "train.ads",
+              "line": 19
+            }
+          ]
+        }
+      }
     }
   ],
   "timings": {
-    "marking": 1.04879995342344E-03,
-    "globals (basic)": 1.28250000998378E-02,
-    "globals/properties (advanced)": 1.74026992172003E-02,
-    "flow analysis": 6.51430012658238E-03,
-    "codepeer results": 7.19999979992281E-06,
-    "init_why_sections": 4.52700012829155E-04,
-    "translation of standard": 3.57490009628236E-03,
-    "translation of compilation unit": 1.83550007641315E-02,
-    "proof": 6.33965790271759E-01
+    "marking": 1.06140004936606E-03,
+    "globals (basic)": 1.25281000509858E-02,
+    "globals/properties (advanced)": 1.82649996131659E-02,
+    "flow analysis": 5.49620017409325E-03,
+    "codepeer results": 7.90000012784731E-06,
+    "init_why_sections": 4.77399997180328E-04,
+    "translation of standard": 3.54310008697212E-03,
+    "translation of compilation unit": 1.59932002425194E-02,
+    "proof": 9.52465891838074E-01
   }
 }

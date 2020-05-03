@@ -13,7 +13,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U reactor%b		reactor.adb		a0fc6684 OO PK
+U reactor%b		reactor.adb		0cb50c6b OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
@@ -27,8 +27,8 @@ D a-stream.ads		20190518041256 119b8fb3 ada.streams%s
 D a-textio.ads		20190518041256 aef4d56d ada.text_io%s
 D interfac.ads		20190518041254 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041254 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200503094828 99b6fd26 reactor%s
-D reactor.adb		20200503094852 97be4ecf reactor%b
+D reactor.ads		20200503101038 99b6fd26 reactor%s
+D reactor.adb		20200503102042 3bf72420 reactor%b
 D system.ads		20190518041256 32a08138 system%s
 D s-crtl.ads		20190518041254 0ebbdb71 system.crtl%s
 D s-ficobl.ads		20190518041256 078245e4 system.file_control_block%s
@@ -40,48 +40,48 @@ X 1 ada.ads
 X 4 a-textio.ads
 57K13*Text_IO 727e16 7|1w10 1r27 8|1w10 1r27
 X 7 reactor.ads
-2K9*Reactor 71l5 71e12 8|2b14 94l5 94t12
+2K9*Reactor 71l5 71e12 8|2b14 98l5 98t12
 4I12*ControlRods{integer} 13r18 13r33
 5I12*WaterSupply{integer} 14r25 14r40
 6I12*Temperature{integer} 15r25 15r40
 7I12*TemperatureIncrease{integer} 16r33
 8I12*ReactorPower{integer} 17r26
-9I12*Electricity{integer} 18r33 18r48 19r28 19r43 8|8r35 15r32 28r35 30r35
-. 39r32
+9I12*Electricity{integer} 18r33 18r48 19r28 19r43 8|8r35 15r32 29r38 31r38
+. 42r35
 10E9*Power 10e26 12r25
 10n18*On{10E9} 26r29 34r34 8|7r32
 10n22*Off{10E9} 12r34 30r34 35r35 8|14r29
 12e4*currentPowerStatus{10E9} 26r8 29r28 30r13 33r27 34r13 35r14 48r85 63r56
 . 8|7m10 14m7
 13i4*currentRods{4I12} 29r81 38r28 39r13 40r14 40r28 43r28 44r13 45r14 45r28
-. 8|6r10 8r54 20m7 20r22 27r10 28r54 36m7 36r22 39r51
+. 8|6r10 8r54 21m10 21r25 28r13 29r57 38m7 38r22 42r54
 14i4*currentWaterSupply{5I12} 23r36 29r107 38r104 53r56 63r27 64r13 65r14
-. 65r35 68r27 8|57r10 58r39 84m10 84r32 90m7
+. 65r35 68r27 8|61r10 62r39 88m10 88r32 94m7
 15i4*currentTemperature{6I12} 23r7 29r126 38r123 48r27 49r13 50r14 50r35
-. 53r27 54r13 55r14 55r35 8|44r15 47m13 49m13 58r18 60m13 62m13 65m10 65r32
-16i4*currentTemperatureIncrease{7I12} 38r41 39r33 43r41 44r33 48r57 8|21m7
-. 21r37 37m7 37r37 44r36
-17i4*currentReactorPower{8I12} 38r69 39r68 43r69 44r68 58r65 8|22r10 23m10
-. 23r33 25m10 38m7 38r30 71r43
-18i4*currentElectricityProduced{9I12} 58r27 59r13 60r17 60r46 8|71r14 73m9
-. 75m9 77m9
+. 53r27 54r13 55r14 55r35 8|48r15 51m13 53m13 62r18 64m13 66m13 69m10 69r32
+16i4*currentTemperatureIncrease{7I12} 38r41 39r33 43r41 44r33 48r57 8|22m10
+. 22r40 39m7 39r37 48r36
+17i4*currentReactorPower{8I12} 38r69 39r68 43r69 44r68 58r65 8|23r13 24m13
+. 24r36 26m13 40m7 40r30 75r43
+18i4*currentElectricityProduced{9I12} 58r27 59r13 60r17 60r46 8|75r14 77m9
+. 79m9 81m9
 19i4*currentMaxElectricity{9I12} 29r48 33r57 38r154 43r101 58r86 8|8m10 15m7
-. 28m10 30m10 39m7 72r17 73r39
+. 29m13 31m13 42m10 76r17 77r39
 20i4*InputConst{integer}
 22V13*ReactorCheck{boolean} 30s42 39s97 40s46
-25V13*ReactorOn{boolean} 8|45s10 83s10
+25V13*ReactorOn{boolean} 8|20s10 41s10 49s10 87s10
 28U14*startReactor 8|4b14 10l8 10t20
 32U14*stopReactor 8|12b14 16l8 16t19
-37U14*removeControlRod 8|18b14 32l8 32t24
-42U14*addControlRod 8|34b14 40l8 40t21
-47U14*increaseTemperature 47<35 8|42b14 52l8 52t27
-47i35 temp{integer} 8|42b35 44m7 46r13 49r35
-52U14*decreaseTemperature 52<35 8|54b14 67l8 67t27
-52i35 temp{integer} 8|54b35 56m7 58m10 59r13 62r35
-57U14*increaseElectricity 57<35 8|69b14 79l8 79t27
-57i35 elec{integer} 8|69b35 71m6 72r9 74r12 77r39
-62U14*decreaseWaterSupply 8|81b14 86l8 86t27
-67U14*fillWaterSupply 8|88b14 91l8 91t23
+37U14*removeControlRod 8|18b14 34l8 34t24
+42U14*addControlRod 8|36b14 44l8 44t21
+47U14*increaseTemperature 47<35 8|46b14 56l8 56t27
+47i35 temp{integer} 8|46b35 48m7 50r13 53r35
+52U14*decreaseTemperature 52<35 8|58b14 71l8 71t27
+52i35 temp{integer} 8|58b35 60m7 62m10 63r13 66r35
+57U14*increaseElectricity 57<35 8|73b14 83l8 83t27
+57i35 elec{integer} 8|73b35 75m6 76r9 78r12 81r39
+62U14*decreaseWaterSupply 8|85b14 90l8 90t27
+67U14*fillWaterSupply 8|92b14 95l8 95t23
 
 QQ SPARKVERSION 2019 (20190517)
 GG EK_DIRECT_CALLS reactor__reactorcheck 0
@@ -92,9 +92,9 @@ GG EK_DIRECT_CALLS reactor__startreactor 1 reactor__reactorcheck
 GG EK_GLOBALS reactor__startreactor local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 2 reactor__currentwatersupply reactor__currenttemperature proper_input 3 reactor__currentpowerstatus reactor__currentrods reactor__currentmaxelectricity proper_output 2 reactor__currentpowerstatus reactor__currentmaxelectricity refined_proof_in 2 reactor__currentwatersupply reactor__currenttemperature refined_input 3 reactor__currentpowerstatus reactor__currentrods reactor__currentmaxelectricity refined_output 2 reactor__currentpowerstatus reactor__currentmaxelectricity calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 3 reactor__currentpowerstatus reactor__currentrods reactor__currentmaxelectricity LOCKS 0
 GG EK_DIRECT_CALLS reactor__stopreactor 0
 GG EK_GLOBALS reactor__stopreactor local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 1 reactor__currentpowerstatus proper_output 2 reactor__currentpowerstatus reactor__currentmaxelectricity refined_proof_in 0 refined_input 1 reactor__currentpowerstatus refined_output 2 reactor__currentpowerstatus reactor__currentmaxelectricity calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currentpowerstatus reactor__currentmaxelectricity LOCKS 0
-GG EK_DIRECT_CALLS reactor__removecontrolrod 1 reactor__reactorcheck
+GG EK_DIRECT_CALLS reactor__removecontrolrod 2 reactor__reactorcheck reactor__reactoron
 GG EK_GLOBALS reactor__removecontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 2 reactor__currentwatersupply reactor__currenttemperature proper_input 3 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower proper_output 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity refined_proof_in 2 reactor__currentwatersupply reactor__currenttemperature refined_input 3 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower refined_output 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity LOCKS 0
-GG EK_DIRECT_CALLS reactor__addcontrolrod 0
+GG EK_DIRECT_CALLS reactor__addcontrolrod 1 reactor__reactoron
 GG EK_GLOBALS reactor__addcontrolrod local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 3 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower proper_output 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity refined_proof_in 0 refined_input 3 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower refined_output 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 4 reactor__currentrods reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentmaxelectricity LOCKS 0
 GG EK_DIRECT_CALLS reactor__increasetemperature 1 reactor__reactoron
 GG EK_GLOBALS reactor__increasetemperature local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 3 reactor__currentpowerstatus reactor__currenttemperature reactor__currenttemperatureincrease proper_output 1 reactor__currenttemperature refined_proof_in 0 refined_input 3 reactor__currentpowerstatus reactor__currenttemperature reactor__currenttemperatureincrease refined_output 1 reactor__currenttemperature calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 2 reactor__currenttemperature reactor__currenttemperatureincrease LOCKS 0
@@ -108,6 +108,7 @@ GG EK_DIRECT_CALLS reactor__fillwatersupply 0
 GG EK_GLOBALS reactor__fillwatersupply local FALSE E_PROCEDURE FALSE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 1 reactor__currentwatersupply refined_proof_in 0 refined_input 0 refined_output 1 reactor__currentwatersupply calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 reactor__currentwatersupply LOCKS 0
 GG EK_DIRECT_CALLS reactor 0
 GG EK_GLOBALS reactor local FALSE E_PACKAGE TRUE ORIGIN_FLOW proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 9 reactor__currentpowerstatus reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentelectricityproduced reactor__currentmaxelectricity reactor__inputconst calls_proof 0 calls 0 calls_conditional 0 local_var 9 reactor__currentpowerstatus reactor__currentrods reactor__currentwatersupply reactor__currenttemperature reactor__currenttemperatureincrease reactor__currentreactorpower reactor__currentelectricityproduced reactor__currentmaxelectricity reactor__inputconst FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE system__crtl__fdopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE reactor__increaseelectricity FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__read__2 FALSE FALSE FALSE FALSE TRUE ada__text_io PRIVATE_PART
 GG EK_FLOW_SCOPE ada__text_io__look_ahead__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
@@ -161,8 +162,8 @@ GG EK_FLOW_SCOPE interfaces__shift_right FALSE FALSE FALSE FALSE TRUE interfaces
 GG EK_FLOW_SCOPE system__crtl__write FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE interfaces__shift_left__4 FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__get_immediate__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__ftell64 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__rewind FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
+GG EK_FLOW_SCOPE system__crtl__ftell64 FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada TRUE FALSE FALSE FALSE FALSE __standard
 GG EK_FLOW_SCOPE ada__text_io__set_error FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__streams__write_sea FALSE FALSE FALSE FALSE TRUE ada__streams PRIVATE_PART
@@ -171,8 +172,8 @@ GG EK_FLOW_SCOPE interfaces__c_streams__full_name FALSE FALSE FALSE FALSE TRUE i
 GG EK_FLOW_SCOPE reactor__reactorcheck FALSE FALSE FALSE FALSE TRUE reactor VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__set_page_length FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__page__2 FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__close FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
+GG EK_FLOW_SCOPE interfaces__shift_right_arithmetic FALSE FALSE FALSE FALSE TRUE interfaces VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__standard_input FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__rmdir FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__getenv FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
@@ -317,5 +318,4 @@ GG EK_FLOW_SCOPE ada__text_io__flush__2 FALSE FALSE FALSE FALSE TRUE ada__text_i
 GG EK_FLOW_SCOPE system__crtl__open FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE system__crtl__pclose FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_FLOW_SCOPE ada__text_io__col FALSE FALSE FALSE FALSE TRUE ada__text_io VISIBLE_PART
-GG EK_FLOW_SCOPE system__crtl__fdopen FALSE FALSE FALSE FALSE TRUE system__crtl VISIBLE_PART
 GG EK_END_MARKER
