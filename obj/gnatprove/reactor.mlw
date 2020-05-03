@@ -2398,7 +2398,7 @@ module Reactor__currentpowerstatus
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentpowerstatus [#"reactor.ads" 12 0 0][@name:currentPowerStatus] [@model_projected] [@model_trace:2737]  : int__ref 
+ val currentpowerstatus [#"reactor.ads" 12 0 0][@name:currentPowerStatus] [@model_trace:2782] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2419,7 +2419,7 @@ module Reactor__currentrods
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentrods [#"reactor.ads" 13 0 0][@name:currentRods] [@model_projected] [@model_trace:2747]  : int__ref 
+ val currentrods [#"reactor.ads" 13 0 0][@name:currentRods] [@model_projected] [@model_trace:2792]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2440,7 +2440,7 @@ module Reactor__currentwatersupply
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentwatersupply [#"reactor.ads" 14 0 0][@model_trace:2759] [@name:currentWaterSupply] [@model_projected]  : int__ref 
+ val currentwatersupply [#"reactor.ads" 14 0 0][@model_trace:2804] [@name:currentWaterSupply] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2461,7 +2461,7 @@ module Reactor__currenttemperature
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currenttemperature [#"reactor.ads" 15 0 0][@name:currentTemperature] [@model_projected] [@model_trace:2771]  : int__ref 
+ val currenttemperature [#"reactor.ads" 15 0 0][@name:currentTemperature] [@model_projected] [@model_trace:2816]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2482,7 +2482,7 @@ module Reactor__currenttemperatureincrease
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currenttemperatureincrease [#"reactor.ads" 16 0 0][@model_trace:2783] [@model_projected] [@name:currentTemperatureIncrease]  : int__ref 
+ val currenttemperatureincrease [#"reactor.ads" 16 0 0][@model_projected] [@model_trace:2828] [@name:currentTemperatureIncrease]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2503,7 +2503,7 @@ module Reactor__currentreactorpower
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentreactorpower [#"reactor.ads" 17 0 0][@model_trace:2793] [@name:currentReactorPower] [@model_projected]  : int__ref 
+ val currentreactorpower [#"reactor.ads" 17 0 0][@name:currentReactorPower] [@model_trace:2838] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2524,7 +2524,7 @@ module Reactor__currentelectricityproduced
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentelectricityproduced [#"reactor.ads" 18 0 0][@model_trace:2803] [@name:currentElectricityProduced] [@model_projected]  : int__ref 
+ val currentelectricityproduced [#"reactor.ads" 18 0 0][@name:currentElectricityProduced] [@model_projected] [@model_trace:2848]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2545,7 +2545,7 @@ module Reactor__currentmaxelectricity
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentmaxelectricity [#"reactor.ads" 19 0 0][@model_projected] [@name:currentMaxElectricity] [@model_trace:2815]  : int__ref 
+ val currentmaxelectricity [#"reactor.ads" 19 0 0][@model_trace:2860] [@model_projected] [@name:currentMaxElectricity]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2566,7 +2566,7 @@ module Reactor__inputconst
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val inputconst [#"reactor.ads" 20 0 0][@model_projected] [@model_trace:2827] [@name:InputConst]  : int__ref 
+ val inputconst [#"reactor.ads" 20 0 0][@model_trace:2872] [@model_projected] [@name:InputConst]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2587,7 +2587,7 @@ module Reactor__increasetemperature__temp
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val temp [#"reactor.ads" 47 0 0][@name:temp] [@model_projected] [@model_trace:3035]  : int__ref 
+ val temp [#"reactor.ads" 47 0 0][@name:temp] [@model_projected] [@model_trace:3082]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2608,7 +2608,7 @@ module Reactor__decreasetemperature__temp
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val temp [#"reactor.ads" 52 0 0][@name:temp] [@model_projected] [@model_trace:3078]  : int__ref 
+ val temp [#"reactor.ads" 52 0 0][@name:temp] [@model_projected] [@model_trace:3127]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2629,7 +2629,7 @@ module Reactor__increaseelectricity__elec
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val elec [#"reactor.ads" 57 0 0][@model_trace:3119] [@name:elec] [@model_projected]  : int__ref 
+ val elec [#"reactor.ads" 57 0 0][@model_trace:3170] [@name:elec] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -3252,10 +3252,10 @@ module Reactor__reactorcheck
  use        "int".Int
 
  val function reactorcheck 
-   (reactor__currentwatersupply : int) (reactor__currenttemperature : int) : bool
+   (reactor__currenttemperature : int) (reactor__currentwatersupply : int) : bool
  
  val predicate reactorcheck__function_guard 
-   (temp___result_156 : bool) (reactor__currentwatersupply : int) (reactor__currenttemperature : int)
+   (temp___result_156 : bool) (reactor__currenttemperature : int) (reactor__currentwatersupply : int)
 
 end
 
@@ -3629,21 +3629,21 @@ module Reactor__reactorcheck___axiom
  val reactorcheck 
    (__void_param : unit) : bool
   requires {  true }
-  ensures {  ( ( (result = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard result Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )/\( (result = True) <-> ( (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) /\ (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) ) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature}
+  ensures {  ( ( (result = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard result Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )/\( (result = True) <-> ( (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) /\ (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) ) ) }
+  reads {Reactor__currenttemperature.currenttemperature, Reactor__currentwatersupply.currentwatersupply}
  
  axiom reactorcheck__post_axiom :
-  (forall reactor__currentwatersupply   reactor__currenttemperature   : int [(Reactor__reactorcheck.reactorcheck reactor__currentwatersupply reactor__currenttemperature)].
-   ( ( (Reactor__watersupply___axiom.dynamic_invariant reactor__currentwatersupply True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant reactor__currenttemperature True True True True) ) -> (let result = (Reactor__reactorcheck.reactorcheck reactor__currentwatersupply reactor__currenttemperature) in (
-    (if ((Reactor__reactorcheck.reactorcheck__function_guard result reactor__currentwatersupply reactor__currenttemperature)) then (
+  (forall reactor__currenttemperature   reactor__currentwatersupply   : int [(Reactor__reactorcheck.reactorcheck reactor__currenttemperature reactor__currentwatersupply)].
+   ( ( (Reactor__temperature___axiom.dynamic_invariant reactor__currenttemperature True True True True) /\ (Reactor__watersupply___axiom.dynamic_invariant reactor__currentwatersupply True True True True) ) -> (let result = (Reactor__reactorcheck.reactorcheck reactor__currenttemperature reactor__currentwatersupply) in (
+    (if ((Reactor__reactorcheck.reactorcheck__function_guard result reactor__currenttemperature reactor__currentwatersupply)) then (
      ( ( true /\ true )/\true )) else true)))
     ))
  
  axiom reactorcheck__def_axiom :
-  (forall reactor__currentwatersupply   reactor__currenttemperature   : int [(Reactor__reactorcheck.reactorcheck reactor__currentwatersupply reactor__currenttemperature)].
-   ( (let result = (Reactor__reactorcheck.reactorcheck reactor__currentwatersupply reactor__currenttemperature) in (
-    (Reactor__reactorcheck.reactorcheck__function_guard result reactor__currentwatersupply reactor__currenttemperature)))
-    -> ( ((Reactor__reactorcheck.reactorcheck reactor__currentwatersupply reactor__currenttemperature) = True) <-> ( (reactor__currenttemperature < (100 : int)) /\ (reactor__currentwatersupply > (0 : int)) ) ) ))
+  (forall reactor__currenttemperature   reactor__currentwatersupply   : int [(Reactor__reactorcheck.reactorcheck reactor__currenttemperature reactor__currentwatersupply)].
+   ( (let result = (Reactor__reactorcheck.reactorcheck reactor__currenttemperature reactor__currentwatersupply) in (
+    (Reactor__reactorcheck.reactorcheck__function_guard result reactor__currenttemperature reactor__currentwatersupply)))
+    -> ( ((Reactor__reactorcheck.reactorcheck reactor__currenttemperature reactor__currentwatersupply) = True) <-> ( (reactor__currenttemperature < (100 : int)) /\ (reactor__currentwatersupply > (0 : int)) ) ) ))
 
 end
 
@@ -3693,11 +3693,11 @@ module Reactor__startreactor___axiom
 
  val startreactor 
    (__void_param : unit) : unit
-  requires {  ( ( [@GP_Pretty_Ada:2898] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((epsilon temp___result_214 : bool.
-   ( (temp___result_214 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_214 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) }
-  ensures {  ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperature.currenttemperature, Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentrods.currentrods}
-  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentpowerstatus.currentpowerstatus}
+  requires {  ( ( [@GP_Pretty_Ada:2943] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2944] ((epsilon temp___result_214 : bool.
+   ( (temp___result_214 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_214 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) }
+  ensures {  ( (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) ) }
+  reads {Reactor__currenttemperature.currenttemperature, Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentrods.currentrods, Reactor__currentwatersupply.currentwatersupply, Reactor__currentmaxelectricity.currentmaxelectricity}
+  writes {Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentmaxelectricity.currentmaxelectricity}
 
 end
 
@@ -3713,10 +3713,10 @@ module Reactor__stopreactor___axiom
 
  val stopreactor 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:18504] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18514] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) ) ) }
+  requires {  ( [@GP_Pretty_Ada:18580] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18590] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) ) ) }
   reads {Reactor__currentpowerstatus.currentpowerstatus}
-  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentpowerstatus.currentpowerstatus}
+  writes {Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentmaxelectricity.currentmaxelectricity}
 
 end
 
@@ -3725,6 +3725,7 @@ module Reactor__removecontrolrod___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__currenttemperature as Reactor__currenttemperature
@@ -3732,6 +3733,7 @@ module Reactor__removecontrolrod___axiom
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__reactorcheck as Reactor__reactorcheck
+ use        Reactor__reactoron as Reactor__reactoron
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
@@ -3739,12 +3741,13 @@ module Reactor__removecontrolrod___axiom
 
  val removecontrolrod 
    (__void_param : unit) : unit
-  requires {  ( ( ( ( [@GP_Pretty_Ada:2963] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2967] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2971] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2972] ((epsilon temp___result_215 : bool.
-   ( (temp___result_215 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_215 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2979] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2982] ((epsilon temp___result_216 : bool.
-   ( (temp___result_216 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_216 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) /\ ( ( ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) ) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
-  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  requires {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:3014] ((epsilon temp___result_215 : bool.
+   ( (temp___result_215 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_215 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) /\ ( [@GP_Pretty_Ada:3016] ((epsilon temp___result_216 : bool.
+   ( (temp___result_216 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_216 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:3023] (Reactor__currentrods.currentrods.int__content = ((old Reactor__currentrods.currentrods.int__content ) - (1 : int))) ) /\ ( [@GP_Pretty_Ada:3028] ((epsilon temp___result_217 : bool.
+   ( (temp___result_217 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_217 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) /\ ( ( ( (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) ) ) }
+  reads {Reactor__currenttemperature.currenttemperature, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods, Reactor__currentwatersupply.currentwatersupply}
+  writes {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods, Reactor__currentmaxelectricity.currentmaxelectricity}
 
 end
 
@@ -3753,10 +3756,12 @@ module Reactor__addcontrolrod___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__reactoron as Reactor__reactoron
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
@@ -3764,10 +3769,11 @@ module Reactor__addcontrolrod___axiom
 
  val addcontrolrod 
    (__void_param : unit) : unit
-  requires {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3015] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:3019] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18643] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) /\ ( ( ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) ) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
-  reads {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
-  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  requires {  ( ( [@GP_Pretty_Ada:3060] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3063] ((epsilon temp___result_218 : bool.
+   ( (temp___result_218 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_218 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18717] (Reactor__currentrods.currentrods.int__content = ((old Reactor__currentrods.currentrods.int__content ) + (1 : int))) ) /\ ( ( ( (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) ) ) }
+  reads {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  writes {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods, Reactor__currentmaxelectricity.currentmaxelectricity}
 
 end
 
@@ -3784,8 +3790,8 @@ module Reactor__increasetemperature___axiom
 
  val increasetemperature 
    (temp : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:18682] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18694] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
+  requires {  ( [@GP_Pretty_Ada:18757] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18768] (Reactor__currenttemperature.currenttemperature.int__content >= (old Reactor__currenttemperature.currenttemperature.int__content )) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
   reads {Reactor__currenttemperature.currenttemperature, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentpowerstatus.currentpowerstatus}
   writes {Reactor__currenttemperature.currenttemperature, temp}
 
@@ -3803,9 +3809,9 @@ module Reactor__decreasetemperature___axiom
 
  val decreasetemperature 
    (temp : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:18731] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18743] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature}
+  requires {  ( [@GP_Pretty_Ada:18806] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18817] (Reactor__currenttemperature.currenttemperature.int__content <= (old Reactor__currenttemperature.currenttemperature.int__content )) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
+  reads {Reactor__currenttemperature.currenttemperature, Reactor__currentwatersupply.currentwatersupply}
   writes {Reactor__currenttemperature.currenttemperature, temp}
 
 end
@@ -3823,9 +3829,9 @@ module Reactor__increaseelectricity___axiom
 
  val increaseelectricity 
    (elec : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:18782] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18794] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant elec.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True True True True) ) ) }
-  reads {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentreactorpower.currentreactorpower, Reactor__currentelectricityproduced.currentelectricityproduced}
+  requires {  ( [@GP_Pretty_Ada:18856] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18873] ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content = ((old Reactor__currentelectricityproduced.currentelectricityproduced.int__content ) + Reactor__currentreactorpower.currentreactorpower.int__content)) \/ (Reactor__currentelectricityproduced.currentelectricityproduced.int__content = Reactor__currentmaxelectricity.currentmaxelectricity.int__content) ) ) /\ ( (Standard__integer___axiom.dynamic_invariant elec.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True True True True) ) ) }
+  reads {Reactor__currentreactorpower.currentreactorpower, Reactor__currentelectricityproduced.currentelectricityproduced, Reactor__currentmaxelectricity.currentmaxelectricity}
   writes {Reactor__currentelectricityproduced.currentelectricityproduced, elec}
 
 end
@@ -3837,13 +3843,15 @@ module Reactor__decreasewatersupply___axiom
  use        "int".Int
  use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
+ use        Reactor__reactoron as Reactor__reactoron
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
 
  val decreasewatersupply 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:18831] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18843] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) /\ (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currentpowerstatus.currentpowerstatus}
+  requires {  ( ( [@GP_Pretty_Ada:3236] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:3237] ((epsilon temp___result_219 : bool.
+   ( (temp___result_219 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_219 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18925] (Reactor__currentwatersupply.currentwatersupply.int__content = ((old Reactor__currentwatersupply.currentwatersupply.int__content ) - (1 : int))) ) /\ (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) ) }
+  reads {Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentwatersupply.currentwatersupply}
   writes {Reactor__currentwatersupply.currentwatersupply}
 
 end
@@ -3852,13 +3860,15 @@ end
 module Reactor__fillwatersupply___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
+ use        "int".Int
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
 
  val fillwatersupply 
    (__void_param : unit) : unit
-  requires {  true }
-  ensures {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) }
+  requires {  ( [@GP_Pretty_Ada:18960] (Reactor__currentwatersupply.currentwatersupply.int__content < (100 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18971] (Reactor__currentwatersupply.currentwatersupply.int__content = (100 : int)) ) /\ (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) ) }
+  reads {Reactor__currentwatersupply.currentwatersupply}
   writes {Reactor__currentwatersupply.currentwatersupply}
 
 end
@@ -4004,6 +4014,8 @@ module Reactor__package_def
   ([#"reactor.ads" 64 0 0] ());
   ([#"reactor.ads" 63 0 0] ());
   ([#"reactor.ads" 67 0 0] ());
+  ([#"reactor.ads" 70 0 0] ());
+  ([#"reactor.ads" 69 0 0] ());
   ([#"reactor.ads" 68 0 0] ());
   ([#"reactor.ads" 22 0 0] ());
   ([#"reactor.ads" 25 0 0] ());
@@ -4013,14 +4025,14 @@ module Reactor__package_def
   ([#"reactor.adb" 4 0 0] ());
   ([#"reactor.adb" 12 0 0] ());
   ([#"reactor.adb" 18 0 0] ());
-  ([#"reactor.adb" 34 0 0] ());
-  ([#"reactor.adb" 42 0 0] ());
-  ([#"reactor.adb" 54 0 0] ());
-  ([#"reactor.adb" 69 0 0] ());
-  ([#"reactor.adb" 81 0 0] ());
-  ([#"reactor.adb" 88 0 0] ());
+  ([#"reactor.adb" 41 0 0] ());
+  ([#"reactor.adb" 60 0 0] ());
+  ([#"reactor.adb" 72 0 0] ());
+  ([#"reactor.adb" 87 0 0] ());
+  ([#"reactor.adb" 97 0 0] ());
+  ([#"reactor.adb" 104 0 0] ());
   ();
-  ( [@GP_Sloc:reactor.adb:94:1] ([#"reactor.adb" 94 0 0] ()) ) )
+  ( [@GP_Sloc:reactor.adb:110:1] ([#"reactor.adb" 110 0 0] ()) ) )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "reactorcheck" defined at reactor.ads:22, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4038,7 +4050,7 @@ module Reactor__reactorcheck__subprogram_def
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
 
- val reactor__reactorcheck__result [@model_projected] [@model_trace:2837@result] [@name:ReactorCheck]  : bool__ref 
+ val reactor__reactorcheck__result [@model_projected] [@model_trace:2882@result] [@name:ReactorCheck]  : bool__ref 
  
  let def [#"reactor.ads" 22 0 0][@GP_Subp:reactor.ads:22] 
    (__void_param : unit)
@@ -4081,7 +4093,7 @@ module Reactor__reactoron__subprogram_def
  use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
 
- val reactor__reactoron__result [@name:ReactorOn] [@model_projected] [@model_trace:2854@result]  : bool__ref 
+ val reactor__reactoron__result [@model_trace:2899@result] [@name:ReactorOn] [@model_projected]  : bool__ref 
  
  let def [#"reactor.ads" 25 0 0][@GP_Subp:reactor.ads:25] 
    (__void_param : unit)
@@ -4166,8 +4178,8 @@ module Reactor__startreactor__subprogram_def
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:28 *)
   ;
-  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] ( ( [@GP_Pretty_Ada:2898] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((epsilon temp___result_217 : bool.
-   ( (temp___result_217 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_217 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) };
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] ( ( [@GP_Pretty_Ada:2943] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2944] ((epsilon temp___result_220 : bool.
+   ( (temp___result_220 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_220 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) };
   [#"reactor.ads" 28 0 0] try
    ( ();
    ( [@GP_Sloc:reactor.adb:6:10] ([#"reactor.adb" 6 0 0] ()) );
@@ -4206,7 +4218,7 @@ module Reactor__stopreactor__subprogram_def
  let def [#"reactor.ads" 32 0 0][@GP_Subp:reactor.ads:32] 
    (__void_param : unit)
   requires { [#"reactor.ads" 32 0 0] true }
-  ensures { [#"reactor.ads" 32 0 0] ([#"reactor.ads" 35 0 0] ( [@comment:     Post => currentPowerStatus = Off;              ^ reactor.ads:35:14:VC_POSTCONDITION] [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:35:14] [@model_vc_post] [@GP_Id:2] ( [@GP_Pretty_Ada:18514] [@GP_Sloc:reactor.ads:35:14] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) )) }
+  ensures { [#"reactor.ads" 32 0 0] ([#"reactor.ads" 35 0 0] ( [@comment:     Post => currentPowerStatus = Off;              ^ reactor.ads:35:14:VC_POSTCONDITION] [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:35:14] [@model_vc_post] [@GP_Id:2] ( [@GP_Sloc:reactor.ads:35:14] [@GP_Pretty_Ada:18590] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:32 *)
   ;
@@ -4221,7 +4233,7 @@ module Reactor__stopreactor__subprogram_def
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:32 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18504] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) };
+   assume {  ( [@GP_Pretty_Ada:18580] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) };
    try
    ( ();
    ( [@GP_Sloc:reactor.adb:14:7] ([#"reactor.adb" 14 0 0] ()) );
@@ -4245,6 +4257,7 @@ module Reactor__removecontrolrod__subprogram_def
  use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__currenttemperature as Reactor__currenttemperature
@@ -4253,6 +4266,8 @@ module Reactor__removecontrolrod__subprogram_def
  use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__reactorcheck as Reactor__reactorcheck
  use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
+ use        Reactor__reactoron as Reactor__reactoron
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__controlrods as Reactor__controlrods
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
@@ -4263,12 +4278,15 @@ module Reactor__removecontrolrod__subprogram_def
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity as Reactor__electricity
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
  use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
@@ -4276,15 +4294,17 @@ module Reactor__removecontrolrod__subprogram_def
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
  use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
  use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
 
  let def [#"reactor.ads" 37 0 0][@GP_Subp:reactor.ads:37] 
    (__void_param : unit)
   requires { [#"reactor.ads" 37 0 0] true }
-  ensures { [#"reactor.ads" 37 0 0] ([#"reactor.ads" 40 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentRods < currentRods+1 and ReactorCheck;              ^ reactor.ads:40:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:40:14] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:8] ( ( [@GP_Sloc:reactor.ads:40:14] [@GP_Pretty_Ada:2979] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2982] [@GP_Sloc:reactor.ads:40:46] ((epsilon temp___result_219 : bool.
-   ( (temp___result_219 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_219 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) )) }
+  ensures { [#"reactor.ads" 37 0 0] ([#"reactor.ads" 40 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:40:14] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:8] [@comment:     Post => currentRods = currentRods'Old-1 and ReactorCheck;              ^ reactor.ads:40:14:VC_POSTCONDITION] ( ( [@GP_Pretty_Ada:3023] [@GP_Sloc:reactor.ads:40:14] (Reactor__currentrods.currentrods.int__content = ((old Reactor__currentrods.currentrods.int__content ) - (1 : int))) ) /\ ( [@GP_Sloc:reactor.ads:40:50] [@GP_Pretty_Ada:3028] ((epsilon temp___result_224 : bool.
+   ( (temp___result_224 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_224 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:37 *)
   ;
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
    assume {  (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) };
    assume {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
    assume {  (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
@@ -4295,48 +4315,68 @@ module Reactor__removecontrolrod__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram reactor.ads:37 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Boolean.andb((Reactor__currentrods.currentrods.int__content > (0 : int))) ((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int))))) ((Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int))))) ((Reactor__reactorcheck___axiom.reactorcheck(())))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Reactor__currentrods.currentrods.int__content > (0 : int))) ((Reactor__reactorcheck___axiom.reactorcheck(()))))) ((Reactor__reactoron___axiom.reactoron(())))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:37 *)
   ;
-   assume {  ( ( ( ( [@GP_Pretty_Ada:2963] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2967] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2971] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2972] ((epsilon temp___result_218 : bool.
-   ( (temp___result_218 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_218 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:20:7] ([#"reactor.adb" 20 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:20:22] ([#"reactor.adb" 20 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:20:19] ([#"reactor.adb" 20 0 0] [#"reactor.adb" 20 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 20 0 0] ( [@GP_Shape:currentrods_assign__sub] [@GP_Sloc:reactor.adb:20:33] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:      currentRods := currentRods-1;                                 ^ reactor.adb:20:33:VC_RANGE_CHECK] [@GP_Id:3] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content - (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:21:7] ([#"reactor.adb" 21 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:21:37] ([#"reactor.adb" 21 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:21:34] ([#"reactor.adb" 21 0 0] [#"reactor.adb" 21 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 21 0 0] ( [@GP_Shape:currenttemperatureincrease_assign__add] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:21:63] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease+1;                                                               ^ reactor.adb:21:63:VC_RANGE_CHECK] [@GP_Id:4] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content + (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:22:10] ([#"reactor.adb" 22 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:22:7] ([#"reactor.adb" 22 0 0] (if (( ([#"reactor.adb" 22 0 0] [#"reactor.adb" 22 0 0] (([@branch_id=2378] Main.spark__branch).bool__content <- ( (Reactor__currentreactorpower.currentreactorpower.int__content < (9 : int)) )));
-   ( [@branch_id=2378] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:23:10] ([#"reactor.adb" 23 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:23:33] ([#"reactor.adb" 23 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:23:30] ([#"reactor.adb" 23 0 0] [#"reactor.adb" 23 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 23 0 0] ( [@comment:         currentReactorPower := currentReactorPower+2;                                                    ^ reactor.adb:23:52:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:23:52] [@GP_Id:5] [@GP_Shape:if__currentreactorpower_assign__add] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content + (2 : int)))) )) ))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:25:10] ([#"reactor.adb" 25 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:25:30] ([#"reactor.adb" 25 0 0] [#"reactor.adb" 25 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (10 : int) ))) ) )))) );
-   ( [@GP_Sloc:reactor.adb:27:10] ([#"reactor.adb" 27 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:27:7] ([#"reactor.adb" 27 0 0] (if (( ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (([@branch_id=2390] Main.spark__branch).bool__content <- ( (Reactor__currentrods.currentrods.int__content > (0 : int)) )));
-   ( [@branch_id=2390] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:28:10] ([#"reactor.adb" 28 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:28:54] ([#"reactor.adb" 28 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:28:32] ([#"reactor.adb" 28 0 0] [#"reactor.adb" 28 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 28 0 0] ( [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:28:52:VC_RANGE_CHECK] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:28:52] [@GP_Id:7] (Reactor__electricity.range_check_(([#"reactor.adb" 28 0 0] ( [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:28:52:VC_DIVISION_CHECK] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:28:52] [@GP_Id:6] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:30:10] ([#"reactor.adb" 30 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:30:32] ([#"reactor.adb" 30 0 0] [#"reactor.adb" 30 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (200 : int) ))) ) )))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int)))) ((Reactor__reactorcheck___axiom.reactorcheck(())))) in (
+   assume {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:3014] ((epsilon temp___result_222 : bool.
+   ( (temp___result_222 = (Reactor__reactorcheck.reactorcheck Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_222 Reactor__currenttemperature.currenttemperature.int__content Reactor__currentwatersupply.currentwatersupply.int__content) )) = True) ) ) /\ ( [@GP_Pretty_Ada:3016] ((epsilon temp___result_223 : bool.
+   ( (temp___result_223 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_223 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currentrods.currentrods.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_221 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currentrods.currentrods.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:20:7] ([#"reactor.adb" 20 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:20:22] ([#"reactor.adb" 20 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:20:19] ([#"reactor.adb" 20 0 0] [#"reactor.adb" 20 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 20 0 0] ( [@GP_Shape:currentrods_assign__sub] [@GP_Sloc:reactor.adb:20:33] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:      currentRods := currentRods-1;                                 ^ reactor.adb:20:33:VC_RANGE_CHECK] [@GP_Id:3] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content - (1 : int)))) )) ))) );
+    ( [@GP_Sloc:reactor.adb:21:10] ([#"reactor.adb" 21 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:21:7] ([#"reactor.adb" 21 0 0] (if (( ([#"reactor.adb" 21 0 0] [#"reactor.adb" 21 0 0] (([@branch_id=2373] Main.spark__branch).bool__content <- ( (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) )));
+    ( [@branch_id=2373] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:22:13] ([#"reactor.adb" 22 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:22:10] ([#"reactor.adb" 22 0 0] (if (( ([#"reactor.adb" 22 0 0] [#"reactor.adb" 22 0 0] (([@branch_id=2377] Main.spark__branch).bool__content <- ( (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (5 : int)) )));
+     ( [@branch_id=2377] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:23:13] ([#"reactor.adb" 23 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:23:43] ([#"reactor.adb" 23 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:23:40] ([#"reactor.adb" 23 0 0] [#"reactor.adb" 23 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 23 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:23:69] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__if__currenttemperatureincrease_assign__add] [@comment:            currentTemperatureIncrease := currentTemperatureIncrease+1;                                                                     ^ reactor.adb:23:69:VC_RANGE_CHECK] [@GP_Id:4] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content + (1 : int)))) )) ))) ) )) else (
+      ()))) );
+     ( [@GP_Sloc:reactor.adb:26:13] ([#"reactor.adb" 26 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:26:10] ([#"reactor.adb" 26 0 0] (if (( ([#"reactor.adb" 26 0 0] [#"reactor.adb" 26 0 0] (([@branch_id=2388] Main.spark__branch).bool__content <- ( (Reactor__currentreactorpower.currentreactorpower.int__content < (8 : int)) )));
+     ( [@branch_id=2388] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:27:13] ([#"reactor.adb" 27 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:27:36] ([#"reactor.adb" 27 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:27:33] ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 27 0 0] ( [@GP_Shape:if__if__currentreactorpower_assign__add] [@vc:annotation] [@GP_Sloc:reactor.adb:27:55] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:5] [@comment:            currentReactorPower := currentReactorPower+2;                                                       ^ reactor.adb:27:55:VC_RANGE_CHECK] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content + (2 : int)))) )) ))) ) )) else (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:29:13] ([#"reactor.adb" 29 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:29:33] ([#"reactor.adb" 29 0 0] [#"reactor.adb" 29 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (10 : int) ))) ) )))) );
+     ( [@GP_Sloc:reactor.adb:31:13] ([#"reactor.adb" 31 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:31:10] ([#"reactor.adb" 31 0 0] (if (( ([#"reactor.adb" 31 0 0] [#"reactor.adb" 31 0 0] (([@branch_id=2406] Main.spark__branch).bool__content <- ( (Reactor__currentrods.currentrods.int__content > (0 : int)) )));
+     ( [@branch_id=2406] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:32:13] ([#"reactor.adb" 32 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:32:57] ([#"reactor.adb" 32 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:32:35] ([#"reactor.adb" 32 0 0] [#"reactor.adb" 32 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 32 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:32:55] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__if__currentmaxelectricity_assign__div] [@comment:            currentMaxElectricity := Electricity'Last / currentRods;                                                       ^ reactor.adb:32:55:VC_RANGE_CHECK] [@GP_Id:7] (Reactor__electricity.range_check_(([#"reactor.adb" 32 0 0] ( [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:32:55] [@comment:            currentMaxElectricity := Electricity'Last / currentRods;                                                       ^ reactor.adb:32:55:VC_DIVISION_CHECK] [@GP_Shape:if__if__currentmaxelectricity_assign__div] [@GP_Id:6] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) ) )) else (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:34:13] ([#"reactor.adb" 34 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:34:35] ([#"reactor.adb" 34 0 0] [#"reactor.adb" 34 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (200 : int) ))) ) )))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:37:10] ([#"reactor.adb" 37 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:37:32] ([#"reactor.adb" 37 0 0] [#"reactor.adb" 37 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (0 : int) ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.andb((Reactor__currentrods.currentrods.int__content = (temp___old_221 - (1 : int)))) ((Reactor__reactorcheck___axiom.reactorcheck(())))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "addcontrolrod" defined at reactor.ads:42, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4344,12 +4384,16 @@ module Reactor__addcontrolrod__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Main as Main
  use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__reactoron as Reactor__reactoron
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__controlrods as Reactor__controlrods
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease as Reactor__temperatureincrease
@@ -4358,22 +4402,27 @@ module Reactor__addcontrolrod__subprogram_def
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity as Reactor__electricity
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
  use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
  use        Reactor__currenttemperatureincrease___axiom as Reactor__currenttemperatureincrease___axiom
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
  use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
 
  let def [#"reactor.ads" 42 0 0][@GP_Subp:reactor.ads:42] 
    (__void_param : unit)
   requires { [#"reactor.ads" 42 0 0] true }
-  ensures { [#"reactor.ads" 42 0 0] ([#"reactor.ads" 45 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:14] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:45:14] [@comment:     Post => currentRods > currentRods-1;              ^ reactor.ads:45:14:VC_POSTCONDITION] [@model_vc_post] ( [@GP_Sloc:reactor.ads:45:14] [@GP_Pretty_Ada:18643] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) )) }
+  ensures { [#"reactor.ads" 42 0 0] ([#"reactor.ads" 45 0 0] ( [@comment:     Post => currentRods = currentRods'Old+1;              ^ reactor.ads:45:14:VC_POSTCONDITION] [@GP_Reason:VC_POSTCONDITION] [@GP_Id:14] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:45:14] [@model_vc_post] ( [@GP_Pretty_Ada:18717] [@GP_Sloc:reactor.ads:45:14] (Reactor__currentrods.currentrods.int__content = ((old Reactor__currentrods.currentrods.int__content ) + (1 : int))) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:42 *)
   ;
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
    assume {  (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) };
    assume {  (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) };
    assume {  (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) };
@@ -4382,33 +4431,58 @@ module Reactor__addcontrolrod__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram reactor.ads:42 *)
   ;
-   begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Reactor__currentrods.currentrods.int__content < (5 : int))) ((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int))))) ((Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)))) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Reactor__currentrods.currentrods.int__content < (5 : int))) ((Reactor__reactoron___axiom.reactoron(())))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:42 *)
   ;
-   assume {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3015] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:3019] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:36:7] ([#"reactor.adb" 36 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:36:22] ([#"reactor.adb" 36 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:36:19] ([#"reactor.adb" 36 0 0] [#"reactor.adb" 36 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 36 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:36:33] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentrods_assign__add] [@comment:      currentRods := currentRods+1;                                 ^ reactor.adb:36:33:VC_RANGE_CHECK] [@GP_Id:9] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content + (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:37:7] ([#"reactor.adb" 37 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:37:37] ([#"reactor.adb" 37 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:37:34] ([#"reactor.adb" 37 0 0] [#"reactor.adb" 37 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 37 0 0] ( [@GP_Id:10] [@GP_Sloc:reactor.adb:37:63] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease-1;                                                               ^ reactor.adb:37:63:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currenttemperatureincrease_assign__sub] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content - (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:38:7] ([#"reactor.adb" 38 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:38:30] ([#"reactor.adb" 38 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:38:27] ([#"reactor.adb" 38 0 0] [#"reactor.adb" 38 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 38 0 0] ( [@GP_Id:11] [@GP_Sloc:reactor.adb:38:49] [@vc:annotation] [@comment:      currentReactorPower := currentReactorPower-1;                                                 ^ reactor.adb:38:49:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentreactorpower_assign__sub] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content - (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:39:7] ([#"reactor.adb" 39 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:39:51] ([#"reactor.adb" 39 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:39:29] ([#"reactor.adb" 39 0 0] [#"reactor.adb" 39 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 39 0 0] ( [@GP_Id:13] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:39:49] [@comment:      currentMaxElectricity := Electricity'Last / currentRods;                                                 ^ reactor.adb:39:49:VC_RANGE_CHECK] [@GP_Shape:currentmaxelectricity_assign__div] (Reactor__electricity.range_check_(([#"reactor.adb" 39 0 0] ( [@GP_Id:12] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:      currentMaxElectricity := Electricity'Last / currentRods;                                                 ^ reactor.adb:39:49:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:39:49] [@GP_Shape:currentmaxelectricity_assign__div] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) in (
+   assume {  ( ( [@GP_Pretty_Ada:3060] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3063] ((epsilon temp___result_226 : bool.
+   ( (temp___result_226 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_226 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currentrods.currentrods.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_225 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currentrods.currentrods.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:43:10] ([#"reactor.adb" 43 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:43:7] ([#"reactor.adb" 43 0 0] (if (( ([#"reactor.adb" 43 0 0] [#"reactor.adb" 43 0 0] (([@branch_id=2440] Main.spark__branch).bool__content <- ( (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) )));
+    ( [@branch_id=2440] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:44:10] ([#"reactor.adb" 44 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:44:25] ([#"reactor.adb" 44 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:44:22] ([#"reactor.adb" 44 0 0] [#"reactor.adb" 44 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 44 0 0] ( [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currentrods_assign__add] [@GP_Sloc:reactor.adb:44:36] [@GP_Id:9] [@comment:         currentRods := currentRods+1;                                    ^ reactor.adb:44:36:VC_RANGE_CHECK] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content + (1 : int)))) )) ))) );
+     ( [@GP_Sloc:reactor.adb:46:13] ([#"reactor.adb" 46 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:46:10] ([#"reactor.adb" 46 0 0] (if (( ([#"reactor.adb" 46 0 0] [#"reactor.adb" 46 0 0] (([@branch_id=2449] Main.spark__branch).bool__content <- ( (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) )));
+     ( [@branch_id=2449] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:47:13] ([#"reactor.adb" 47 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:47:43] ([#"reactor.adb" 47 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:47:40] ([#"reactor.adb" 47 0 0] [#"reactor.adb" 47 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 47 0 0] ( [@GP_Id:10] [@comment:            currentTemperatureIncrease := currentTemperatureIncrease-1;                                                                     ^ reactor.adb:47:69:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:47:69] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__if__currenttemperatureincrease_assign__sub] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content - (1 : int)))) )) ))) ) )) else (
+      ()))) );
+     ( [@GP_Sloc:reactor.adb:50:13] ([#"reactor.adb" 50 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:50:10] ([#"reactor.adb" 50 0 0] (if (( ([#"reactor.adb" 50 0 0] [#"reactor.adb" 50 0 0] (([@branch_id=2460] Main.spark__branch).bool__content <- ( (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) )));
+     ( [@branch_id=2460] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:51:13] ([#"reactor.adb" 51 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:51:36] ([#"reactor.adb" 51 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:51:33] ([#"reactor.adb" 51 0 0] [#"reactor.adb" 51 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 51 0 0] ( [@GP_Id:11] [@GP_Sloc:reactor.adb:51:55] [@vc:annotation] [@GP_Shape:if__if__currentreactorpower_assign__sub] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentReactorPower := currentReactorPower-1;                                                       ^ reactor.adb:51:55:VC_RANGE_CHECK] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content - (1 : int)))) )) ))) ) )) else (
+      ()))) );
+     ( [@GP_Sloc:reactor.adb:54:10] ([#"reactor.adb" 54 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:54:54] ([#"reactor.adb" 54 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:54:32] ([#"reactor.adb" 54 0 0] [#"reactor.adb" 54 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 54 0 0] ( [@GP_Id:13] [@GP_Sloc:reactor.adb:54:52] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:54:52:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] (Reactor__electricity.range_check_(([#"reactor.adb" 54 0 0] ( [@GP_Id:12] [@GP_Sloc:reactor.adb:54:52] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:54:52:VC_DIVISION_CHECK] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:56:10] ([#"reactor.adb" 56 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:56:32] ([#"reactor.adb" 56 0 0] [#"reactor.adb" 56 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (0 : int) ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Reactor__currentrods.currentrods.int__content = (temp___old_225 + (1 : int))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "increasetemperature" defined at reactor.ads:47, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4440,7 +4514,7 @@ module Reactor__increasetemperature__subprogram_def
  let def [#"reactor.ads" 47 0 0][@GP_Subp:reactor.ads:47] 
    (__void_param : unit)
   requires { [#"reactor.ads" 47 0 0] true }
-  ensures { [#"reactor.ads" 47 0 0] ([#"reactor.ads" 50 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:16] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Sloc:reactor.ads:50:14] [@comment:     Post => currentTemperature > currentTemperature-1;              ^ reactor.ads:50:14:VC_POSTCONDITION] ( [@GP_Pretty_Ada:18694] [@GP_Sloc:reactor.ads:50:14] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) )) }
+  ensures { [#"reactor.ads" 47 0 0] ([#"reactor.ads" 50 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:16] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentTemperature >= currentTemperature'Old;              ^ reactor.ads:50:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Sloc:reactor.ads:50:14] ( [@GP_Pretty_Ada:18768] [@GP_Sloc:reactor.ads:50:14] (Reactor__currenttemperature.currenttemperature.int__content >= (old Reactor__currenttemperature.currenttemperature.int__content )) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:47 *)
   ;
@@ -4457,32 +4531,39 @@ module Reactor__increasetemperature__subprogram_def
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:47 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18682] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:44:15] ([#"reactor.adb" 44 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:44:36] ([#"reactor.adb" 44 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:44:12] ([#"reactor.adb" 44 0 0] [#"reactor.adb" 44 0 0] (Reactor__increasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content + Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content) ))) );
-   ( [@GP_Sloc:reactor.adb:45:10] ([#"reactor.adb" 45 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:45:7] ([#"reactor.adb" 45 0 0] (if (( ([#"reactor.adb" 45 0 0] [#"reactor.adb" 45 0 0] (([@branch_id=2464] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
-   ( [@branch_id=2464] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:46:10] ([#"reactor.adb" 46 0 0] (if (( ([#"reactor.adb" 46 0 0] [#"reactor.adb" 46 0 0] (([@branch_id=2466] Main.spark__branch).bool__content <- ( (Reactor__increasetemperature__temp.temp.int__content > (100 : int)) )));
-    ( [@branch_id=2466] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:47:13] ([#"reactor.adb" 47 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:47:32] ([#"reactor.adb" 47 0 0] [#"reactor.adb" 47 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (100 : int) ))) ) )) else (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:49:13] ([#"reactor.adb" 49 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:49:32] ([#"reactor.adb" 49 0 0] [#"reactor.adb" 49 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 49 0 0] ( [@comment:            currentTemperature := temp;                                   ^ reactor.adb:49:35:VC_RANGE_CHECK] [@GP_Id:15] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:49:35] (Reactor__temperature.range_check_(Reactor__increasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
-    ()))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) in (
+   assume {  ( [@GP_Pretty_Ada:18757] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currenttemperature.currenttemperature.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_227 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currenttemperature.currenttemperature.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:62:15] ([#"reactor.adb" 62 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:62:36] ([#"reactor.adb" 62 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:62:12] ([#"reactor.adb" 62 0 0] [#"reactor.adb" 62 0 0] (Reactor__increasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content + Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content) ))) );
+    ( [@GP_Sloc:reactor.adb:63:10] ([#"reactor.adb" 63 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:63:7] ([#"reactor.adb" 63 0 0] (if (( ([#"reactor.adb" 63 0 0] [#"reactor.adb" 63 0 0] (([@branch_id=2508] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
+    ( [@branch_id=2508] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:64:10] ([#"reactor.adb" 64 0 0] (if (( ([#"reactor.adb" 64 0 0] [#"reactor.adb" 64 0 0] (([@branch_id=2510] Main.spark__branch).bool__content <- ( (Reactor__increasetemperature__temp.temp.int__content > (100 : int)) )));
+     ( [@branch_id=2510] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:65:13] ([#"reactor.adb" 65 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:65:32] ([#"reactor.adb" 65 0 0] [#"reactor.adb" 65 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (100 : int) ))) ) )) else (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:67:13] ([#"reactor.adb" 67 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:67:32] ([#"reactor.adb" 67 0 0] [#"reactor.adb" 67 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 67 0 0] ( [@GP_Id:15] [@GP_Sloc:reactor.adb:67:35] [@GP_Shape:if__if__currenttemperature_assign] [@comment:            currentTemperature := temp;                                   ^ reactor.adb:67:35:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] (Reactor__temperature.range_check_(Reactor__increasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content >= temp___old_227) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "decreasetemperature" defined at reactor.ads:52, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4509,7 +4590,7 @@ module Reactor__decreasetemperature__subprogram_def
  let def [#"reactor.ads" 52 0 0][@GP_Subp:reactor.ads:52] 
    (__void_param : unit)
   requires { [#"reactor.ads" 52 0 0] true }
-  ensures { [#"reactor.ads" 52 0 0] ([#"reactor.ads" 55 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentTemperature < currentTemperature+1;              ^ reactor.ads:55:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:20] [@GP_Sloc:reactor.ads:55:14] ( [@GP_Pretty_Ada:18743] [@GP_Sloc:reactor.ads:55:14] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) )) }
+  ensures { [#"reactor.ads" 52 0 0] ([#"reactor.ads" 55 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Id:20] [@GP_Sloc:reactor.ads:55:14] [@comment:     Post => currentTemperature <= currentTemperature'Old;              ^ reactor.ads:55:14:VC_POSTCONDITION] ( [@GP_Pretty_Ada:18817] [@GP_Sloc:reactor.ads:55:14] (Reactor__currenttemperature.currenttemperature.int__content <= (old Reactor__currenttemperature.currenttemperature.int__content )) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:52 *)
   ;
@@ -4525,36 +4606,43 @@ module Reactor__decreasetemperature__subprogram_def
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:52 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18731] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:56:12] ([#"reactor.adb" 56 0 0] [#"reactor.adb" 56 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (0 : int) ))) );
-   ( [@GP_Sloc:reactor.adb:57:10] ([#"reactor.adb" 57 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:57:7] ([#"reactor.adb" 57 0 0] (if (( ([#"reactor.adb" 57 0 0] [#"reactor.adb" 57 0 0] (([@branch_id=2499] Main.spark__branch).bool__content <- ( (Reactor__currentwatersupply.currentwatersupply.int__content >= (10 : int)) )));
-   ( [@branch_id=2499] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:58:18] ([#"reactor.adb" 58 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:58:39] ([#"reactor.adb" 58 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:58:15] ([#"reactor.adb" 58 0 0] [#"reactor.adb" 58 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content - ([#"reactor.adb" 58 0 0] ( [@GP_Sloc:reactor.adb:58:57] [@GP_Id:17] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         temp := currentTemperature - currentWaterSupply/15;                                                         ^ reactor.adb:58:57:VC_DIVISION_CHECK] [@GP_Shape:if__temp_assign__sub__div] (Int_Division.div_(Reactor__currentwatersupply.currentwatersupply.int__content) ((15 : int))) ))) ))) );
-    ( [@GP_Sloc:reactor.adb:59:10] ([#"reactor.adb" 59 0 0] (if (( ([#"reactor.adb" 59 0 0] [#"reactor.adb" 59 0 0] (([@branch_id=2510] Main.spark__branch).bool__content <- ( (Reactor__decreasetemperature__temp.temp.int__content < (0 : int)) )));
-    ( [@branch_id=2510] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:60:13] ([#"reactor.adb" 60 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:60:32] ([#"reactor.adb" 60 0 0] [#"reactor.adb" 60 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ))) ) )) else (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:62:13] ([#"reactor.adb" 62 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:62:32] ([#"reactor.adb" 62 0 0] [#"reactor.adb" 62 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 62 0 0] ( [@GP_Id:18] [@GP_Sloc:reactor.adb:62:35] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentTemperature := temp;                                   ^ reactor.adb:62:35:VC_RANGE_CHECK] (Reactor__temperature.range_check_(Reactor__decreasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:65:10] ([#"reactor.adb" 65 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:65:32] ([#"reactor.adb" 65 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:65:29] ([#"reactor.adb" 65 0 0] [#"reactor.adb" 65 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 65 0 0] ( [@comment:         currentTemperature := currentTemperature-1;                                                  ^ reactor.adb:65:50:VC_RANGE_CHECK] [@GP_Id:19] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currenttemperature_assign__sub] [@GP_Sloc:reactor.adb:65:50] (Reactor__temperature.range_check_((Reactor__currenttemperature.currenttemperature.int__content - (1 : int)))) )) ))) ) )))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) in (
+   assume {  ( [@GP_Pretty_Ada:18806] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currenttemperature.currenttemperature.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_228 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currenttemperature.currenttemperature.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:74:12] ([#"reactor.adb" 74 0 0] [#"reactor.adb" 74 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (0 : int) ))) );
+    ( [@GP_Sloc:reactor.adb:75:10] ([#"reactor.adb" 75 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:75:7] ([#"reactor.adb" 75 0 0] (if (( ([#"reactor.adb" 75 0 0] [#"reactor.adb" 75 0 0] (([@branch_id=2547] Main.spark__branch).bool__content <- ( (Reactor__currentwatersupply.currentwatersupply.int__content >= (10 : int)) )));
+    ( [@branch_id=2547] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:76:18] ([#"reactor.adb" 76 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:76:39] ([#"reactor.adb" 76 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:76:15] ([#"reactor.adb" 76 0 0] [#"reactor.adb" 76 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content - ([#"reactor.adb" 76 0 0] ( [@GP_Id:17] [@GP_Sloc:reactor.adb:76:57] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         temp := currentTemperature - currentWaterSupply/15;                                                         ^ reactor.adb:76:57:VC_DIVISION_CHECK] [@GP_Shape:if__temp_assign__sub__div] (Int_Division.div_(Reactor__currentwatersupply.currentwatersupply.int__content) ((15 : int))) ))) ))) );
+     ( [@GP_Sloc:reactor.adb:77:10] ([#"reactor.adb" 77 0 0] (if (( ([#"reactor.adb" 77 0 0] [#"reactor.adb" 77 0 0] (([@branch_id=2558] Main.spark__branch).bool__content <- ( (Reactor__decreasetemperature__temp.temp.int__content < (0 : int)) )));
+     ( [@branch_id=2558] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:78:13] ([#"reactor.adb" 78 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:78:32] ([#"reactor.adb" 78 0 0] [#"reactor.adb" 78 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ))) ) )) else (
+      ( ();
+      ( [@GP_Sloc:reactor.adb:80:13] ([#"reactor.adb" 80 0 0] ()) );
+      ( [@GP_Sloc:reactor.adb:80:32] ([#"reactor.adb" 80 0 0] [#"reactor.adb" 80 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 80 0 0] ( [@GP_Id:18] [@comment:            currentTemperature := temp;                                   ^ reactor.adb:80:35:VC_RANGE_CHECK] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Sloc:reactor.adb:80:35] [@GP_Reason:VC_RANGE_CHECK] (Reactor__temperature.range_check_(Reactor__decreasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:83:10] ([#"reactor.adb" 83 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:83:32] ([#"reactor.adb" 83 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:83:29] ([#"reactor.adb" 83 0 0] [#"reactor.adb" 83 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 83 0 0] ( [@GP_Sloc:reactor.adb:83:50] [@GP_Id:19] [@comment:         currentTemperature := currentTemperature-1;                                                  ^ reactor.adb:83:50:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currenttemperature_assign__sub] (Reactor__temperature.range_check_((Reactor__currenttemperature.currenttemperature.int__content - (1 : int)))) )) ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content <= temp___old_228) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "increaseelectricity" defined at reactor.ads:57, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4563,6 +4651,7 @@ module Reactor__increaseelectricity__subprogram_def
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
@@ -4582,7 +4671,7 @@ module Reactor__increaseelectricity__subprogram_def
  let def [#"reactor.ads" 57 0 0][@GP_Subp:reactor.ads:57] 
    (__void_param : unit)
   requires { [#"reactor.ads" 57 0 0] true }
-  ensures { [#"reactor.ads" 57 0 0] ([#"reactor.ads" 60 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:        Post => currentElectricityProduced > currentElectricityProduced-1;                 ^ reactor.ads:60:17:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:22] [@GP_Sloc:reactor.ads:60:17] ( [@GP_Pretty_Ada:18794] [@GP_Sloc:reactor.ads:60:17] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) )) }
+  ensures { [#"reactor.ads" 57 0 0] ([#"reactor.ads" 60 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentElectricityProduced = currentElectricityProduced'Old+currentReactorPower or currentElectricityProduced = currentMaxElectricity;              ^ reactor.ads:60:14:VC_POSTCONDITION] [@GP_Shape:pragargs__or] [@model_vc_post] [@GP_Id:22] [@GP_Sloc:reactor.ads:60:14] ( [@GP_Sloc:reactor.ads:60:14] [@GP_Pretty_Ada:18873] ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content = ((old Reactor__currentelectricityproduced.currentelectricityproduced.int__content ) + Reactor__currentreactorpower.currentreactorpower.int__content)) \/ (Reactor__currentelectricityproduced.currentelectricityproduced.int__content = Reactor__currentmaxelectricity.currentmaxelectricity.int__content) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:57 *)
   ;
@@ -4594,39 +4683,41 @@ module Reactor__increaseelectricity__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram reactor.ads:57 *)
   ;
-   begin ensures {true} let _ = (let _ = (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) in (
+   begin ensures {true} let _ = (let _ = (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:57 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18782] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:71:14] ([#"reactor.adb" 71 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:71:43] ([#"reactor.adb" 71 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:71:11] ([#"reactor.adb" 71 0 0] [#"reactor.adb" 71 0 0] (Reactor__increaseelectricity__elec.elec.int__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content + Reactor__currentreactorpower.currentreactorpower.int__content) ))) );
-   ( [@GP_Sloc:reactor.adb:72:17] ([#"reactor.adb" 72 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:72:6] ([#"reactor.adb" 72 0 0] (if (( ([#"reactor.adb" 72 0 0] [#"reactor.adb" 72 0 0] (([@branch_id=2550] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content >= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) )));
-   ( [@branch_id=2550] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:73:9] ([#"reactor.adb" 73 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:73:39] ([#"reactor.adb" 73 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:73:36] ([#"reactor.adb" 73 0 0] [#"reactor.adb" 73 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( Reactor__currentmaxelectricity.currentmaxelectricity.int__content ))) ) )) else (
-    ( [@GP_Sloc:reactor.adb:74:6] (if (( ([#"reactor.adb" 74 0 0] [#"reactor.adb" 74 0 0] (([@branch_id=2558] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content > (200 : int)) )));
-    ( [@branch_id=2558] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:75:9] ([#"reactor.adb" 75 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:75:36] ([#"reactor.adb" 75 0 0] [#"reactor.adb" 75 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( (200 : int) ))) ) )) else (
-     ( ();
-     ( [@GP_Sloc:reactor.adb:77:9] ([#"reactor.adb" 77 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:77:36] ([#"reactor.adb" 77 0 0] [#"reactor.adb" 77 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( ([#"reactor.adb" 77 0 0] ( [@GP_Sloc:reactor.adb:77:39] [@vc:annotation] [@comment:        currentElectricityProduced := elec;                                       ^ reactor.adb:77:39:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:21] [@GP_Shape:if__currentelectricityproduced_assign] (Reactor__electricity.range_check_(Reactor__increaseelectricity__elec.elec.int__content)) )) ))) ) ))) )))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) in (
+   assume {  ( [@GP_Pretty_Ada:18856] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currentelectricityproduced.currentelectricityproduced.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_229 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currentelectricityproduced.currentelectricityproduced.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:89:14] ([#"reactor.adb" 89 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:89:43] ([#"reactor.adb" 89 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:89:11] ([#"reactor.adb" 89 0 0] [#"reactor.adb" 89 0 0] (Reactor__increaseelectricity__elec.elec.int__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content + Reactor__currentreactorpower.currentreactorpower.int__content) ))) );
+    ( [@GP_Sloc:reactor.adb:90:17] ([#"reactor.adb" 90 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:90:6] ([#"reactor.adb" 90 0 0] (if (( ([#"reactor.adb" 90 0 0] [#"reactor.adb" 90 0 0] (([@branch_id=2602] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content >= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) )));
+    ( [@branch_id=2602] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:91:9] ([#"reactor.adb" 91 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:91:39] ([#"reactor.adb" 91 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:91:36] ([#"reactor.adb" 91 0 0] [#"reactor.adb" 91 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( Reactor__currentmaxelectricity.currentmaxelectricity.int__content ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:93:9] ([#"reactor.adb" 93 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:93:36] ([#"reactor.adb" 93 0 0] [#"reactor.adb" 93 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( ([#"reactor.adb" 93 0 0] ( [@vc:annotation] [@comment:        currentElectricityProduced := elec;                                       ^ reactor.adb:93:39:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:21] [@GP_Sloc:reactor.adb:93:39] [@GP_Shape:if__currentelectricityproduced_assign] (Reactor__electricity.range_check_(Reactor__increaseelectricity__elec.elec.int__content)) )) ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.orb((Reactor__currentelectricityproduced.currentelectricityproduced.int__content = (temp___old_229 + Reactor__currentreactorpower.currentreactorpower.int__content))) ((Reactor__currentelectricityproduced.currentelectricityproduced.int__content = Reactor__currentmaxelectricity.currentmaxelectricity.int__content))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "decreasewatersupply" defined at reactor.ads:62, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4635,8 +4726,10 @@ module Reactor__decreasewatersupply__subprogram_def
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
  use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
+ use        Reactor__reactoron as Reactor__reactoron
  use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__watersupply as Reactor__watersupply
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
@@ -4650,7 +4743,7 @@ module Reactor__decreasewatersupply__subprogram_def
  let def [#"reactor.ads" 62 0 0][@GP_Subp:reactor.ads:62] 
    (__void_param : unit)
   requires { [#"reactor.ads" 62 0 0] true }
-  ensures { [#"reactor.ads" 62 0 0] ([#"reactor.ads" 65 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentWaterSupply < currentWaterSupply+1;              ^ reactor.ads:65:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Sloc:reactor.ads:65:14] [@GP_Id:24] ( [@GP_Pretty_Ada:18843] [@GP_Sloc:reactor.ads:65:14] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) )) }
+  ensures { [#"reactor.ads" 62 0 0] ([#"reactor.ads" 65 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentWaterSupply = currentWaterSupply'Old-1;              ^ reactor.ads:65:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Sloc:reactor.ads:65:14] [@GP_Id:24] ( [@GP_Pretty_Ada:18925] [@GP_Sloc:reactor.ads:65:14] (Reactor__currentwatersupply.currentwatersupply.int__content = ((old Reactor__currentwatersupply.currentwatersupply.int__content ) - (1 : int))) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:62 *)
   ;
@@ -4660,29 +4753,37 @@ module Reactor__decreasewatersupply__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram reactor.ads:62 *)
   ;
-   begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int))) ((Reactor__reactoron___axiom.reactoron(())))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:62 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18831] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:reactor.adb:83:10] ([#"reactor.adb" 83 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:83:7] ([#"reactor.adb" 83 0 0] (if (( ([#"reactor.adb" 83 0 0] [#"reactor.adb" 83 0 0] (([@branch_id=2578] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
-   ( [@branch_id=2578] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:84:10] ([#"reactor.adb" 84 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:84:32] ([#"reactor.adb" 84 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:84:29] ([#"reactor.adb" 84 0 0] [#"reactor.adb" 84 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( ([#"reactor.adb" 84 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:84:51] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentWaterSupply := currentWaterSupply -1;                                                   ^ reactor.adb:84:51:VC_RANGE_CHECK] [@GP_Id:23] [@GP_Shape:if__currentwatersupply_assign__sub] (Reactor__watersupply.range_check_((Reactor__currentwatersupply.currentwatersupply.int__content - (1 : int)))) )) ))) ) )) else (
-    ()))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) in (
+   assume {  ( ( [@GP_Pretty_Ada:3236] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:3237] ((epsilon temp___result_231 : bool.
+   ( (temp___result_231 = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard temp___result_231 Reactor__currentpowerstatus.currentpowerstatus.int__content) )) = True) ) ) };
+   begin ensures {true} let _ = (let _ = Reactor__currentwatersupply.currentwatersupply.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_230 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Reactor__currentwatersupply.currentwatersupply.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:reactor.adb:99:10] ([#"reactor.adb" 99 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:99:7] ([#"reactor.adb" 99 0 0] (if (( ([#"reactor.adb" 99 0 0] [#"reactor.adb" 99 0 0] (([@branch_id=2623] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
+    ( [@branch_id=2623] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:100:10] ([#"reactor.adb" 100 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:100:32] ([#"reactor.adb" 100 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:100:29] ([#"reactor.adb" 100 0 0] [#"reactor.adb" 100 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( ([#"reactor.adb" 100 0 0] ( [@GP_Sloc:reactor.adb:100:51] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentWaterSupply := currentWaterSupply -1;                                                   ^ reactor.adb:100:51:VC_RANGE_CHECK] [@GP_Id:23] [@GP_Shape:if__currentwatersupply_assign__sub] (Reactor__watersupply.range_check_((Reactor__currentwatersupply.currentwatersupply.int__content - (1 : int)))) )) ))) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content = (temp___old_230 - (1 : int))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "fillwatersupply" defined at reactor.ads:67, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -4698,28 +4799,30 @@ module Reactor__fillwatersupply__subprogram_def
  let def [#"reactor.ads" 67 0 0][@GP_Subp:reactor.ads:67] 
    (__void_param : unit)
   requires { [#"reactor.ads" 67 0 0] true }
+  ensures { [#"reactor.ads" 67 0 0] ([#"reactor.ads" 70 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Sloc:reactor.ads:70:14] [@GP_Id:25] [@comment:     Post => currentWaterSupply = WaterSupply'Last;              ^ reactor.ads:70:14:VC_POSTCONDITION] ( [@GP_Pretty_Ada:18971] [@GP_Sloc:reactor.ads:70:14] (Reactor__currentwatersupply.currentwatersupply.int__content = (100 : int)) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 67 0 0] assume { [#"reactor.ads" 67 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content False False True True) };
+   assume {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
   () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:67 *)
   ;
   () (* Check for RTE in the Pre of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 67 0 0] begin ensures {true} let _ = (let _ = True in (
+   begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content < (100 : int)) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 67 0 0] try
+   assume {  ( [@GP_Pretty_Ada:18960] (Reactor__currentwatersupply.currentwatersupply.int__content < (100 : int)) ) };
+   try
    ( ();
-   ( [@GP_Sloc:reactor.adb:90:7] ([#"reactor.adb" 90 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:90:26] ([#"reactor.adb" 90 0 0] [#"reactor.adb" 90 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ))) );
+   ( [@GP_Sloc:reactor.adb:106:7] ([#"reactor.adb" 106 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:106:26] ([#"reactor.adb" 106 0 0] [#"reactor.adb" 106 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ))) );
     raise Return__exc )
   with
    Return__exc -> ()
   end;
-   begin ensures {true} let _ = (let _ = True in (
+   begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content = (100 : int)) in (
    ()))
    in () end  )
 end

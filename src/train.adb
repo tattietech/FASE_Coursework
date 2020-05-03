@@ -31,4 +31,13 @@ is
          currentSpeed := currentElectricityProduced;
       end if;
    end increaseSpeed;
+
+   procedure decreaseSpeed is
+   begin
+      if currentSpeed >= 5 then
+         currentSpeed := currentSpeed-5;
+      else
+         currentSpeed := 0;
+      end if;
+   end decreaseSpeed;
 end Train;

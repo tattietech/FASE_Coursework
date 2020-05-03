@@ -4,16 +4,16 @@ Summary of SPARK analysis
 ---------------------------------------------------------------------------------------------------------
 SPARK Analysis results        Total        Flow   Interval   CodePeer      Provers   Justified   Unproved
 ---------------------------------------------------------------------------------------------------------
-Data Dependencies                12          12          .          .            .           .          .
+Data Dependencies                13          13          .          .            .           .          .
 Flow Dependencies                 .           .          .          .            .           .          .
-Initialization                    7           7          .          .            .           .          .
+Initialization                    6           6          .          .            .           .          .
 Non-Aliasing                      .           .          .          .            .           .          .
-Run-time Checks                  22           .          .          .    22 (CVC4)           .          .
+Run-time Checks                  23           .          .          .    23 (CVC4)           .          .
 Assertions                        .           .          .          .            .           .          .
-Functional Contracts             10           .          .          .    10 (CVC4)           .          .
+Functional Contracts             12           .          .          .    12 (CVC4)           .          .
 LSP Verification                  .           .          .          .            .           .          .
 ---------------------------------------------------------------------------------------------------------
-Total                            51    19 (37%)          .          .     32 (63%)           .          .
+Total                            54    19 (35%)          .          .     35 (65%)           .          .
 
 
 max steps used for successful proof: 1
@@ -28,15 +28,16 @@ in unit reactor, 12 subprograms and packages out of 12 analyzed
   Reactor.addControlRod at reactor.ads:42 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (6 checks)
   Reactor.decreaseTemperature at reactor.ads:52 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (4 checks)
   Reactor.decreaseWaterSupply at reactor.ads:62 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
-  Reactor.fillWaterSupply at reactor.ads:67 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  Reactor.fillWaterSupply at reactor.ads:67 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
   Reactor.increaseElectricity at reactor.ads:57 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
   Reactor.increaseTemperature at reactor.ads:47 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
   Reactor.removeControlRod at reactor.ads:37 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (6 checks)
   Reactor.startReactor at reactor.ads:28 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
   Reactor.stopReactor at reactor.ads:32 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
-in unit train, 5 subprograms and packages out of 5 analyzed
+in unit train, 6 subprograms and packages out of 6 analyzed
   Train at train.ads:2 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
   Train.TrainStopped at train.ads:11 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
   Train.addCarriage at train.ads:14 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (3 checks)
+  Train.decreaseSpeed at train.ads:30 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
   Train.increaseSpeed at train.ads:24 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (1 checks)
   Train.removeCarriage at train.ads:19 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (3 checks)

@@ -76,7 +76,7 @@ procedure Main is
    begin
       loop
          increaseSpeed;
-         --decreaseSpeed;
+         decreaseSpeed;
          delay 1.0;
       end loop;
    end Speed;

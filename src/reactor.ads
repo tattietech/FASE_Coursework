@@ -35,37 +35,39 @@ is
      Post => currentPowerStatus = Off;
 
    procedure removeControlRod with
-     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Proof_In => (currentWaterSupply,currentTemperature), Output => currentMaxElectricity),
-     Pre => currentRods > 0 and currentTemperatureIncrease < 5 and currentReactorPower < 10 and ReactorCheck,
-     Post => currentRods < currentRods+1 and ReactorCheck;
+     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Proof_In => (currentWaterSupply,currentTemperature), Output => currentMaxElectricity, Input => currentPowerStatus),
+     Pre => currentRods > ControlRods'First and ReactorCheck and ReactorOn,
+     Post => currentRods = currentRods'Old-1 and ReactorCheck;
 
    procedure addControlRod with
-     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Output => currentMaxElectricity),
-     Pre => currentRods < 5 and currentTemperatureIncrease > 0 and currentReactorPower > 0,
-     Post => currentRods > currentRods-1;
+     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Output => currentMaxElectricity, Input => currentPowerStatus),
+     Pre => currentRods < ControlRods'Last and ReactorOn,
+     Post => currentRods = currentRods'Old+1;
 
    procedure increaseTemperature (temp : out Integer) with
      Global => (In_Out => currentTemperature, Input => (currentTemperatureIncrease, currentPowerStatus)),
-     Pre => currentTemperature < 100,
-     Post => currentTemperature > currentTemperature-1;
+     Pre => currentTemperature < Temperature'Last,
+     Post => currentTemperature >= currentTemperature'Old;
 
    procedure decreaseTemperature (temp : out Integer) with
      Global => (In_Out => currentTemperature, Input => currentWaterSupply),
-     Pre => currentTemperature > 0,
-     Post => currentTemperature < currentTemperature+1;
+     Pre => currentTemperature > Temperature'First,
+     Post => currentTemperature <= currentTemperature'Old;
 
    procedure increaseElectricity (elec : out Integer) with
      Global => (In_Out => currentElectricityProduced, Input => (currentReactorPower, currentMaxElectricity)),
-     Pre => currentElectricityProduced < 1000,
-        Post => currentElectricityProduced > currentElectricityProduced-1;
+     Pre => currentElectricityProduced <= currentMaxElectricity,
+     Post => currentElectricityProduced = currentElectricityProduced'Old+currentReactorPower or currentElectricityProduced = currentMaxElectricity;
 
    procedure decreaseWaterSupply with
      Global => (In_Out => currentWaterSupply, Input => currentPowerStatus),
-     Pre => currentWaterSupply > 0,
-     Post => currentWaterSupply < currentWaterSupply+1;
+     Pre => currentWaterSupply > 0 and ReactorOn,
+     Post => currentWaterSupply = currentWaterSupply'Old-1;
 
    procedure fillWaterSupply with
-     Global => (Output => currentWaterSupply);
+     Global => (In_Out => currentWaterSupply),
+     Pre => currentWaterSupply < WaterSupply'Last,
+     Post => currentWaterSupply = WaterSupply'Last;
 
 
 end Reactor;

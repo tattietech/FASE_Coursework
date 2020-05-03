@@ -1924,6 +1924,68 @@ module Train__speed__rep
 
 end
 
+(* Module for axiomatizing type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__power
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type power 
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (1 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = power, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type power__ref =
+  { mutable power__content : power }
+ 
+ function power__ref_power__content__projection 
+   (a : power__ref) : power =
+  a.power__content
+ 
+ meta "model_projection" function power__ref_power__content__projection
+ 
+ meta "inline:no" function power__ref_power__content__projection
+ 
+ val power__havoc 
+   (x : power__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__power__rep
+ use        Reactor__power as Reactor__power
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__power.power, 
+ predicate in_range = Reactor__power.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
 (* Module for axiomatizing type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
 module Ada__text_io__TcountB
  use        "_gnatprove_standard".Main
@@ -2132,7 +2194,7 @@ module Train__currentcarriages
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentcarriages [#"train.ads" 7 0 0][@model_projected] [@name:currentCarriages] [@model_trace:2458]  : int__ref 
+ val currentcarriages [#"train.ads" 7 0 0][@model_projected] [@name:currentCarriages] [@model_trace:2481]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2153,7 +2215,7 @@ module Train__currentspeed
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentspeed [#"train.ads" 8 0 0][@model_trace:2470] [@model_projected] [@name:currentSpeed]  : int__ref 
+ val currentspeed [#"train.ads" 8 0 0][@model_projected] [@model_trace:2493] [@name:currentSpeed]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2174,7 +2236,7 @@ module Train__currentmaxspeed
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentmaxspeed [#"train.ads" 9 0 0][@model_projected] [@name:currentMaxSpeed] [@model_trace:2482]  : int__ref 
+ val currentmaxspeed [#"train.ads" 9 0 0][@model_projected] [@name:currentMaxSpeed] [@model_trace:2505]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2190,12 +2252,33 @@ module Train__currentmaxspeed___axiom
 
 end
 
+(* Module for defining a ref holding the value of variable "currentpowerstatus" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__currentpowerstatus
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val currentpowerstatus [#"reactor.ads" 12 0 0][@name:currentPowerStatus] [@model_projected] [@model_trace:2823]  : int__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "currentpowerstatus" defined at reactor.ads:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Reactor__currentpowerstatus___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
 (* Module for defining a ref holding the value of variable "currentelectricityproduced" defined at reactor.ads:18, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currentelectricityproduced
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentelectricityproduced [#"reactor.ads" 18 0 0][@name:currentElectricityProduced] [@model_projected] [@model_trace:2812]  : int__ref 
+ val currentelectricityproduced [#"reactor.ads" 18 0 0][@name:currentElectricityProduced] [@model_projected] [@model_trace:2889]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2821,6 +2904,14 @@ module Train__increasespeed
 
 end
 
+(* Module for possibly declaring a logic function for "decreasespeed" defined at train.ads:30, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Train__decreasespeed
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
 (* Module for possibly declaring a logic function for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Ada__text_io__line_length__2
  use        "_gnatprove_standard".Main
@@ -2897,6 +2988,30 @@ module Train__speed___axiom
 
 end
 
+(* Module giving axioms for type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__power___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__power as Reactor__power
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) =
+  (if (( temp___is_init_175 \/ (Reactor__power.first <= Reactor__power.last) )) then (
+   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_179)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_179 : int) (temp___is_init_175 : bool) (temp___skip_constant_176 : bool) (temp___do_toplevel_177 : bool) (temp___do_typ_inv_178 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_180 : int) (temp___skip_top_level_181 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_180 : int) (temp___skip_top_level_181 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_180 : int) (temp___skip_top_level_181 : bool) }
+
+end
+
 (* Module giving axioms for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Ada__text_io__TcountB___axiom
  use        "_gnatprove_standard".Main
@@ -2913,19 +3028,19 @@ module Ada__text_io__count___axiom
  use        Ada__text_io__count as Ada__text_io__count
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) =
-  (if (( temp___is_init_171 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
-   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_175)) else true)
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) =
+  (if (( temp___is_init_182 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
+   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_186)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_175 : int) (temp___is_init_171 : bool) (temp___skip_constant_172 : bool) (temp___do_toplevel_173 : bool) (temp___do_typ_inv_174 : bool) }
+   (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_186 : int) (temp___is_init_182 : bool) (temp___skip_constant_183 : bool) (temp___do_toplevel_184 : bool) (temp___do_typ_inv_185 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_176 : int) (temp___skip_top_level_177 : bool) =
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_176 : int) (temp___skip_top_level_177 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_176 : int) (temp___skip_top_level_177 : bool) }
+   (temp___expr_187 : int) (temp___skip_top_level_188 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_187 : int) (temp___skip_top_level_188 : bool) }
 
 end
 
@@ -2937,19 +3052,19 @@ module Reactor__electricity___axiom
  use        Reactor__electricity as Reactor__electricity
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) =
-  (if (( temp___is_init_178 \/ (Reactor__electricity.first <= Reactor__electricity.last) )) then (
-   (Reactor__electricity.dynamic_property Reactor__electricity.first Reactor__electricity.last temp___expr_182)) else true)
+   (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) =
+  (if (( temp___is_init_189 \/ (Reactor__electricity.first <= Reactor__electricity.last) )) then (
+   (Reactor__electricity.dynamic_property Reactor__electricity.first Reactor__electricity.last temp___expr_193)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_182 : int) (temp___is_init_178 : bool) (temp___skip_constant_179 : bool) (temp___do_toplevel_180 : bool) (temp___do_typ_inv_181 : bool) }
+   (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_193 : int) (temp___is_init_189 : bool) (temp___skip_constant_190 : bool) (temp___do_toplevel_191 : bool) (temp___do_typ_inv_192 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_183 : int) (temp___skip_top_level_184 : bool) =
+   (temp___expr_194 : int) (temp___skip_top_level_195 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_183 : int) (temp___skip_top_level_184 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_183 : int) (temp___skip_top_level_184 : bool) }
+   (temp___expr_194 : int) (temp___skip_top_level_195 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_194 : int) (temp___skip_top_level_195 : bool) }
 
 end
 (* Module giving a program function and a defining axiom for the expression function "trainstopped" defined at train.ads:11, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
@@ -2990,15 +3105,18 @@ module Train__addcarriage___axiom
  use        Train__currentcarriages as Train__currentcarriages
  use        Train__currentspeed as Train__currentspeed
  use        Train__currentmaxspeed as Train__currentmaxspeed
+ use        Train__trainstopped as Train__trainstopped
  use        Train__carriage___axiom as Train__carriage___axiom
  use        Train__speed___axiom as Train__speed___axiom
 
  val addcarriage 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:18942] (Train__currentcarriages.currentcarriages.int__content < (19 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:18954] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) /\ ( (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) /\ (Train__speed___axiom.dynamic_invariant Train__currentmaxspeed.currentmaxspeed.int__content True True True True) ) ) }
-  reads {Train__currentcarriages.currentcarriages, Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed}
-  writes {Train__currentcarriages.currentcarriages, Train__currentmaxspeed.currentmaxspeed}
+  requires {  ( ( [@GP_Pretty_Ada:2556] (Train__currentcarriages.currentcarriages.int__content < (19 : int)) ) /\ ( [@GP_Pretty_Ada:2557] ((epsilon temp___result_171 : bool.
+   ( (temp___result_171 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_171 Train__currentspeed.currentspeed.int__content) )) = True) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2564] (Train__currentcarriages.currentcarriages.int__content = ((old Train__currentcarriages.currentcarriages.int__content ) + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2569] ((epsilon temp___result_172 : bool.
+   ( (temp___result_172 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_172 Train__currentspeed.currentspeed.int__content) )) = True) ) ) /\ ( (Train__speed___axiom.dynamic_invariant Train__currentmaxspeed.currentmaxspeed.int__content True True True True) /\ (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) ) ) }
+  reads {Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed, Train__currentcarriages.currentcarriages}
+  writes {Train__currentmaxspeed.currentmaxspeed, Train__currentcarriages.currentcarriages}
 
 end
 
@@ -3010,15 +3128,18 @@ module Train__removecarriage___axiom
  use        Train__currentcarriages as Train__currentcarriages
  use        Train__currentspeed as Train__currentspeed
  use        Train__currentmaxspeed as Train__currentmaxspeed
+ use        Train__trainstopped as Train__trainstopped
  use        Train__carriage___axiom as Train__carriage___axiom
  use        Train__speed___axiom as Train__speed___axiom
 
  val removecarriage 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:18993] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:19005] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) /\ ( (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) /\ (Train__speed___axiom.dynamic_invariant Train__currentmaxspeed.currentmaxspeed.int__content True True True True) ) ) }
-  reads {Train__currentcarriages.currentcarriages, Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed}
-  writes {Train__currentcarriages.currentcarriages, Train__currentmaxspeed.currentmaxspeed}
+  requires {  ( ( [@GP_Pretty_Ada:2597] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2598] ((epsilon temp___result_173 : bool.
+   ( (temp___result_173 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_173 Train__currentspeed.currentspeed.int__content) )) = True) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2605] (Train__currentcarriages.currentcarriages.int__content = ((old Train__currentcarriages.currentcarriages.int__content ) - (1 : int))) ) /\ ( [@GP_Pretty_Ada:2610] ((epsilon temp___result_174 : bool.
+   ( (temp___result_174 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_174 Train__currentspeed.currentspeed.int__content) )) = True) ) ) /\ ( (Train__speed___axiom.dynamic_invariant Train__currentmaxspeed.currentmaxspeed.int__content True True True True) /\ (Train__carriage___axiom.dynamic_invariant Train__currentcarriages.currentcarriages.int__content True True True True) ) ) }
+  reads {Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed, Train__currentcarriages.currentcarriages}
+  writes {Train__currentmaxspeed.currentmaxspeed, Train__currentcarriages.currentcarriages}
 
 end
 
@@ -3034,9 +3155,27 @@ module Train__increasespeed___axiom
 
  val increasespeed 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:19045] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:19057] (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) ) /\ (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True True True True) ) }
-  reads {Reactor__currentelectricityproduced.currentelectricityproduced, Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed}
+  requires {  ( [@GP_Pretty_Ada:19132] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:19147] ( (Train__currentspeed.currentspeed.int__content > (old Train__currentspeed.currentspeed.int__content )) \/ (Train__currentspeed.currentspeed.int__content <= Train__currentmaxspeed.currentmaxspeed.int__content) ) ) /\ (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True True True True) ) }
+  reads {Train__currentspeed.currentspeed, Train__currentmaxspeed.currentmaxspeed, Reactor__currentelectricityproduced.currentelectricityproduced}
+  writes {Train__currentspeed.currentspeed}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "decreasespeed" defined at train.ads:30, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Train__decreasespeed___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Train__currentspeed as Train__currentspeed
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Train__speed___axiom as Train__speed___axiom
+
+ val decreasespeed 
+   (__void_param : unit) : unit
+  requires {  ( [@GP_Pretty_Ada:19184] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:19199] ( (Train__currentspeed.currentspeed.int__content < (old Train__currentspeed.currentspeed.int__content )) \/ (Train__currentspeed.currentspeed.int__content = (0 : int)) ) ) /\ (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True True True True) ) }
+  reads {Train__currentspeed.currentspeed, Reactor__currentpowerstatus.currentpowerstatus}
   writes {Train__currentspeed.currentspeed}
 
 end
@@ -3176,6 +3315,10 @@ module Train__package_def
   ([#"train.ads" 27 0 0] ());
   ([#"train.ads" 26 0 0] ());
   ([#"train.ads" 25 0 0] ());
+  ([#"train.ads" 30 0 0] ());
+  ([#"train.ads" 33 0 0] ());
+  ([#"train.ads" 32 0 0] ());
+  ([#"train.ads" 31 0 0] ());
   ([#"train.ads" 11 0 0] ());
    assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
   ();
@@ -3183,8 +3326,9 @@ module Train__package_def
   ([#"train.adb" 6 0 0] ());
   ([#"train.adb" 16 0 0] ());
   ([#"train.adb" 26 0 0] ());
+  ([#"train.adb" 35 0 0] ());
   ();
-  ( [@GP_Sloc:train.adb:34:1] ([#"train.adb" 34 0 0] ()) ) )
+  ( [@GP_Sloc:train.adb:43:1] ([#"train.adb" 43 0 0] ()) ) )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "trainstopped" defined at train.ads:11, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -3197,7 +3341,7 @@ module Train__trainstopped__subprogram_def
  use        Train__speed___axiom as Train__speed___axiom
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
 
- val train__trainstopped__result [@model_trace:2494@result] [@name:TrainStopped] [@model_projected]  : bool__ref 
+ val train__trainstopped__result [@model_trace:2517@result] [@name:TrainStopped] [@model_projected]  : bool__ref 
  
  let def [#"train.ads" 11 0 0][@GP_Subp:train.ads:11] 
    (__void_param : unit)
@@ -3235,9 +3379,12 @@ module Train__addcarriage__subprogram_def
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
  use        Train__currentcarriages as Train__currentcarriages
  use        Train__currentspeed as Train__currentspeed
  use        Train__currentmaxspeed as Train__currentmaxspeed
+ use        Train__trainstopped as Train__trainstopped
+ use        Train__trainstopped___axiom as Train__trainstopped___axiom
  use        Train__carriage as Train__carriage
  use        Train__carriage___axiom as Train__carriage___axiom
  use        Train__speed as Train__speed
@@ -3247,11 +3394,13 @@ module Train__addcarriage__subprogram_def
  use        Train__currentcarriages___axiom as Train__currentcarriages___axiom
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
  use        Train__currentmaxspeed___axiom as Train__currentmaxspeed___axiom
+ use        Train__trainstopped___axiom as Train__trainstopped___axiom
 
  let def [#"train.ads" 14 0 0][@GP_Subp:train.ads:14] 
    (__void_param : unit)
   requires { [#"train.ads" 14 0 0] true }
-  ensures { [#"train.ads" 14 0 0] ([#"train.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentCarriages > currentCarriages-1;              ^ train.ads:17:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:2] [@GP_Sloc:train.ads:17:14] ( [@GP_Pretty_Ada:18954] [@GP_Sloc:train.ads:17:14] (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) ) )) }
+  ensures { [#"train.ads" 14 0 0] ([#"train.ads" 17 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentCarriages = currentCarriages'Old+1 and TrainStopped;              ^ train.ads:17:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:2] [@GP_Shape:pragargs__and] [@GP_Sloc:train.ads:17:14] ( ( [@GP_Pretty_Ada:2564] [@GP_Sloc:train.ads:17:14] (Train__currentcarriages.currentcarriages.int__content = ((old Train__currentcarriages.currentcarriages.int__content ) + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2569] [@GP_Sloc:train.ads:17:60] ((epsilon temp___result_198 : bool.
+   ( (temp___result_198 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_198 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:14 *)
   ;
@@ -3262,37 +3411,45 @@ module Train__addcarriage__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram train.ads:14 *)
   ;
-   begin ensures {true} let _ = (let _ = (Train__currentcarriages.currentcarriages.int__content < (19 : int)) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content < (19 : int))) ((Train__trainstopped___axiom.trainstopped(())))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram train.ads:14 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18942] (Train__currentcarriages.currentcarriages.int__content < (19 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:train.adb:8:10] ([#"train.adb" 8 0 0] ()) );
-   ( [@GP_Sloc:train.adb:8:7] ([#"train.adb" 8 0 0] (if (( ([#"train.adb" 8 0 0] [#"train.adb" 8 0 0] (([@branch_id=2328] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) )));
-   ( [@branch_id=2328] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:train.adb:9:10] ([#"train.adb" 9 0 0] ()) );
-    ( [@GP_Sloc:train.adb:9:30] ([#"train.adb" 9 0 0] ()) );
-    ( [@GP_Sloc:train.adb:9:27] ([#"train.adb" 9 0 0] [#"train.adb" 9 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 9 0 0] ( [@vc:annotation] [@GP_Shape:if__currentcarriages_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] [@GP_Sloc:train.adb:9:46] [@comment:         currentCarriages := currentCarriages+1;                                              ^ train.adb:9:46:VC_RANGE_CHECK] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content + (1 : int)))) )) ))) );
-    ( [@GP_Sloc:train.adb:10:13] ([#"train.adb" 10 0 0] ()) );
-    ( [@GP_Sloc:train.adb:10:10] ([#"train.adb" 10 0 0] (if (( ([#"train.adb" 10 0 0] [#"train.adb" 10 0 0] (([@branch_id=2337] Main.spark__branch).bool__content <- ( (Train__currentmaxspeed.currentmaxspeed.int__content >= (10 : int)) )));
-    ( [@branch_id=2337] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:train.adb:11:13] ([#"train.adb" 11 0 0] ()) );
-     ( [@GP_Sloc:train.adb:11:32] ([#"train.adb" 11 0 0] ()) );
-     ( [@GP_Sloc:train.adb:11:29] ([#"train.adb" 11 0 0] [#"train.adb" 11 0 0] (Train__currentmaxspeed.currentmaxspeed.int__content <- ( ([#"train.adb" 11 0 0] ( [@vc:annotation] [@GP_Shape:if__if__currentmaxspeed_assign__sub] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:1] [@comment:            currentMaxSpeed := currentMaxSpeed-10;                                               ^ train.adb:11:47:VC_RANGE_CHECK] [@GP_Sloc:train.adb:11:47] (Train__speed.range_check_((Train__currentmaxspeed.currentmaxspeed.int__content - (10 : int)))) )) ))) ) )) else (
-     ()))) ) )) else (
-    ()))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Train__currentcarriages.currentcarriages.int__content > (Train__currentcarriages.currentcarriages.int__content - (1 : int))) in (
+   assume {  ( ( [@GP_Pretty_Ada:2556] (Train__currentcarriages.currentcarriages.int__content < (19 : int)) ) /\ ( [@GP_Pretty_Ada:2557] ((epsilon temp___result_197 : bool.
+   ( (temp___result_197 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_197 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
+   begin ensures {true} let _ = (let _ = Train__currentcarriages.currentcarriages.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_196 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Train__currentcarriages.currentcarriages.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:8:10] ([#"train.adb" 8 0 0] ()) );
+    ( [@GP_Sloc:train.adb:8:7] ([#"train.adb" 8 0 0] (if (( ([#"train.adb" 8 0 0] [#"train.adb" 8 0 0] (([@branch_id=2328] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) )));
+    ( [@branch_id=2328] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:9:10] ([#"train.adb" 9 0 0] ()) );
+     ( [@GP_Sloc:train.adb:9:30] ([#"train.adb" 9 0 0] ()) );
+     ( [@GP_Sloc:train.adb:9:27] ([#"train.adb" 9 0 0] [#"train.adb" 9 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 9 0 0] ( [@vc:annotation] [@GP_Shape:if__currentcarriages_assign__add] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] [@GP_Sloc:train.adb:9:46] [@comment:         currentCarriages := currentCarriages+1;                                              ^ train.adb:9:46:VC_RANGE_CHECK] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content + (1 : int)))) )) ))) );
+     ( [@GP_Sloc:train.adb:10:13] ([#"train.adb" 10 0 0] ()) );
+     ( [@GP_Sloc:train.adb:10:10] ([#"train.adb" 10 0 0] (if (( ([#"train.adb" 10 0 0] [#"train.adb" 10 0 0] (([@branch_id=2337] Main.spark__branch).bool__content <- ( (Train__currentmaxspeed.currentmaxspeed.int__content >= (10 : int)) )));
+     ( [@branch_id=2337] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:train.adb:11:13] ([#"train.adb" 11 0 0] ()) );
+      ( [@GP_Sloc:train.adb:11:32] ([#"train.adb" 11 0 0] ()) );
+      ( [@GP_Sloc:train.adb:11:29] ([#"train.adb" 11 0 0] [#"train.adb" 11 0 0] (Train__currentmaxspeed.currentmaxspeed.int__content <- ( ([#"train.adb" 11 0 0] ( [@vc:annotation] [@GP_Shape:if__if__currentmaxspeed_assign__sub] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:1] [@comment:            currentMaxSpeed := currentMaxSpeed-10;                                               ^ train.adb:11:47:VC_RANGE_CHECK] [@GP_Sloc:train.adb:11:47] (Train__speed.range_check_((Train__currentmaxspeed.currentmaxspeed.int__content - (10 : int)))) )) ))) ) )) else (
+      ()))) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content = (temp___old_196 + (1 : int)))) ((Train__trainstopped___axiom.trainstopped(())))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "removecarriage" defined at train.ads:19, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -3301,9 +3458,12 @@ module Train__removecarriage__subprogram_def
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
  use        Train__currentcarriages as Train__currentcarriages
  use        Train__currentspeed as Train__currentspeed
  use        Train__currentmaxspeed as Train__currentmaxspeed
+ use        Train__trainstopped as Train__trainstopped
+ use        Train__trainstopped___axiom as Train__trainstopped___axiom
  use        Train__carriage as Train__carriage
  use        Train__carriage___axiom as Train__carriage___axiom
  use        Train__speed as Train__speed
@@ -3313,11 +3473,13 @@ module Train__removecarriage__subprogram_def
  use        Train__currentcarriages___axiom as Train__currentcarriages___axiom
  use        Train__currentspeed___axiom as Train__currentspeed___axiom
  use        Train__currentmaxspeed___axiom as Train__currentmaxspeed___axiom
+ use        Train__trainstopped___axiom as Train__trainstopped___axiom
 
  let def [#"train.ads" 19 0 0][@GP_Subp:train.ads:19] 
    (__void_param : unit)
   requires { [#"train.ads" 19 0 0] true }
-  ensures { [#"train.ads" 19 0 0] ([#"train.ads" 22 0 0] ( [@comment:     Post => currentCarriages < currentCarriages+1;              ^ train.ads:22:14:VC_POSTCONDITION] [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Id:5] [@GP_Sloc:train.ads:22:14] ( [@GP_Pretty_Ada:19005] [@GP_Sloc:train.ads:22:14] (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) ) )) }
+  ensures { [#"train.ads" 19 0 0] ([#"train.ads" 22 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@model_vc_post] [@comment:     Post => currentCarriages = currentCarriages'Old-1 and TrainStopped;              ^ train.ads:22:14:VC_POSTCONDITION] [@GP_Shape:pragargs__and] [@GP_Id:5] [@GP_Sloc:train.ads:22:14] ( ( [@GP_Pretty_Ada:2605] [@GP_Sloc:train.ads:22:14] (Train__currentcarriages.currentcarriages.int__content = ((old Train__currentcarriages.currentcarriages.int__content ) - (1 : int))) ) /\ ( [@GP_Sloc:train.ads:22:60] [@GP_Pretty_Ada:2610] ((epsilon temp___result_201 : bool.
+   ( (temp___result_201 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_201 Train__currentspeed.currentspeed.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:19 *)
   ;
@@ -3328,37 +3490,45 @@ module Train__removecarriage__subprogram_def
   ;
   () (* Check for RTE in the Pre of the subprogram train.ads:19 *)
   ;
-   begin ensures {true} let _ = (let _ = (Train__currentcarriages.currentcarriages.int__content > (1 : int)) in (
+   begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content > (1 : int))) ((Train__trainstopped___axiom.trainstopped(())))) in (
    ()))
    in () end ;
   () (* Assume Pre of the subprogram train.ads:19 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:18993] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:train.adb:18:10] ([#"train.adb" 18 0 0] ()) );
-   ( [@GP_Sloc:train.adb:18:7] ([#"train.adb" 18 0 0] (if (( ([#"train.adb" 18 0 0] [#"train.adb" 18 0 0] (([@branch_id=2361] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) )));
-   ( [@branch_id=2361] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:train.adb:19:10] ([#"train.adb" 19 0 0] ()) );
-    ( [@GP_Sloc:train.adb:19:30] ([#"train.adb" 19 0 0] ()) );
-    ( [@GP_Sloc:train.adb:19:27] ([#"train.adb" 19 0 0] [#"train.adb" 19 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 19 0 0] ( [@GP_Sloc:train.adb:19:46] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currentcarriages_assign__sub] [@comment:         currentCarriages := currentCarriages-1;                                              ^ train.adb:19:46:VC_RANGE_CHECK] [@GP_Id:3] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content - (1 : int)))) )) ))) );
-    ( [@GP_Sloc:train.adb:20:13] ([#"train.adb" 20 0 0] ()) );
-    ( [@GP_Sloc:train.adb:20:10] ([#"train.adb" 20 0 0] (if (( ([#"train.adb" 20 0 0] [#"train.adb" 20 0 0] (([@branch_id=2370] Main.spark__branch).bool__content <- ( (Train__currentmaxspeed.currentmaxspeed.int__content <= (190 : int)) )));
-    ( [@branch_id=2370] Main.spark__branch ).bool__content )) then (
-     ( ();
-     ( [@GP_Sloc:train.adb:21:13] ([#"train.adb" 21 0 0] ()) );
-     ( [@GP_Sloc:train.adb:21:32] ([#"train.adb" 21 0 0] ()) );
-     ( [@GP_Sloc:train.adb:21:29] ([#"train.adb" 21 0 0] [#"train.adb" 21 0 0] (Train__currentmaxspeed.currentmaxspeed.int__content <- ( ([#"train.adb" 21 0 0] ( [@GP_Shape:if__if__currentmaxspeed_assign__add] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentMaxSpeed := currentMaxSpeed+10;                                               ^ train.adb:21:47:VC_RANGE_CHECK] [@GP_Id:4] [@GP_Sloc:train.adb:21:47] (Train__speed.range_check_((Train__currentmaxspeed.currentmaxspeed.int__content + (10 : int)))) )) ))) ) )) else (
-     ()))) ) )) else (
-    ()))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Train__currentcarriages.currentcarriages.int__content < (Train__currentcarriages.currentcarriages.int__content + (1 : int))) in (
+   assume {  ( ( [@GP_Pretty_Ada:2597] (Train__currentcarriages.currentcarriages.int__content > (1 : int)) ) /\ ( [@GP_Pretty_Ada:2598] ((epsilon temp___result_200 : bool.
+   ( (temp___result_200 = (Train__trainstopped.trainstopped Train__currentspeed.currentspeed.int__content)) /\ (Train__trainstopped.trainstopped__function_guard temp___result_200 Train__currentspeed.currentspeed.int__content) )) = True) ) ) };
+   begin ensures {true} let _ = (let _ = Train__currentcarriages.currentcarriages.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_199 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Train__currentcarriages.currentcarriages.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:18:10] ([#"train.adb" 18 0 0] ()) );
+    ( [@GP_Sloc:train.adb:18:7] ([#"train.adb" 18 0 0] (if (( ([#"train.adb" 18 0 0] [#"train.adb" 18 0 0] (([@branch_id=2361] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content = (0 : int)) )));
+    ( [@branch_id=2361] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:19:10] ([#"train.adb" 19 0 0] ()) );
+     ( [@GP_Sloc:train.adb:19:30] ([#"train.adb" 19 0 0] ()) );
+     ( [@GP_Sloc:train.adb:19:27] ([#"train.adb" 19 0 0] [#"train.adb" 19 0 0] (Train__currentcarriages.currentcarriages.int__content <- ( ([#"train.adb" 19 0 0] ( [@GP_Sloc:train.adb:19:46] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currentcarriages_assign__sub] [@comment:         currentCarriages := currentCarriages-1;                                              ^ train.adb:19:46:VC_RANGE_CHECK] [@GP_Id:3] (Train__carriage.range_check_((Train__currentcarriages.currentcarriages.int__content - (1 : int)))) )) ))) );
+     ( [@GP_Sloc:train.adb:20:13] ([#"train.adb" 20 0 0] ()) );
+     ( [@GP_Sloc:train.adb:20:10] ([#"train.adb" 20 0 0] (if (( ([#"train.adb" 20 0 0] [#"train.adb" 20 0 0] (([@branch_id=2370] Main.spark__branch).bool__content <- ( (Train__currentmaxspeed.currentmaxspeed.int__content <= (190 : int)) )));
+     ( [@branch_id=2370] Main.spark__branch ).bool__content )) then (
+      ( ();
+      ( [@GP_Sloc:train.adb:21:13] ([#"train.adb" 21 0 0] ()) );
+      ( [@GP_Sloc:train.adb:21:32] ([#"train.adb" 21 0 0] ()) );
+      ( [@GP_Sloc:train.adb:21:29] ([#"train.adb" 21 0 0] [#"train.adb" 21 0 0] (Train__currentmaxspeed.currentmaxspeed.int__content <- ( ([#"train.adb" 21 0 0] ( [@GP_Shape:if__if__currentmaxspeed_assign__add] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentMaxSpeed := currentMaxSpeed+10;                                               ^ train.adb:21:47:VC_RANGE_CHECK] [@GP_Id:4] [@GP_Sloc:train.adb:21:47] (Train__speed.range_check_((Train__currentmaxspeed.currentmaxspeed.int__content + (10 : int)))) )) ))) ) )) else (
+      ()))) ) )) else (
+     ()))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.andb((Train__currentcarriages.currentcarriages.int__content = (temp___old_199 - (1 : int)))) ((Train__trainstopped___axiom.trainstopped(())))) in (
+    ()))
+    in () end  )))
+   )
 end
 
 (* Module for checking contracts and absence of run-time errors in subprogram "increasespeed" defined at train.ads:24, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
@@ -3367,6 +3537,7 @@ module Train__increasespeed__subprogram_def
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
  use        Train__currentspeed as Train__currentspeed
  use        Train__currentmaxspeed as Train__currentmaxspeed
  use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
@@ -3381,7 +3552,7 @@ module Train__increasespeed__subprogram_def
  let def [#"train.ads" 24 0 0][@GP_Subp:train.ads:24] 
    (__void_param : unit)
   requires { [#"train.ads" 24 0 0] true }
-  ensures { [#"train.ads" 24 0 0] ([#"train.ads" 27 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentSpeed >= currentSpeed-2;              ^ train.ads:27:14:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Sloc:train.ads:27:14] [@GP_Id:6] ( [@GP_Pretty_Ada:19057] [@GP_Sloc:train.ads:27:14] (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) ) )) }
+  ensures { [#"train.ads" 24 0 0] ([#"train.ads" 27 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentSpeed > currentSpeed'Old or currentSpeed <= currentMaxSpeed;              ^ train.ads:27:14:VC_POSTCONDITION] [@GP_Shape:pragargs__or] [@model_vc_post] [@GP_Sloc:train.ads:27:14] [@GP_Id:6] ( [@GP_Sloc:train.ads:27:14] [@GP_Pretty_Ada:19147] ( (Train__currentspeed.currentspeed.int__content > (old Train__currentspeed.currentspeed.int__content )) \/ (Train__currentspeed.currentspeed.int__content <= Train__currentmaxspeed.currentmaxspeed.int__content) ) ) )) }
    = [@vc:divergent]
   ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:24 *)
   ;
@@ -3397,26 +3568,97 @@ module Train__increasespeed__subprogram_def
    in () end ;
   () (* Assume Pre of the subprogram train.ads:24 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:19045] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) };
-   try
-   ( ();
-   ( [@GP_Sloc:train.adb:28:10] ([#"train.adb" 28 0 0] ()) );
-   ( [@GP_Sloc:train.adb:28:39] ([#"train.adb" 28 0 0] ()) );
-   ( [@GP_Sloc:train.adb:28:7] ([#"train.adb" 28 0 0] (if (( ([#"train.adb" 28 0 0] [#"train.adb" 28 0 0] (([@branch_id=2394] Main.spark__branch).bool__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > Train__currentmaxspeed.currentmaxspeed.int__content) )));
-   ( [@branch_id=2394] Main.spark__branch ).bool__content )) then (
-    ( ();
-    ( [@GP_Sloc:train.adb:29:10] ([#"train.adb" 29 0 0] ()) );
-    ( [@GP_Sloc:train.adb:29:26] ([#"train.adb" 29 0 0] ()) );
-    ( [@GP_Sloc:train.adb:29:23] ([#"train.adb" 29 0 0] [#"train.adb" 29 0 0] (Train__currentspeed.currentspeed.int__content <- ( Train__currentmaxspeed.currentmaxspeed.int__content ))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:train.adb:31:10] ([#"train.adb" 31 0 0] ()) );
-    ( [@GP_Sloc:train.adb:31:26] ([#"train.adb" 31 0 0] ()) );
-    ( [@GP_Sloc:train.adb:31:23] ([#"train.adb" 31 0 0] [#"train.adb" 31 0 0] (Train__currentspeed.currentspeed.int__content <- ( Reactor__currentelectricityproduced.currentelectricityproduced.int__content ))) ) )))) );
-    raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-   begin ensures {true} let _ = (let _ = (Train__currentspeed.currentspeed.int__content >= (Train__currentspeed.currentspeed.int__content - (2 : int))) in (
+   assume {  ( [@GP_Pretty_Ada:19132] (Train__currentspeed.currentspeed.int__content < (200 : int)) ) };
+   begin ensures {true} let _ = (let _ = Train__currentspeed.currentspeed.int__content in (
    ()))
-   in () end  )
+   in () end ;
+  (let temp___old_202 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Train__currentspeed.currentspeed.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:28:10] ([#"train.adb" 28 0 0] ()) );
+    ( [@GP_Sloc:train.adb:28:39] ([#"train.adb" 28 0 0] ()) );
+    ( [@GP_Sloc:train.adb:28:7] ([#"train.adb" 28 0 0] (if (( ([#"train.adb" 28 0 0] [#"train.adb" 28 0 0] (([@branch_id=2394] Main.spark__branch).bool__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > Train__currentmaxspeed.currentmaxspeed.int__content) )));
+    ( [@branch_id=2394] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:29:10] ([#"train.adb" 29 0 0] ()) );
+     ( [@GP_Sloc:train.adb:29:26] ([#"train.adb" 29 0 0] ()) );
+     ( [@GP_Sloc:train.adb:29:23] ([#"train.adb" 29 0 0] [#"train.adb" 29 0 0] (Train__currentspeed.currentspeed.int__content <- ( Train__currentmaxspeed.currentmaxspeed.int__content ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:train.adb:31:10] ([#"train.adb" 31 0 0] ()) );
+     ( [@GP_Sloc:train.adb:31:26] ([#"train.adb" 31 0 0] ()) );
+     ( [@GP_Sloc:train.adb:31:23] ([#"train.adb" 31 0 0] [#"train.adb" 31 0 0] (Train__currentspeed.currentspeed.int__content <- ( Reactor__currentelectricityproduced.currentelectricityproduced.int__content ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.orb((Train__currentspeed.currentspeed.int__content > temp___old_202)) ((Train__currentspeed.currentspeed.int__content <= Train__currentmaxspeed.currentmaxspeed.int__content))) in (
+    ()))
+    in () end  )))
+   )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "decreasespeed" defined at train.ads:30, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Train__decreasespeed__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Boolean as Boolean
+ use        Train__currentspeed as Train__currentspeed
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Train__speed as Train__speed
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Train__speed___axiom as Train__speed___axiom
+ use        Train__currentspeed___axiom as Train__currentspeed___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
+
+ let def [#"train.ads" 30 0 0][@GP_Subp:train.ads:30] 
+   (__void_param : unit)
+  requires { [#"train.ads" 30 0 0] true }
+  ensures { [#"train.ads" 30 0 0] ([#"train.ads" 33 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentSpeed < currentSpeed'Old or currentSpeed = 0;              ^ train.ads:33:14:VC_POSTCONDITION] [@GP_Shape:pragargs__or] [@GP_Sloc:train.ads:33:14] [@model_vc_post] [@GP_Id:8] ( [@GP_Sloc:train.ads:33:14] [@GP_Pretty_Ada:19199] ( (Train__currentspeed.currentspeed.int__content < (old Train__currentspeed.currentspeed.int__content )) \/ (Train__currentspeed.currentspeed.int__content = (0 : int)) ) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram train.ads:30 *)
+  ;
+   assume {  (Train__speed___axiom.dynamic_invariant Train__currentspeed.currentspeed.int__content True False True True) };
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram train.ads:30 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram train.ads:30 *)
+  ;
+   begin ensures {true} let _ = (let _ = (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram train.ads:30 *)
+  ;
+   assume {  ( [@GP_Pretty_Ada:19184] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) };
+   begin ensures {true} let _ = (let _ = Train__currentspeed.currentspeed.int__content in (
+   ()))
+   in () end ;
+  (let temp___old_203 [@mlw:proxy_symbol] [@introduced] =  (val _f : int
+  ensures { (result = Train__currentspeed.currentspeed.int__content)} 
+  in _f) in (
+   (  try
+    ( ();
+    ( [@GP_Sloc:train.adb:37:10] ([#"train.adb" 37 0 0] ()) );
+    ( [@GP_Sloc:train.adb:37:7] ([#"train.adb" 37 0 0] (if (( ([#"train.adb" 37 0 0] [#"train.adb" 37 0 0] (([@branch_id=2415] Main.spark__branch).bool__content <- ( (Train__currentspeed.currentspeed.int__content >= (5 : int)) )));
+    ( [@branch_id=2415] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:train.adb:38:10] ([#"train.adb" 38 0 0] ()) );
+     ( [@GP_Sloc:train.adb:38:26] ([#"train.adb" 38 0 0] ()) );
+     ( [@GP_Sloc:train.adb:38:23] ([#"train.adb" 38 0 0] [#"train.adb" 38 0 0] (Train__currentspeed.currentspeed.int__content <- ( ([#"train.adb" 38 0 0] ( [@GP_Shape:if__currentspeed_assign__sub] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentSpeed := currentSpeed-5;                                      ^ train.adb:38:38:VC_RANGE_CHECK] [@GP_Id:7] [@GP_Sloc:train.adb:38:38] (Train__speed.range_check_((Train__currentspeed.currentspeed.int__content - (5 : int)))) )) ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:train.adb:40:10] ([#"train.adb" 40 0 0] ()) );
+     ( [@GP_Sloc:train.adb:40:23] ([#"train.adb" 40 0 0] [#"train.adb" 40 0 0] (Train__currentspeed.currentspeed.int__content <- ( (0 : int) ))) ) )))) );
+     raise Return__exc )
+   with
+    Return__exc -> ()
+   end;
+    begin ensures {true} let _ = (let _ = (Boolean.orb((Train__currentspeed.currentspeed.int__content < temp___old_203)) ((Train__currentspeed.currentspeed.int__content = (0 : int)))) in (
+    ()))
+    in () end  )))
+   )
 end

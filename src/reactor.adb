@@ -17,29 +17,43 @@ is
 
    procedure removeControlRod is
    begin
-      if ReactorOn then
-         currentRods := currentRods-1;
-         currentTemperatureIncrease := currentTemperatureIncrease+1;
-         if currentReactorPower < 9 then
+      currentRods := currentRods-1;
+      if currentPowerStatus = On then
+         if currentTemperatureIncrease > TemperatureIncrease'Last then
+            currentTemperatureIncrease := currentTemperatureIncrease+1;
+         end if;
+
+         if currentReactorPower < ReactorPower'Last-2 then
             currentReactorPower := currentReactorPower+2;
          else
-            currentReactorPower := 10;
+            currentReactorPower := ReactorPower'Last;
          end if;
-         if currentRods > 0 then
+         if currentRods > ControlRods'First then
             currentMaxElectricity := Electricity'Last / currentRods;
          else
             currentMaxElectricity := Electricity'Last;
          end if;
+      else
+         currentMaxElectricity := Electricity'First;
       end if;
    end removeControlRod;
 
    procedure addControlRod is
    begin
-      currentRods := currentRods+1;
-      currentTemperatureIncrease := currentTemperatureIncrease-1;
-      currentReactorPower := currentReactorPower-1;
-      if ReactorOn then
+      if currentPowerStatus = On then
+         currentRods := currentRods+1;
+
+         if currentTemperatureIncrease > Temperature'First then
+            currentTemperatureIncrease := currentTemperatureIncrease-1;
+         end if;
+
+         if currentReactorPower > ReactorPower'First then
+            currentReactorPower := currentReactorPower-1;
+         end if;
+
          currentMaxElectricity := Electricity'Last / currentRods;
+      else
+         currentMaxElectricity := Electricity'First;
       end if;
    end addControlRod;
 
@@ -47,8 +61,8 @@ is
    begin
       temp := currentTemperature + currentTemperatureIncrease;
       if ReactorOn then
-         if temp > 100 then
-            currentTemperature := 100;
+         if temp > Temperature'Last then
+            currentTemperature := Temperature'Last;
          else
             currentTemperature := temp;
          end if;
@@ -60,8 +74,8 @@ is
       temp := 0;
       if currentWaterSupply >= 10 then
          temp := currentTemperature - currentWaterSupply/15;
-         if temp < 0 then
-            currentTemperature := 0;
+         if temp < Temperature'First then
+            currentTemperature := Temperature'First;
          else
             currentTemperature := temp;
          end if;
@@ -75,8 +89,6 @@ is
      elec := currentElectricityProduced + currentReactorPower;
      if elec >= currentMaxElectricity then
         currentElectricityProduced := currentMaxElectricity;
-     elsif elec > 200 then
-        currentElectricityProduced := 200;
      else
         currentElectricityProduced := elec;
      end if;
