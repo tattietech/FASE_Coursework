@@ -45,7 +45,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 32
+          "line": 33
         }
       ],
       "spark": "all"
@@ -55,7 +55,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 37
+          "line": 38
         }
       ],
       "spark": "all"
@@ -65,7 +65,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 42
+          "line": 43
         }
       ],
       "spark": "all"
@@ -75,7 +75,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 47
+          "line": 48
         }
       ],
       "spark": "all"
@@ -85,7 +85,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 52
+          "line": 53
         }
       ],
       "spark": "all"
@@ -95,7 +95,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 57
+          "line": 58
         }
       ],
       "spark": "all"
@@ -105,7 +105,7 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 62
+          "line": 63
         }
       ],
       "spark": "all"
@@ -115,279 +115,13 @@
       "sloc": [
         {
           "file": "reactor.ads",
-          "line": 67
+          "line": 68
         }
       ],
       "spark": "all"
     }
   ],
   "flow": [
-    {
-      "file": "reactor.ads",
-      "line": 47,
-      "col": 35,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.increaseTemperature",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 47
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 48,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.increaseTemperature",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 47
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 38,
-      "col": 154,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.removeControlRod",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 37
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 38,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.removeControlRod",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 37
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 43,
-      "col": 101,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.addControlRod",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 42
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 43,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.addControlRod",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 42
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 68,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.fillWaterSupply",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 67
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 63,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.decreaseWaterSupply",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 62
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 33,
-      "col": 57,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.stopReactor",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 32
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 33,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.stopReactor",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 32
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 57,
-      "col": 35,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.increaseElectricity",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 57
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 58,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.increaseElectricity",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 57
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 52,
-      "col": 35,
-      "rule": "UNINITIALIZED",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.decreaseTemperature",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 52
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
-    {
-      "file": "reactor.ads",
-      "line": 53,
-      "col": 6,
-      "rule": "GLOBAL_WRONG",
-      "severity": "info",
-      "entity": {
-        "name": "Reactor.decreaseTemperature",
-        "sloc": [
-          {
-            "file": "reactor.ads",
-            "line": 52
-          }
-        ]
-      },
-      "check_tree": {
-      },
-      "how_proved": "flow"
-    },
     {
       "file": "reactor.ads",
       "line": 29,
@@ -400,6 +134,272 @@
           {
             "file": "reactor.ads",
             "line": 28
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 53,
+      "col": 35,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.decreaseTemperature",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 53
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 54,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.decreaseTemperature",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 53
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 48,
+      "col": 35,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.increaseTemperature",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 48
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 49,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.increaseTemperature",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 48
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 39,
+      "col": 154,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.removeControlRod",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 38
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 39,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.removeControlRod",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 38
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 44,
+      "col": 101,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.addControlRod",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 43
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 44,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.addControlRod",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 43
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 69,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.fillWaterSupply",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 68
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 64,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.decreaseWaterSupply",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 63
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 34,
+      "col": 57,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.stopReactor",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 33
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 34,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.stopReactor",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 33
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 58,
+      "col": 35,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.increaseElectricity",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 58
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "reactor.ads",
+      "line": 59,
+      "col": 6,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.increaseElectricity",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 58
           }
         ]
       },
@@ -491,7 +491,47 @@
     },
     {
       "file": "reactor.ads",
-      "line": 35,
+      "line": 31,
+      "col": 14,
+      "rule": "VC_POSTCONDITION",
+      "severity": "info",
+      "entity": {
+        "name": "Reactor.startReactor",
+        "sloc": [
+          {
+            "file": "reactor.ads",
+            "line": 28
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 126,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "reactor.ads",
+      "check_line": 31,
+      "check_col": 14,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 2.99999993294477E-02
+        }
+      }
+    },
+    {
+      "file": "reactor.ads",
+      "line": 36,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -500,7 +540,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 32
+            "line": 33
           }
         ]
       },
@@ -518,7 +558,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 35,
+      "check_line": 36,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -540,7 +580,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -580,7 +620,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -620,7 +660,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -660,7 +700,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -700,7 +740,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -731,7 +771,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 40,
+      "line": 41,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -740,7 +780,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 37
+            "line": 38
           }
         ]
       },
@@ -769,7 +809,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 40,
+      "check_line": 41,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -791,7 +831,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -831,7 +871,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -871,7 +911,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -911,7 +951,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -951,7 +991,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -982,7 +1022,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 45,
+      "line": 46,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -991,7 +1031,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 42
+            "line": 43
           }
         ]
       },
@@ -1009,7 +1049,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 45,
+      "check_line": 46,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1031,7 +1071,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 47
+            "line": 48
           }
         ]
       },
@@ -1062,7 +1102,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 50,
+      "line": 51,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1071,7 +1111,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 47
+            "line": 48
           }
         ]
       },
@@ -1089,7 +1129,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 50,
+      "check_line": 51,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1111,7 +1151,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 52
+            "line": 53
           }
         ]
       },
@@ -1151,7 +1191,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 52
+            "line": 53
           }
         ]
       },
@@ -1191,7 +1231,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 52
+            "line": 53
           }
         ]
       },
@@ -1222,7 +1262,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 55,
+      "line": 56,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1231,7 +1271,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 52
+            "line": 53
           }
         ]
       },
@@ -1249,7 +1289,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 55,
+      "check_line": 56,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1271,7 +1311,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 57
+            "line": 58
           }
         ]
       },
@@ -1302,7 +1342,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 60,
+      "line": 61,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1311,7 +1351,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 57
+            "line": 58
           }
         ]
       },
@@ -1329,7 +1369,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 60,
+      "check_line": 61,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1351,7 +1391,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 62
+            "line": 63
           }
         ]
       },
@@ -1382,7 +1422,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 65,
+      "line": 66,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1391,7 +1431,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 62
+            "line": 63
           }
         ]
       },
@@ -1409,7 +1449,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 65,
+      "check_line": 66,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1422,7 +1462,7 @@
     },
     {
       "file": "reactor.ads",
-      "line": 70,
+      "line": 71,
       "col": 14,
       "rule": "VC_POSTCONDITION",
       "severity": "info",
@@ -1431,7 +1471,7 @@
         "sloc": [
           {
             "file": "reactor.ads",
-            "line": 67
+            "line": 68
           }
         ]
       },
@@ -1449,7 +1489,7 @@
         }
       ],
       "check_file": "reactor.ads",
-      "check_line": 70,
+      "check_line": 71,
       "check_col": 14,
       "how_proved": "prover",
       "stats": {
@@ -1467,78 +1507,6 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.startReactor",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 28
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.ReactorOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 25
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.ReactorOn",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 25
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
             "name": "Reactor.ReactorOn",
             "sloc": [
               {
@@ -1568,7 +1536,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 47
+              "line": 48
             }
           ]
         }
@@ -1596,7 +1564,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 47
+              "line": 48
             }
           ]
         }
@@ -1636,507 +1604,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 47
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.fillWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 67
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.fillWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 67
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.fillWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 67
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.decreaseWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 62
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.decreaseWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 62
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.decreaseWaterSupply",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 62
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.ReactorCheck",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 22
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.decreaseTemperature",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 52
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.ReactorCheck",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 22
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.decreaseTemperature",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 52
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.decreaseTemperature",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 52
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.stopReactor",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.stopReactor",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.stopReactor",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 32
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.increaseElectricity",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 57
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.increaseElectricity",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 57
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.increaseElectricity",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 57
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_POST",
-        "arg": {
-          "name": "Reactor.removeControlRod",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 37
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.removeControlRod",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 37
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        },
-        {
-          "predicate": "CLAIM_AORTE",
-          "arg": {
-            "name": "Reactor.ReactorOn",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 25
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_AORTE",
-        "arg": {
-          "name": "Reactor.removeControlRod",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 37
+              "line": 48
             }
           ]
         }
@@ -2160,6 +1628,706 @@
     },
     {
       "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.fillWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 68
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.fillWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 68
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.fillWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 68
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.startReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 28
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.startReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 28
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.startReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 28
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.ReactorOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.ReactorOn",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 25
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.decreaseWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 63
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.decreaseWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 63
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.decreaseWaterSupply",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 63
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.decreaseTemperature",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.decreaseTemperature",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.decreaseTemperature",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 53
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.stopReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.stopReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.stopReactor",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 33
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.ReactorCheck",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.increaseElectricity",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.ReactorCheck",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 22
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.increaseElectricity",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.increaseElectricity",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 58
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_POST",
+        "arg": {
+          "name": "Reactor.removeControlRod",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 38
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Reactor.removeControlRod",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 38
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorCheck",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 22
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_AORTE",
+          "arg": {
+            "name": "Reactor.ReactorOn",
+            "sloc": [
+              {
+                "file": "reactor.ads",
+                "line": 25
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Reactor.removeControlRod",
+          "sloc": [
+            {
+              "file": "reactor.ads",
+              "line": 38
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
@@ -2192,7 +2360,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 42
+              "line": 43
             }
           ]
         }
@@ -2220,7 +2388,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 42
+              "line": 43
             }
           ]
         }
@@ -2260,35 +2428,7 @@
           "sloc": [
             {
               "file": "reactor.ads",
-              "line": 42
-            }
-          ]
-        }
-      }
-    },
-    {
-      "assumptions": [
-        {
-          "predicate": "CLAIM_EFFECTS",
-          "arg": {
-            "name": "Reactor.ReactorCheck",
-            "sloc": [
-              {
-                "file": "reactor.ads",
-                "line": 22
-              }
-            ]
-          }
-        }
-      ],
-      "claim": {
-        "predicate": "CLAIM_EFFECTS",
-        "arg": {
-          "name": "Reactor.startReactor",
-          "sloc": [
-            {
-              "file": "reactor.ads",
-              "line": 28
+              "line": 43
             }
           ]
         }
@@ -2296,14 +2436,14 @@
     }
   ],
   "timings": {
-    "marking": 1.23689998872578E-03,
-    "globals (basic)": 1.23624000698328E-02,
-    "globals/properties (advanced)": 1.80571991950274E-02,
-    "flow analysis": 1.66544001549482E-02,
-    "codepeer results": 7.90000012784731E-06,
-    "init_why_sections": 5.21500012837350E-04,
-    "translation of standard": 3.59959993511438E-03,
-    "translation of compilation unit": 3.82044017314911E-02,
-    "proof": 1.08484089374542E+00
+    "marking": 1.24350003898144E-03,
+    "globals (basic)": 1.36347999796271E-02,
+    "globals/properties (advanced)": 1.74690000712872E-02,
+    "flow analysis": 1.70217994600534E-02,
+    "codepeer results": 7.09999994796817E-06,
+    "init_why_sections": 4.87300014356151E-04,
+    "translation of standard": 3.52969998493791E-03,
+    "translation of compilation unit": 3.89342010021210E-02,
+    "proof": 9.67070400714874E-01
   }
 }

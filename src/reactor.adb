@@ -3,7 +3,7 @@ package body Reactor with SPARK_mode
 is
    procedure startReactor is
    begin
-      if currentRods = 5 then
+      if currentRods = ControlRods'Last then
          currentPowerStatus := On;
          currentMaxElectricity := Electricity'Last / currentRods;
       end if;
@@ -103,7 +103,7 @@ is
 
    procedure fillWaterSupply is
    begin
-      currentWaterSupply := 100;
+      currentWaterSupply := WaterSupply'Last;
    end fillWaterSupply;
 
 

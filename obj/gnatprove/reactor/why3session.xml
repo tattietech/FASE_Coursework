@@ -53,7 +53,12 @@
   <goal name="VC def.3" expl="precondition" proved="true">
   <proof prover="0"><result status="valid" steps="135"/></proof>
   </goal>
-  <goal name="VC def.4" expl="postcondition">
+  <goal name="VC def.4" expl="precondition">
+  </goal>
+  <goal name="VC def.5" expl="postcondition">
+  </goal>
+  <goal name="VC def.6" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="126"/></proof>
   </goal>
  </transf>
  </goal>

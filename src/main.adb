@@ -28,16 +28,20 @@ procedure Main is
          when '7' => startReactor;
          when others => abort Display; abort Heat; abort Power; abort Water; abort Speed; abort EntryGuard; exit;
          end case;
-      delay 0.1;
       end loop;
+      delay 0.1;
    end EntryGuard;
 
    task body Display is
    begin
       loop
-           Put_Line("Power Status : " & Boolean'Image(ReactorOn) & " | Rods: " & Integer'Image(currentRods) & " | Water: " & Integer'Image(currentWaterSupply) & " | Temp: " & Integer'Image(currentTemperature) & " | Power " & Integer'Image(currentElectricityProduced)
-                  & " | Speed: " & Integer'Image(currentSpeed) & " | Carriages " & Integer'Image(currentCarriages)
-                   );
+         Put_Line("Power Status : " & Boolean'Image(ReactorOn) &
+                    " | Rods: " & Integer'Image(currentRods) &
+                    " | Water: " & Integer'Image(currentWaterSupply) &
+                    " | Temp: " & Integer'Image(currentTemperature) &
+                    " | Power " & Integer'Image(currentElectricityProduced)
+                  & " | Speed: " & Integer'Image(currentSpeed) &
+                    " | Carriages " & Integer'Image(currentCarriages));
        delay 1.0;
       end loop;
    end Display;

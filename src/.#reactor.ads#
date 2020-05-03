@@ -26,7 +26,8 @@ is
       (currentPowerStatus = On);
 
    procedure startReactor with
-     Global => (In_Out => (currentPowerStatus, currentMaxElectricity), Input => currentRods, Proof_in => (currentWaterSupply,currentTemperature)),
+     Global => (In_Out => (currentPowerStatus, currentMaxElectricity),
+                Input => currentRods, Proof_in => (currentWaterSupply,currentTemperature)),
      Pre => currentPowerStatus = Off and ReactorCheck and currentRods = ControlRods'Last,
      Post => ReactorOn;
 
@@ -36,12 +37,15 @@ is
      Post => currentPowerStatus = Off;
 
    procedure removeControlRod with
-     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Proof_In => (currentWaterSupply,currentTemperature), Output => currentMaxElectricity, Input => currentPowerStatus),
+     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower),
+                Proof_In => (currentWaterSupply,currentTemperature),
+                Output => currentMaxElectricity, Input => currentPowerStatus),
      Pre => currentRods > ControlRods'First and ReactorCheck and ReactorOn,
      Post => currentRods = currentRods'Old-1 and ReactorCheck;
 
    procedure addControlRod with
-     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Output => currentMaxElectricity, Input => currentPowerStatus),
+     Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower),
+                Output => currentMaxElectricity, Input => currentPowerStatus),
      Pre => currentRods < ControlRods'Last,
      Post => currentRods = currentRods'Old+1;
 
