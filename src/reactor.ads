@@ -41,7 +41,7 @@ is
 
    procedure addControlRod with
      Global => (In_Out => (currentRods, currentTemperatureIncrease, currentReactorPower), Output => currentMaxElectricity, Input => currentPowerStatus),
-     Pre => currentRods < ControlRods'Last and ReactorOn,
+     Pre => currentRods < ControlRods'Last,
      Post => currentRods = currentRods'Old+1;
 
    procedure increaseTemperature (temp : out Integer) with

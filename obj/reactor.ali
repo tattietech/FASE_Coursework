@@ -11,11 +11,11 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U reactor%b		reactor.adb		5833dc89 NE OO PK
+U reactor%b		reactor.adb		0c7c3b29 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
-U reactor%s		reactor.ads		8e914f18 EE NE OO PK
+U reactor%s		reactor.ads		9fd23230 EE NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 
@@ -28,8 +28,8 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200503141120 20659a75 reactor%s
-D reactor.adb		20200503140100 d6a29391 reactor%b
+D reactor.ads		20200503144842 3126e75d reactor%s
+D reactor.adb		20200503150042 93ae0919 reactor%b
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -63,34 +63,34 @@ X 10 reactor.ads
 2K9*Reactor 73l5 73e12 11|2b14 110l5 110t12
 4I12*ControlRods{integer} 13r18 13r33 39r27 44r27 11|31r27
 5I12*WaterSupply{integer} 14r25 14r40 23r70 69r34 70r35
-6I12*Temperature{integer} 15r25 15r40 23r28 49r34 54r34 11|46r42 64r20 65r35
+6I12*Temperature{integer} 15r25 15r40 23r28 49r34 54r34 11|45r38 64r20 65r35
 . 77r20 78r35
 7I12*TemperatureIncrease{integer} 16r33 11|22r42
-8I12*ReactorPower{integer} 17r26 11|26r35 29r36 50r35
+8I12*ReactorPower{integer} 17r26 11|26r35 29r36 49r31
 9I12*Electricity{integer} 18r33 18r48 19r28 19r43 11|8r35 15r32 32r38 34r38
 . 37r35 54r35 56r35
 10E9*Power 10e26 12r25
-10n18*On{10E9} 26r29 34r34 11|7r32 21r31 43r31
+10n18*On{10E9} 26r29 34r34 11|7r32 21r31
 10n22*Off{10E9} 12r34 30r34 35r35 11|14r29
 12e4*currentPowerStatus{10E9} 26r8 29r28 30r13 33r27 34r13 35r14 38r186 43r133
-. 48r85 63r56 11|7m10 14m7 21r10 43r10
+. 48r85 63r56 11|7m10 14m7 21r10
 13i4*currentRods{4I12} 29r81 38r28 39r13 40r14 40r28 43r28 44r13 45r14 45r28
-. 11|6r10 8r54 20m7 20r22 31r13 32r57 44m10 44r25 54r54
+. 11|6r10 8r54 20m7 20r22 31r13 32r57 43m7 43r22 54r54
 14i4*currentWaterSupply{5I12} 23r49 29r107 38r104 53r56 63r27 64r13 65r14
 . 65r35 68r27 69r13 70r14 11|75r10 76r39 100m10 100r32 106m7
 15i4*currentTemperature{6I12} 23r7 29r126 38r123 48r27 49r13 50r14 50r36
 . 53r27 54r13 55r14 55r36 11|62r15 65m13 67m13 76r18 78m13 80m13 83m10 83r32
 16i4*currentTemperatureIncrease{7I12} 38r41 43r41 48r57 11|22r13 23m13 23r43
-. 46r13 47m13 47r43 62r36
+. 45r9 46m9 46r39 62r36
 17i4*currentReactorPower{8I12} 38r69 43r69 58r65 60r74 11|26r13 27m13 27r36
-. 29m13 50r13 51m13 51r36 89r43
+. 29m13 49r9 50m9 50r32 89r43
 18i4*currentElectricityProduced{9I12} 58r27 59r13 60r14 60r43 60r97 11|89r14
 . 91m9 93m9
 19i4*currentMaxElectricity{9I12} 29r48 33r57 38r154 43r101 58r86 59r43 60r126
 . 11|8m10 15m7 32m13 34m13 37m10 54m10 56m10 90r17 91r39
 20i4*InputConst{integer}
 22V13*ReactorCheck{boolean} 30s42 39s49 40s50
-25V13*ReactorOn{boolean} 39s66 44s48 64s40 11|63s10 99s10
+25V13*ReactorOn{boolean} 39s66 64s40 11|53s10 63s10 99s10
 28U14*startReactor 11|4b14 10l8 10t20
 32U14*stopReactor 11|12b14 16l8 16t19
 37U14*removeControlRod 11|18b14 39l8 39t24

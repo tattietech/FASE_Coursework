@@ -20,7 +20,7 @@ RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 RV MAX_TASKS=1+
 
-U main%b		main.adb		f962b698 NE OO SU
+U main%b		main.adb		8ed65606 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 Z ada.real_time%s	a-reatim.adb		a-reatim.ali
@@ -52,7 +52,7 @@ D i-c.ads		20190518041256 5421119b interfaces.c%s
 D i-cstrin.ads		20190518041256 341d0ddf interfaces.c.strings%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
 D main.adb		20200503142512 788bae10 main%b
-D reactor.ads		20200503141120 20659a75 reactor%s
+D reactor.ads		20200503144842 3126e75d reactor%s
 D system.ads		20190518041258 32a08138 system%s
 D s-atacco.ads		20190518041258 4c36d12f system.address_to_access_conversions%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
@@ -78,7 +78,7 @@ D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
 D s-win32.ads		20190518041256 90ecf4e6 system.win32%s
-D train.ads		20200503123128 0f785790 train%s
+D train.ads		20200503143846 698fca26 train%s
 G a e
 G c Z b b [main standard 5 11 none]
 G r c none [main standard 5 11 none] [addcontrolrod reactor 42 14 none]
@@ -94,7 +94,7 @@ G r c none [main standard 5 11 none] [decreasetemperature reactor 52 14 none]
 G r c none [main standard 5 11 none] [increaseelectricity reactor 57 14 none]
 G r c none [main standard 5 11 none] [decreasewatersupply reactor 62 14 none]
 G r c none [main standard 5 11 none] [increasespeed train 24 14 none]
-G r c none [main standard 5 11 none] [decreasespeed train 30 14 none]
+G r c none [main standard 5 11 none] [decreasespeed train 29 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 15|3r6 3r23
 X 9 a-textio.ads
@@ -136,7 +136,7 @@ X 30 s-stausa.ads
 203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
 268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
 X 42 train.ads
-2K9*Train 15|2w6 2r17 42|35e10
+2K9*Train 15|2w6 2r17 42|34e10
 4I12*Carriage{integer}
 5I12*Speed{integer}
 7i4*currentCarriages{4I12} 15|39r98
@@ -144,5 +144,5 @@ X 42 train.ads
 14U14*addCarriage 15|25s22
 19U14*removeCarriage 15|26s22
 24U14*increaseSpeed 15|78s10
-30U14*decreaseSpeed 15|79s10
+29U14*decreaseSpeed 15|79s10
 

@@ -19,7 +19,7 @@ is
    begin
       currentRods := currentRods-1;
       if currentPowerStatus = On then
-         if currentTemperatureIncrease > TemperatureIncrease'Last then
+         if currentTemperatureIncrease < TemperatureIncrease'Last then
             currentTemperatureIncrease := currentTemperatureIncrease+1;
          end if;
 
@@ -40,17 +40,17 @@ is
 
    procedure addControlRod is
    begin
-      if currentPowerStatus = On then
-         currentRods := currentRods+1;
+      currentRods := currentRods+1;
 
-         if currentTemperatureIncrease > Temperature'First then
-            currentTemperatureIncrease := currentTemperatureIncrease-1;
-         end if;
+     if currentTemperatureIncrease > Temperature'First then
+        currentTemperatureIncrease := currentTemperatureIncrease-1;
+     end if;
 
-         if currentReactorPower > ReactorPower'First then
-            currentReactorPower := currentReactorPower-1;
-         end if;
+     if currentReactorPower > ReactorPower'First then
+        currentReactorPower := currentReactorPower-1;
+      end if;
 
+      if ReactorOn then
          currentMaxElectricity := Electricity'Last / currentRods;
       else
          currentMaxElectricity := Electricity'First;

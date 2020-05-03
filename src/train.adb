@@ -27,17 +27,19 @@ is
    begin
       if currentElectricityProduced > currentMaxSpeed then
          currentSpeed := currentMaxSpeed;
-      else
+      elsif currentElectricityProduced > 0 then
          currentSpeed := currentElectricityProduced;
       end if;
    end increaseSpeed;
 
    procedure decreaseSpeed is
    begin
-      if currentSpeed >= 5 then
-         currentSpeed := currentSpeed-5;
-      else
-         currentSpeed := 0;
+      if currentPowerStatus = Off then
+         if currentSpeed >= 10 then
+            currentSpeed := currentSpeed-10;
+         else
+            currentSpeed := Speed'First;
+         end if;
       end if;
    end decreaseSpeed;
 end Train;

@@ -87,15 +87,15 @@
   </goal>
   <goal name="VC def.1" expl="postcondition">
   </goal>
+  <goal name="VC def.1" expl="precondition">
+  <proof prover="0"><result status="valid" steps="14"/></proof>
+  </goal>
   <goal name="VC def.2" expl="postcondition">
   <proof prover="0" obsolete="true"><result status="valid" steps="13"/></proof>
   </goal>
-  <goal name="VC def.3" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" steps="62"/></proof>
-  </goal>
-  <goal name="VC def.1" expl="precondition">
-  <proof prover="0"><result status="valid" steps="14"/></proof>
+  <goal name="VC def.3" expl="postcondition">
+  <proof prover="0"><result status="unknown" steps="47"/></proof>
+  <proof prover="1"><result status="unknown" steps="44"/></proof>
   </goal>
  </transf>
  </goal>

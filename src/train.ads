@@ -23,13 +23,12 @@ is
 
    procedure increaseSpeed with
      Global => (In_Out => currentSpeed, Input => (currentElectricityProduced, currentMaxSpeed)),
-     Pre => currentSpeed < Speed'Last,
-     Post => currentSpeed > currentSpeed'Old or currentSpeed <= currentMaxSpeed;
+     Pre => currentSpeed < Speed'Last;
 
 
    procedure decreaseSpeed with
-     Global => (In_Out => currentSpeed, Proof_In => currentPowerStatus),
-     Pre => currentPowerStatus = Off,
+     Global => (In_Out => currentSpeed, Input => currentPowerStatus),
+     Pre => currentSpeed > Speed'First and currentPowerStatus = Off,
      Post => currentSpeed < currentSpeed'Old or currentSpeed = Speed'First;
 
 end Train;

@@ -118,23 +118,23 @@
 <theory name="Reactor__addcontrolrod__subprogram_def">
  <goal name="VC def" expl="VC for def">
  <transf name="split_goal_wp_conj" >
-  <goal name="VC def.0" expl="precondition">
+  <goal name="VC def.0" expl="postcondition">
   </goal>
   <goal name="VC def.1" expl="postcondition">
   </goal>
-  <goal name="VC def.2" expl="postcondition">
-  </goal>
-  <goal name="VC def.3" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
+  <goal name="VC def.2" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="43"/></proof>
   </goal>
-  <goal name="VC def.4" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
+  <goal name="VC def.3" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="136"/></proof>
   </goal>
-  <goal name="VC def.5" expl="precondition" proved="true">
-  <proof prover="0"><result status="valid" steps="20"/></proof>
+  <goal name="VC def.4" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="19"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="136"/></proof>
+  </goal>
+  <goal name="VC def.5" expl="precondition">
   </goal>
   <goal name="VC def.6" expl="precondition" proved="true">
   <proof prover="0"><result status="valid" steps="5"/></proof>
@@ -145,7 +145,7 @@
   <goal name="VC def.8" expl="postcondition">
   </goal>
   <goal name="VC def.9" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" steps="125"/></proof>
+  <proof prover="0"><result status="valid" steps="5"/></proof>
   <proof prover="1" obsolete="true"><result status="unknown" steps="220"/></proof>
   </goal>
  </transf>
