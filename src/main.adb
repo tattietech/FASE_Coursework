@@ -7,6 +7,7 @@ procedure Main is
    Last : Natural;
 
    task EntryGuard;
+   task Display;
    task Heat;
    task Power;
    task Water;
@@ -23,23 +24,37 @@ procedure Main is
          when '3' => fillWaterSupply;
          when '4' => addCarriage;
          when '5' => removeCarriage;
+         when '6' => stopReactor;
+         when '7' => startReactor;
          when others => abort Heat; abort Power; abort Water; abort Speed; exit;
          end case;
       end loop;
       delay 0.1;
    end EntryGuard;
 
-  task body Heat is
+   task body Display is
    begin
       loop
-         increaseTemperature(InputConst);
-         decreaseTemperature(InputConst);
-         Put_Line("Rods: " & Integer'Image(currentRods) & " Water: " & Integer'Image(currentWaterSupply) & " Temp: " & Integer'Image(currentTemperature) & " Power " & Integer'Image(currentElectricityProduced)
-                & " Speed: " & Integer'Image(currentSpeed) & " Carriages " & Integer'Image(currentCarriages)
-                 );
-         delay 1.0;
+           Put_Line("Power Status : " & Boolean'Image(ReactorOn) & " | Rods: " & Integer'Image(currentRods) & " | Water: " & Integer'Image(currentWaterSupply) & " | Temp: " & Integer'Image(currentTemperature) & " | Power " & Integer'Image(currentElectricityProduced)
+                  & " | Speed: " & Integer'Image(currentSpeed) & " | Carriages " & Integer'Image(currentCarriages)
+                   );
+       delay 1.0;
       end loop;
-   end Heat;
+   end Display;
+
+    task body Heat is
+     begin
+        loop
+           increaseTemperature(InputConst);
+           decreaseTemperature(InputConst);
+           if currentTemperature = Temperature'Last then
+              stopReactor;
+              currentTemperature := Temperature'Last-1;
+              Put_Line("Reactor over heating, shutting down...");
+           end if;
+           delay 1.0;
+        end loop;
+     end Heat;
 
    task body Water is
    begin
@@ -61,7 +76,7 @@ procedure Main is
    begin
       loop
          increaseSpeed;
-         decreaseSpeed;
+         --decreaseSpeed;
          delay 1.0;
       end loop;
    end Speed;

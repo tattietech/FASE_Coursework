@@ -11,12 +11,12 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV SPARK_05
 
-U train%b		train.adb		134090a4 NE OO PK
+U train%b		train.adb		563209f0 NE OO PK
 W ada%s			ada.ads			ada.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W reactor%s		reactor.adb		reactor.ali
 
-U train%s		train.ads		e3d22db9 EE NE OO PK
+U train%s		train.ads		3aee6d49 EE NE OO PK
 W reactor%s		reactor.adb		reactor.ali
 
 D ada.ads		20190518041256 76789da1 ada%s
@@ -28,7 +28,7 @@ D a-textio.ads		20190518041258 aef4d56d ada.text_io%s
 D a-unccon.ads		20190518041256 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20190518041256 5ab55268 interfaces%s
 D i-cstrea.ads		20190518041256 e53d8b8e interfaces.c_streams%s
-D reactor.ads		20200502225018 464981c8 reactor%s
+D reactor.ads		20200503101038 99b6fd26 reactor%s
 D system.ads		20190518041258 32a08138 system%s
 D s-crtl.ads		20190518041256 0ebbdb71 system.crtl%s
 D s-exctab.ads		20190518041256 54135002 system.exception_table%s
@@ -42,33 +42,33 @@ D s-stoele.ads		20190518041258 2dc34a04 system.storage_elements%s
 D s-traent.ads		20190518041256 005bf670 system.traceback_entries%s
 D s-unstyp.ads		20190518041256 34867c83 system.unsigned_types%s
 D s-wchcon.ads		20190518041256 1b7d22d2 system.wch_con%s
-D train.ads		20200502233146 a59bac71 train%s
-D train.adb		20200502234602 5e666870 train%b
+D train.ads		20200503083314 a358906f train%s
+D train.adb		20200503083318 c228b1d4 train%b
 G a e
-G c Z s s [trainstopped train 10 13 none]
-G c Z s b [addcarriage train 13 14 none]
-G c Z s b [removecarriage train 18 14 none]
-G c Z s b [increasespeed train 23 14 none]
-G c Z s b [decreasespeed train 28 14 none]
+G c Z s s [trainstopped train 11 13 none]
+G c Z s b [addcarriage train 14 14 none]
+G c Z s b [removecarriage train 19 14 none]
+G c Z s b [increasespeed train 24 14 none]
 X 1 ada.ads
 16K9*Ada 20e8 25|2r6 2r23
 X 6 a-textio.ads
 57K13*Text_IO 727e16 25|2w10 2r27
 X 10 reactor.ads
-1K9*Reactor 55e12 24|1w6 1r19 25|1w6 1r19
-8I12*Electricity{integer}
-15i4*currentElectricityProduced{8I12} 24|24r50 25|18r23
+2K9*Reactor 71e12 24|1w6 1r19 25|1w6 1r19
+9I12*Electricity{integer}
+18i4*currentElectricityProduced{9I12} 24|25r51 25|24r10 27r26
 X 24 train.ads
-2K9*Train 33l5 33e10 25|3b14 27l5 27t10
+2K9*Train 29l5 29e10 25|3b14 30l5 30t10
 4I12*Carriage{integer} 7r23 7r35
-5I12*Speed{integer} 8r19 8r28 25r28 30r28
-7i4*currentCarriages{4I12} 14r27 15r13 16r14 16r33 19r27 20r13 21r14 21r33
-. 29r50 25|8m7 8r27 13m7 13r27 24r41
-8i4*currentSpeed{5I12} 11r8 14r57 19r57 24r27 25r13 26r14 26r30 29r27 30r13
-. 31r14 31r30 25|18m7 23r10 24m10 24r26
-10V13*TrainStopped{boolean} 15s39 16s56 20s38 21s56
-13U14*addCarriage 25|6b14 9l8 9t19
-18U14*removeCarriage 25|11b14 14l8 14t22
-23U14*increaseSpeed 25|16b14 19l8 19t21
-28U14*decreaseSpeed 25|21b14 26l8 26t21
+5I12*Speed{integer} 8r19 8r28 9r22 9r31 26r28 25|9r28 17r28
+7i4*currentCarriages{4I12} 15r28 16r13 17r14 17r33 20r28 21r13 22r14 22r33
+. 25|8m7 8r27 16m7 16r27
+8i4*currentSpeed{5I12} 12r8 15r76 20r76 25r27 26r13 27r14 27r30 25|25m10
+. 27m10
+9i4*currentMaxSpeed{5I12} 15r46 20r46 25r79 25|9r10 10m10 10r29 17r10 18m10
+. 18r29 24r39 25r26
+11V13*TrainStopped{boolean} 16s39 17s56 21s38 22s56
+14U14*addCarriage 25|6b14 12l8 12t19
+19U14*removeCarriage 25|14b14 20l8 20t22
+24U14*increaseSpeed 25|22b14 29l8 29t21
 

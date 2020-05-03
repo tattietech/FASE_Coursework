@@ -6,22 +6,25 @@ is
    procedure addCarriage is
    begin
       currentCarriages := currentCarriages+1;
+      if currentMaxSpeed >=Speed'First+10 then
+         currentMaxSpeed := currentMaxSpeed-10;
+      end if;
    end addCarriage;
 
    procedure removeCarriage is
    begin
       currentCarriages := currentCarriages-1;
+      if currentMaxSpeed <=Speed'Last-10 then
+         currentMaxSpeed := currentMaxSpeed+10;
+      end if;
    end removeCarriage;
 
    procedure increaseSpeed is
    begin
-      currentSpeed := currentElectricityProduced*2;
-   end increaseSpeed;
-
-   procedure decreaseSpeed is
-   begin
-      if currentSpeed > 1 then
-         currentSpeed := currentSpeed - currentCarriages;
+      if currentElectricityProduced > currentMaxSpeed then
+         currentSpeed := currentMaxSpeed;
+      else
+         currentSpeed := currentElectricityProduced;
       end if;
-   end decreaseSpeed;
+   end increaseSpeed;
 end Train;

@@ -1788,7 +1788,143 @@ module Standard__universal_integer__rep
 
 end
 
-(* Module for axiomatizing type "controlrods" defined at reactor.ads:3, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
+module Ada__text_io__TcountB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type tcountB =
+  < range -2147483648 2147483647 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (( -2147483648) : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (2147483647 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = tcountB, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type tcountB__ref =
+  { mutable tcountB__content : tcountB }
+ 
+ function tcountB__ref_tcountB__content__projection 
+   (a : tcountB__ref) : tcountB =
+  a.tcountB__content
+ 
+ meta "model_projection" function tcountB__ref_tcountB__content__projection
+ 
+ meta "inline:no" function tcountB__ref_tcountB__content__projection
+ 
+ val tcountB__havoc 
+   (x : tcountB__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
+module Ada__text_io__TcountB__rep
+ use        Ada__text_io__TcountB as Ada__text_io__TcountB
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Ada__text_io__TcountB.tcountB) : int =
+  (Ada__text_io__TcountB.tcountB'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Ada__text_io__TcountB.tcountB, 
+ predicate in_range = Ada__text_io__TcountB.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
+module Ada__text_io__count
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type count =
+  < range 0 2147483647 >
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (2147483647 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = count, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type count__ref =
+  { mutable count__content : count }
+ 
+ function count__ref_count__content__projection 
+   (a : count__ref) : count =
+  a.count__content
+ 
+ meta "model_projection" function count__ref_count__content__projection
+ 
+ meta "inline:no" function count__ref_count__content__projection
+ 
+ val count__havoc 
+   (x : count__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Translate_Type *)
+module Ada__text_io__count__rep
+ use        Ada__text_io__count as Ada__text_io__count
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ function to_rep 
+   (x : Ada__text_io__count.count) : int =
+  (Ada__text_io__count.count'int x)
+ 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Ada__text_io__count.count, 
+ predicate in_range = Ada__text_io__count.in_range, 
+ function to_rep = to_rep
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+
+(* Module for axiomatizing type "controlrods" defined at reactor.ads:4, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__controlrods
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -1835,7 +1971,7 @@ module Reactor__controlrods
 
 end
 
-(* Module defining to_rep/of_rep for type "controlrods" defined at reactor.ads:3, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "controlrods" defined at reactor.ads:4, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__controlrods__rep
  use        Reactor__controlrods as Reactor__controlrods
  use        "_gnatprove_standard".Main
@@ -1856,7 +1992,7 @@ module Reactor__controlrods__rep
 
 end
 
-(* Module for axiomatizing type "watersupply" defined at reactor.ads:4, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "watersupply" defined at reactor.ads:5, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__watersupply
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -1903,7 +2039,7 @@ module Reactor__watersupply
 
 end
 
-(* Module defining to_rep/of_rep for type "watersupply" defined at reactor.ads:4, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "watersupply" defined at reactor.ads:5, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__watersupply__rep
  use        Reactor__watersupply as Reactor__watersupply
  use        "_gnatprove_standard".Main
@@ -1924,7 +2060,7 @@ module Reactor__watersupply__rep
 
 end
 
-(* Module for axiomatizing type "temperature" defined at reactor.ads:5, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "temperature" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__temperature
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -1971,7 +2107,7 @@ module Reactor__temperature
 
 end
 
-(* Module defining to_rep/of_rep for type "temperature" defined at reactor.ads:5, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "temperature" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__temperature__rep
  use        Reactor__temperature as Reactor__temperature
  use        "_gnatprove_standard".Main
@@ -1992,7 +2128,7 @@ module Reactor__temperature__rep
 
 end
 
-(* Module for axiomatizing type "temperatureincrease" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "temperatureincrease" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__temperatureincrease
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2039,7 +2175,7 @@ module Reactor__temperatureincrease
 
 end
 
-(* Module defining to_rep/of_rep for type "temperatureincrease" defined at reactor.ads:6, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "temperatureincrease" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__temperatureincrease__rep
  use        Reactor__temperatureincrease as Reactor__temperatureincrease
  use        "_gnatprove_standard".Main
@@ -2060,7 +2196,7 @@ module Reactor__temperatureincrease__rep
 
 end
 
-(* Module for axiomatizing type "reactorpower" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "reactorpower" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__reactorpower
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2107,7 +2243,7 @@ module Reactor__reactorpower
 
 end
 
-(* Module defining to_rep/of_rep for type "reactorpower" defined at reactor.ads:7, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "reactorpower" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__reactorpower__rep
  use        Reactor__reactorpower as Reactor__reactorpower
  use        "_gnatprove_standard".Main
@@ -2128,14 +2264,14 @@ module Reactor__reactorpower__rep
 
 end
 
-(* Module for axiomatizing type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
+(* Module for axiomatizing type "electricity" defined at reactor.ads:9, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__electricity
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
 
  type electricity =
-  < range 0 100 >
+  < range 0 200 >
  
  val constant first 
    : int
@@ -2143,7 +2279,7 @@ module Reactor__electricity
  
  val constant last 
    : int
-  ensures { result =  (100 : int) }
+  ensures { result =  (200 : int) }
  
  predicate in_range 
    (x : int) =
@@ -2175,7 +2311,7 @@ module Reactor__electricity
 
 end
 
-(* Module defining to_rep/of_rep for type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Translate_Type *)
+(* Module defining to_rep/of_rep for type "electricity" defined at reactor.ads:9, created in Gnat2Why.Types.Translate_Type *)
 module Reactor__electricity__rep
  use        Reactor__electricity as Reactor__electricity
  use        "_gnatprove_standard".Main
@@ -2195,12 +2331,74 @@ module Reactor__electricity__rep
  meta "inline:no" function to_rep
 
 end
-(* Module for defining a ref holding the value of variable "currentrods" defined at reactor.ads:10, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__currentrods
+
+(* Module for axiomatizing type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__power
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+
+ type power 
+ 
+ val constant first 
+   : int
+  ensures { result =  (0 : int) }
+ 
+ val constant last 
+   : int
+  ensures { result =  (1 : int) }
+ 
+ predicate in_range 
+   (x : int) =
+  ( (first <= x) /\ (x <= last) )
+ val in_range 
+   (x : int) : bool
+  ensures { result <-> in_range (x : int) }
+ 
+ clone export "ada__model".Static_Discrete with axiom .,
+ type t = power, 
+ function first = first, 
+ function last = last, 
+ predicate in_range = in_range
+ 
+ type power__ref =
+  { mutable power__content : power }
+ 
+ function power__ref_power__content__projection 
+   (a : power__ref) : power =
+  a.power__content
+ 
+ meta "model_projection" function power__ref_power__content__projection
+ 
+ meta "inline:no" function power__ref_power__content__projection
+ 
+ val power__havoc 
+   (x : power__ref) : unit
+  writes {x}
+
+end
+
+(* Module defining to_rep/of_rep for type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Translate_Type *)
+module Reactor__power__rep
+ use        Reactor__power as Reactor__power
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentrods [#"reactor.ads" 10 0 0][@name:currentRods] [@model_projected] [@model_trace:2619]  : int__ref 
+ clone export "ada__model".Rep_Proj_Int with axiom .,
+ type t = Reactor__power.power, 
+ predicate in_range = Reactor__power.in_range
+ 
+ meta "model_projection" function to_rep
+ 
+ meta "inline:no" function to_rep
+
+end
+(* Module for defining a ref holding the value of variable "currentpowerstatus" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__currentpowerstatus
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val currentpowerstatus [#"reactor.ads" 12 0 0][@name:currentPowerStatus] [@model_projected] [@model_trace:2737]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2208,7 +2406,28 @@ module Reactor__currentrods
 
 end
 
-(* Module giving an empty axiom for the entity "currentrods" defined at reactor.ads:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentpowerstatus" defined at reactor.ads:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Reactor__currentpowerstatus___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for defining a ref holding the value of variable "currentrods" defined at reactor.ads:13, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__currentrods
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val currentrods [#"reactor.ads" 13 0 0][@name:currentRods] [@model_projected] [@model_trace:2747]  : int__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "currentrods" defined at reactor.ads:13, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currentrods___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2216,12 +2435,12 @@ module Reactor__currentrods___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currentwatersupply" defined at reactor.ads:11, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currentwatersupply" defined at reactor.ads:14, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currentwatersupply
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentwatersupply [#"reactor.ads" 11 0 0][@model_trace:2631] [@name:currentWaterSupply] [@model_projected]  : int__ref 
+ val currentwatersupply [#"reactor.ads" 14 0 0][@model_trace:2759] [@name:currentWaterSupply] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2229,7 +2448,7 @@ module Reactor__currentwatersupply
 
 end
 
-(* Module giving an empty axiom for the entity "currentwatersupply" defined at reactor.ads:11, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentwatersupply" defined at reactor.ads:14, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currentwatersupply___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2237,12 +2456,12 @@ module Reactor__currentwatersupply___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currenttemperature" defined at reactor.ads:12, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currenttemperature" defined at reactor.ads:15, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currenttemperature
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currenttemperature [#"reactor.ads" 12 0 0][@name:currentTemperature] [@model_projected] [@model_trace:2643]  : int__ref 
+ val currenttemperature [#"reactor.ads" 15 0 0][@name:currentTemperature] [@model_projected] [@model_trace:2771]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2250,7 +2469,7 @@ module Reactor__currenttemperature
 
 end
 
-(* Module giving an empty axiom for the entity "currenttemperature" defined at reactor.ads:12, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currenttemperature" defined at reactor.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currenttemperature___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2258,12 +2477,12 @@ module Reactor__currenttemperature___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currenttemperatureincrease" defined at reactor.ads:13, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currenttemperatureincrease" defined at reactor.ads:16, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currenttemperatureincrease
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currenttemperatureincrease [#"reactor.ads" 13 0 0][@model_projected] [@model_trace:2655] [@name:currentTemperatureIncrease]  : int__ref 
+ val currenttemperatureincrease [#"reactor.ads" 16 0 0][@model_trace:2783] [@model_projected] [@name:currentTemperatureIncrease]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2271,7 +2490,7 @@ module Reactor__currenttemperatureincrease
 
 end
 
-(* Module giving an empty axiom for the entity "currenttemperatureincrease" defined at reactor.ads:13, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currenttemperatureincrease" defined at reactor.ads:16, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currenttemperatureincrease___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2279,12 +2498,12 @@ module Reactor__currenttemperatureincrease___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currentreactorpower" defined at reactor.ads:14, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currentreactorpower" defined at reactor.ads:17, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currentreactorpower
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentreactorpower [#"reactor.ads" 14 0 0][@name:currentReactorPower] [@model_projected] [@model_trace:2665]  : int__ref 
+ val currentreactorpower [#"reactor.ads" 17 0 0][@model_trace:2793] [@name:currentReactorPower] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2292,7 +2511,7 @@ module Reactor__currentreactorpower
 
 end
 
-(* Module giving an empty axiom for the entity "currentreactorpower" defined at reactor.ads:14, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentreactorpower" defined at reactor.ads:17, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currentreactorpower___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2300,12 +2519,12 @@ module Reactor__currentreactorpower___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "currentelectricityproduced" defined at reactor.ads:15, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "currentelectricityproduced" defined at reactor.ads:18, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__currentelectricityproduced
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val currentelectricityproduced [#"reactor.ads" 15 0 0][@model_trace:2675] [@name:currentElectricityProduced] [@model_projected]  : int__ref 
+ val currentelectricityproduced [#"reactor.ads" 18 0 0][@model_trace:2803] [@name:currentElectricityProduced] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2313,7 +2532,7 @@ module Reactor__currentelectricityproduced
 
 end
 
-(* Module giving an empty axiom for the entity "currentelectricityproduced" defined at reactor.ads:15, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentelectricityproduced" defined at reactor.ads:18, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__currentelectricityproduced___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2321,12 +2540,12 @@ module Reactor__currentelectricityproduced___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "inputconst" defined at reactor.ads:16, created in Gnat2Why.Decls.Translate_Variable *)
-module Reactor__inputconst
+(* Module for defining a ref holding the value of variable "currentmaxelectricity" defined at reactor.ads:19, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__currentmaxelectricity
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val inputconst [#"reactor.ads" 16 0 0][@model_projected] [@name:InputConst] [@model_trace:2687]  : int__ref 
+ val currentmaxelectricity [#"reactor.ads" 19 0 0][@model_projected] [@name:currentMaxElectricity] [@model_trace:2815]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2334,7 +2553,28 @@ module Reactor__inputconst
 
 end
 
-(* Module giving an empty axiom for the entity "inputconst" defined at reactor.ads:16, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "currentmaxelectricity" defined at reactor.ads:19, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Reactor__currentmaxelectricity___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for defining a ref holding the value of variable "inputconst" defined at reactor.ads:20, created in Gnat2Why.Decls.Translate_Variable *)
+module Reactor__inputconst
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val inputconst [#"reactor.ads" 20 0 0][@model_projected] [@model_trace:2827] [@name:InputConst]  : int__ref 
+ 
+ val constant attr__ATTRIBUTE_ADDRESS 
+   : int
+
+
+end
+
+(* Module giving an empty axiom for the entity "inputconst" defined at reactor.ads:20, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__inputconst___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2342,12 +2582,12 @@ module Reactor__inputconst___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "temp" defined at reactor.ads:31, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "temp" defined at reactor.ads:47, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__increasetemperature__temp
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val temp [#"reactor.ads" 31 0 0][@name:temp] [@model_projected] [@model_trace:2812]  : int__ref 
+ val temp [#"reactor.ads" 47 0 0][@name:temp] [@model_projected] [@model_trace:3035]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2355,7 +2595,7 @@ module Reactor__increasetemperature__temp
 
 end
 
-(* Module giving an empty axiom for the entity "temp" defined at reactor.ads:31, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "temp" defined at reactor.ads:47, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__increasetemperature__temp___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2363,12 +2603,12 @@ module Reactor__increasetemperature__temp___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "temp" defined at reactor.ads:36, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "temp" defined at reactor.ads:52, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__decreasetemperature__temp
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val temp [#"reactor.ads" 36 0 0][@name:temp] [@model_projected] [@model_trace:2853]  : int__ref 
+ val temp [#"reactor.ads" 52 0 0][@name:temp] [@model_projected] [@model_trace:3078]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2376,7 +2616,7 @@ module Reactor__decreasetemperature__temp
 
 end
 
-(* Module giving an empty axiom for the entity "temp" defined at reactor.ads:36, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "temp" defined at reactor.ads:52, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__decreasetemperature__temp___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2384,12 +2624,12 @@ module Reactor__decreasetemperature__temp___axiom
 
 end
 
-(* Module for defining a ref holding the value of variable "elec" defined at reactor.ads:41, created in Gnat2Why.Decls.Translate_Variable *)
+(* Module for defining a ref holding the value of variable "elec" defined at reactor.ads:57, created in Gnat2Why.Decls.Translate_Variable *)
 module Reactor__increaseelectricity__elec
  use        "_gnatprove_standard".Main
  use        "int".Int
 
- val elec [#"reactor.ads" 41 0 0][@name:elec] [@model_projected] [@model_trace:2894]  : int__ref 
+ val elec [#"reactor.ads" 57 0 0][@model_trace:3119] [@name:elec] [@model_projected]  : int__ref 
  
  val constant attr__ATTRIBUTE_ADDRESS 
    : int
@@ -2397,11 +2637,74 @@ module Reactor__increaseelectricity__elec
 
 end
 
-(* Module giving an empty axiom for the entity "elec" defined at reactor.ads:41, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+(* Module giving an empty axiom for the entity "elec" defined at reactor.ads:57, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
 module Reactor__increaseelectricity__elec___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
 
+
+end
+
+(* Module declaring the external object "ada__text_io__standard_in," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__standard_in
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val standard_in  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__file_system," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__file_system
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val file_system  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__standard_out," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__standard_out
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val standard_out  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__standard_err," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__standard_err
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val standard_err  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__current_in," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__current_in
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val current_in  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__current_out," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__current_out
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val current_out  : Main.__private__ref 
+
+end
+
+(* Module declaring the external object "ada__text_io__current_err," created in Gnat2Why.Decls.Translate_External_Object *)
+module Ada__text_io__current_err
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val current_err  : Main.__private__ref 
 
 end
 (* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
@@ -2915,7 +3218,35 @@ module Standard__universal_integer___axiom
 
 end
 
-(* Module for possibly declaring a logic function for "reactorcheck" defined at reactor.ads:18, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Ada__text_io__line_length__2
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+
+ val function line_length__2 
+   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
+ 
+ val predicate line_length__2__function_guard 
+   (temp___result_154 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+
+end
+
+(* Module for possibly declaring a logic function for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Ada__text_io__page_length__2
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+
+ val function page_length__2 
+   (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private) : int
+ 
+ val predicate page_length__2__function_guard 
+   (temp___result_155 : int) (ada__text_io__standard_in : Main.__private) (ada__text_io__file_system : Main.__private) (ada__text_io__standard_out : Main.__private) (ada__text_io__standard_err : Main.__private) (ada__text_io__current_in : Main.__private) (ada__text_io__current_out : Main.__private) (ada__text_io__current_err : Main.__private)
+
+end
+
+(* Module for possibly declaring a logic function for "reactorcheck" defined at reactor.ads:22, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__reactorcheck
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2924,11 +3255,40 @@ module Reactor__reactorcheck
    (reactor__currentwatersupply : int) (reactor__currenttemperature : int) : bool
  
  val predicate reactorcheck__function_guard 
-   (temp___result_154 : bool) (reactor__currentwatersupply : int) (reactor__currenttemperature : int)
+   (temp___result_156 : bool) (reactor__currentwatersupply : int) (reactor__currenttemperature : int)
 
 end
 
-(* Module for possibly declaring a logic function for "removecontrolrod" defined at reactor.ads:21, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "reactoron" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Reactor__reactoron
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+ val function reactoron 
+   (reactor__currentpowerstatus : int) : bool
+ 
+ val predicate reactoron__function_guard 
+   (temp___result_157 : bool) (reactor__currentpowerstatus : int)
+
+end
+
+(* Module for possibly declaring a logic function for "startreactor" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Reactor__startreactor
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "stopreactor" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Reactor__stopreactor
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module for possibly declaring a logic function for "removecontrolrod" defined at reactor.ads:37, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__removecontrolrod
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2936,7 +3296,7 @@ module Reactor__removecontrolrod
 
 end
 
-(* Module for possibly declaring a logic function for "addcontrolrod" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "addcontrolrod" defined at reactor.ads:42, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__addcontrolrod
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2944,7 +3304,7 @@ module Reactor__addcontrolrod
 
 end
 
-(* Module for possibly declaring a logic function for "increasetemperature" defined at reactor.ads:31, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "increasetemperature" defined at reactor.ads:47, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__increasetemperature
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2952,7 +3312,7 @@ module Reactor__increasetemperature
 
 end
 
-(* Module for possibly declaring a logic function for "decreasetemperature" defined at reactor.ads:36, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "decreasetemperature" defined at reactor.ads:52, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__decreasetemperature
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2960,7 +3320,7 @@ module Reactor__decreasetemperature
 
 end
 
-(* Module for possibly declaring a logic function for "increaseelectricity" defined at reactor.ads:41, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "increaseelectricity" defined at reactor.ads:57, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__increaseelectricity
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2968,7 +3328,7 @@ module Reactor__increaseelectricity
 
 end
 
-(* Module for possibly declaring a logic function for "decreasewatersupply" defined at reactor.ads:46, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "decreasewatersupply" defined at reactor.ads:62, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__decreasewatersupply
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2976,7 +3336,7 @@ module Reactor__decreasewatersupply
 
 end
 
-(* Module for possibly declaring a logic function for "fillwatersupply" defined at reactor.ads:51, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+(* Module for possibly declaring a logic function for "fillwatersupply" defined at reactor.ads:67, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
 module Reactor__fillwatersupply
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2984,7 +3344,39 @@ module Reactor__fillwatersupply
 
 end
 
-(* Module giving axioms for type "controlrods" defined at reactor.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "TcountB" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Ada__text_io__TcountB___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+
+
+end
+
+(* Module giving axioms for type "count" defined at a-textio.ads:77, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Ada__text_io__count___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Ada__text_io__count as Ada__text_io__count
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) =
+  (if (( temp___is_init_158 \/ (Ada__text_io__count.first <= Ada__text_io__count.last) )) then (
+   (Ada__text_io__count.dynamic_property Ada__text_io__count.first Ada__text_io__count.last temp___expr_162)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_162 : int) (temp___is_init_158 : bool) (temp___skip_constant_159 : bool) (temp___do_toplevel_160 : bool) (temp___do_typ_inv_161 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_163 : int) (temp___skip_top_level_164 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_163 : int) (temp___skip_top_level_164 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_163 : int) (temp___skip_top_level_164 : bool) }
+
+end
+
+(* Module giving axioms for type "controlrods" defined at reactor.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__controlrods___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -2992,23 +3384,23 @@ module Reactor__controlrods___axiom
  use        Reactor__controlrods as Reactor__controlrods
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) =
-  (if (( temp___is_init_155 \/ (Reactor__controlrods.first <= Reactor__controlrods.last) )) then (
-   (Reactor__controlrods.dynamic_property Reactor__controlrods.first Reactor__controlrods.last temp___expr_159)) else true)
+   (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) =
+  (if (( temp___is_init_165 \/ (Reactor__controlrods.first <= Reactor__controlrods.last) )) then (
+   (Reactor__controlrods.dynamic_property Reactor__controlrods.first Reactor__controlrods.last temp___expr_169)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_159 : int) (temp___is_init_155 : bool) (temp___skip_constant_156 : bool) (temp___do_toplevel_157 : bool) (temp___do_typ_inv_158 : bool) }
+   (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_169 : int) (temp___is_init_165 : bool) (temp___skip_constant_166 : bool) (temp___do_toplevel_167 : bool) (temp___do_typ_inv_168 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_160 : int) (temp___skip_top_level_161 : bool) =
+   (temp___expr_170 : int) (temp___skip_top_level_171 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_160 : int) (temp___skip_top_level_161 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_160 : int) (temp___skip_top_level_161 : bool) }
+   (temp___expr_170 : int) (temp___skip_top_level_171 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_170 : int) (temp___skip_top_level_171 : bool) }
 
 end
 
-(* Module giving axioms for type "watersupply" defined at reactor.ads:4, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "watersupply" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__watersupply___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3016,23 +3408,23 @@ module Reactor__watersupply___axiom
  use        Reactor__watersupply as Reactor__watersupply
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) =
-  (if (( temp___is_init_162 \/ (Reactor__watersupply.first <= Reactor__watersupply.last) )) then (
-   (Reactor__watersupply.dynamic_property Reactor__watersupply.first Reactor__watersupply.last temp___expr_166)) else true)
+   (temp___expr_176 : int) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) =
+  (if (( temp___is_init_172 \/ (Reactor__watersupply.first <= Reactor__watersupply.last) )) then (
+   (Reactor__watersupply.dynamic_property Reactor__watersupply.first Reactor__watersupply.last temp___expr_176)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_166 : int) (temp___is_init_162 : bool) (temp___skip_constant_163 : bool) (temp___do_toplevel_164 : bool) (temp___do_typ_inv_165 : bool) }
+   (temp___expr_176 : int) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_176 : int) (temp___is_init_172 : bool) (temp___skip_constant_173 : bool) (temp___do_toplevel_174 : bool) (temp___do_typ_inv_175 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_167 : int) (temp___skip_top_level_168 : bool) =
+   (temp___expr_177 : int) (temp___skip_top_level_178 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_167 : int) (temp___skip_top_level_168 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_167 : int) (temp___skip_top_level_168 : bool) }
+   (temp___expr_177 : int) (temp___skip_top_level_178 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_177 : int) (temp___skip_top_level_178 : bool) }
 
 end
 
-(* Module giving axioms for type "temperature" defined at reactor.ads:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "temperature" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__temperature___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3040,23 +3432,23 @@ module Reactor__temperature___axiom
  use        Reactor__temperature as Reactor__temperature
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_173 : int) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) =
-  (if (( temp___is_init_169 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
-   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_173)) else true)
+   (temp___expr_183 : int) (temp___is_init_179 : bool) (temp___skip_constant_180 : bool) (temp___do_toplevel_181 : bool) (temp___do_typ_inv_182 : bool) =
+  (if (( temp___is_init_179 \/ (Reactor__temperature.first <= Reactor__temperature.last) )) then (
+   (Reactor__temperature.dynamic_property Reactor__temperature.first Reactor__temperature.last temp___expr_183)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_173 : int) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_173 : int) (temp___is_init_169 : bool) (temp___skip_constant_170 : bool) (temp___do_toplevel_171 : bool) (temp___do_typ_inv_172 : bool) }
+   (temp___expr_183 : int) (temp___is_init_179 : bool) (temp___skip_constant_180 : bool) (temp___do_toplevel_181 : bool) (temp___do_typ_inv_182 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_183 : int) (temp___is_init_179 : bool) (temp___skip_constant_180 : bool) (temp___do_toplevel_181 : bool) (temp___do_typ_inv_182 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_174 : int) (temp___skip_top_level_175 : bool) =
+   (temp___expr_184 : int) (temp___skip_top_level_185 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_174 : int) (temp___skip_top_level_175 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_174 : int) (temp___skip_top_level_175 : bool) }
+   (temp___expr_184 : int) (temp___skip_top_level_185 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_184 : int) (temp___skip_top_level_185 : bool) }
 
 end
 
-(* Module giving axioms for type "temperatureincrease" defined at reactor.ads:6, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "temperatureincrease" defined at reactor.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__temperatureincrease___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3064,23 +3456,23 @@ module Reactor__temperatureincrease___axiom
  use        Reactor__temperatureincrease as Reactor__temperatureincrease
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_180 : int) (temp___is_init_176 : bool) (temp___skip_constant_177 : bool) (temp___do_toplevel_178 : bool) (temp___do_typ_inv_179 : bool) =
-  (if (( temp___is_init_176 \/ (Reactor__temperatureincrease.first <= Reactor__temperatureincrease.last) )) then (
-   (Reactor__temperatureincrease.dynamic_property Reactor__temperatureincrease.first Reactor__temperatureincrease.last temp___expr_180)) else true)
+   (temp___expr_190 : int) (temp___is_init_186 : bool) (temp___skip_constant_187 : bool) (temp___do_toplevel_188 : bool) (temp___do_typ_inv_189 : bool) =
+  (if (( temp___is_init_186 \/ (Reactor__temperatureincrease.first <= Reactor__temperatureincrease.last) )) then (
+   (Reactor__temperatureincrease.dynamic_property Reactor__temperatureincrease.first Reactor__temperatureincrease.last temp___expr_190)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_180 : int) (temp___is_init_176 : bool) (temp___skip_constant_177 : bool) (temp___do_toplevel_178 : bool) (temp___do_typ_inv_179 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_180 : int) (temp___is_init_176 : bool) (temp___skip_constant_177 : bool) (temp___do_toplevel_178 : bool) (temp___do_typ_inv_179 : bool) }
+   (temp___expr_190 : int) (temp___is_init_186 : bool) (temp___skip_constant_187 : bool) (temp___do_toplevel_188 : bool) (temp___do_typ_inv_189 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_190 : int) (temp___is_init_186 : bool) (temp___skip_constant_187 : bool) (temp___do_toplevel_188 : bool) (temp___do_typ_inv_189 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_181 : int) (temp___skip_top_level_182 : bool) =
+   (temp___expr_191 : int) (temp___skip_top_level_192 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_181 : int) (temp___skip_top_level_182 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_181 : int) (temp___skip_top_level_182 : bool) }
+   (temp___expr_191 : int) (temp___skip_top_level_192 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_191 : int) (temp___skip_top_level_192 : bool) }
 
 end
 
-(* Module giving axioms for type "reactorpower" defined at reactor.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "reactorpower" defined at reactor.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__reactorpower___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3088,23 +3480,23 @@ module Reactor__reactorpower___axiom
  use        Reactor__reactorpower as Reactor__reactorpower
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_187 : int) (temp___is_init_183 : bool) (temp___skip_constant_184 : bool) (temp___do_toplevel_185 : bool) (temp___do_typ_inv_186 : bool) =
-  (if (( temp___is_init_183 \/ (Reactor__reactorpower.first <= Reactor__reactorpower.last) )) then (
-   (Reactor__reactorpower.dynamic_property Reactor__reactorpower.first Reactor__reactorpower.last temp___expr_187)) else true)
+   (temp___expr_197 : int) (temp___is_init_193 : bool) (temp___skip_constant_194 : bool) (temp___do_toplevel_195 : bool) (temp___do_typ_inv_196 : bool) =
+  (if (( temp___is_init_193 \/ (Reactor__reactorpower.first <= Reactor__reactorpower.last) )) then (
+   (Reactor__reactorpower.dynamic_property Reactor__reactorpower.first Reactor__reactorpower.last temp___expr_197)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_187 : int) (temp___is_init_183 : bool) (temp___skip_constant_184 : bool) (temp___do_toplevel_185 : bool) (temp___do_typ_inv_186 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_187 : int) (temp___is_init_183 : bool) (temp___skip_constant_184 : bool) (temp___do_toplevel_185 : bool) (temp___do_typ_inv_186 : bool) }
+   (temp___expr_197 : int) (temp___is_init_193 : bool) (temp___skip_constant_194 : bool) (temp___do_toplevel_195 : bool) (temp___do_typ_inv_196 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_197 : int) (temp___is_init_193 : bool) (temp___skip_constant_194 : bool) (temp___do_toplevel_195 : bool) (temp___do_typ_inv_196 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_188 : int) (temp___skip_top_level_189 : bool) =
+   (temp___expr_198 : int) (temp___skip_top_level_199 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_188 : int) (temp___skip_top_level_189 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_188 : int) (temp___skip_top_level_189 : bool) }
+   (temp___expr_198 : int) (temp___skip_top_level_199 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_198 : int) (temp___skip_top_level_199 : bool) }
 
 end
 
-(* Module giving axioms for type "electricity" defined at reactor.ads:8, created in Gnat2Why.Types.Generate_Type_Completion *)
+(* Module giving axioms for type "electricity" defined at reactor.ads:9, created in Gnat2Why.Types.Generate_Type_Completion *)
 module Reactor__electricity___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3112,22 +3504,118 @@ module Reactor__electricity___axiom
  use        Reactor__electricity as Reactor__electricity
 
  predicate dynamic_invariant [@inline] 
-   (temp___expr_194 : int) (temp___is_init_190 : bool) (temp___skip_constant_191 : bool) (temp___do_toplevel_192 : bool) (temp___do_typ_inv_193 : bool) =
-  (if (( temp___is_init_190 \/ (Reactor__electricity.first <= Reactor__electricity.last) )) then (
-   (Reactor__electricity.dynamic_property Reactor__electricity.first Reactor__electricity.last temp___expr_194)) else true)
+   (temp___expr_204 : int) (temp___is_init_200 : bool) (temp___skip_constant_201 : bool) (temp___do_toplevel_202 : bool) (temp___do_typ_inv_203 : bool) =
+  (if (( temp___is_init_200 \/ (Reactor__electricity.first <= Reactor__electricity.last) )) then (
+   (Reactor__electricity.dynamic_property Reactor__electricity.first Reactor__electricity.last temp___expr_204)) else true)
  val dynamic_invariant [@inline] 
-   (temp___expr_194 : int) (temp___is_init_190 : bool) (temp___skip_constant_191 : bool) (temp___do_toplevel_192 : bool) (temp___do_typ_inv_193 : bool) : bool
-  ensures { result <-> dynamic_invariant (temp___expr_194 : int) (temp___is_init_190 : bool) (temp___skip_constant_191 : bool) (temp___do_toplevel_192 : bool) (temp___do_typ_inv_193 : bool) }
+   (temp___expr_204 : int) (temp___is_init_200 : bool) (temp___skip_constant_201 : bool) (temp___do_toplevel_202 : bool) (temp___do_typ_inv_203 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_204 : int) (temp___is_init_200 : bool) (temp___skip_constant_201 : bool) (temp___do_toplevel_202 : bool) (temp___do_typ_inv_203 : bool) }
  
  predicate default_initial_assumption [@inline] 
-   (temp___expr_195 : int) (temp___skip_top_level_196 : bool) =
+   (temp___expr_205 : int) (temp___skip_top_level_206 : bool) =
   true
  val default_initial_assumption [@inline] 
-   (temp___expr_195 : int) (temp___skip_top_level_196 : bool) : bool
-  ensures { result <-> default_initial_assumption (temp___expr_195 : int) (temp___skip_top_level_196 : bool) }
+   (temp___expr_205 : int) (temp___skip_top_level_206 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_205 : int) (temp___skip_top_level_206 : bool) }
 
 end
-(* Module giving a program function and a defining axiom for the expression function "reactorcheck" defined at reactor.ads:18, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+
+(* Module giving axioms for type "power" defined at reactor.ads:10, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Reactor__power___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__power as Reactor__power
+
+ predicate dynamic_invariant [@inline] 
+   (temp___expr_211 : int) (temp___is_init_207 : bool) (temp___skip_constant_208 : bool) (temp___do_toplevel_209 : bool) (temp___do_typ_inv_210 : bool) =
+  (if (( temp___is_init_207 \/ (Reactor__power.first <= Reactor__power.last) )) then (
+   (Reactor__power.dynamic_property Reactor__power.first Reactor__power.last temp___expr_211)) else true)
+ val dynamic_invariant [@inline] 
+   (temp___expr_211 : int) (temp___is_init_207 : bool) (temp___skip_constant_208 : bool) (temp___do_toplevel_209 : bool) (temp___do_typ_inv_210 : bool) : bool
+  ensures { result <-> dynamic_invariant (temp___expr_211 : int) (temp___is_init_207 : bool) (temp___skip_constant_208 : bool) (temp___do_toplevel_209 : bool) (temp___do_typ_inv_210 : bool) }
+ 
+ predicate default_initial_assumption [@inline] 
+   (temp___expr_212 : int) (temp___skip_top_level_213 : bool) =
+  true
+ val default_initial_assumption [@inline] 
+   (temp___expr_212 : int) (temp___skip_top_level_213 : bool) : bool
+  ensures { result <-> default_initial_assumption (temp___expr_212 : int) (temp___skip_top_level_213 : bool) }
+
+end
+(* Module for declaring a program function (and possibly an axiom) for "line_length__2" defined at a-textio.ads:245, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Ada__text_io__line_length__2___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
+ use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+
+ val line_length__2 
+   (__void_param : unit) : int
+  requires {  true }
+  ensures {  ( ( (result = (Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
+  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
+ 
+ axiom line_length__2__post_axiom :
+  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
+   ( true -> (let result = (Ada__text_io__line_length__2.line_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
+    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
+    ))
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "page_length__2" defined at a-textio.ads:251, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Ada__text_io__page_length__2___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
+ use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+
+ val page_length__2 
+   (__void_param : unit) : int
+  requires {  true }
+  ensures {  ( ( (result = (Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content)) /\ true )/\(Ada__text_io__count___axiom.dynamic_invariant result True False True True) ) }
+  reads {Ada__text_io__standard_in.standard_in, Ada__text_io__file_system.file_system, Ada__text_io__standard_out.standard_out, Ada__text_io__standard_err.standard_err, Ada__text_io__current_in.current_in, Ada__text_io__current_out.current_out, Ada__text_io__current_err.current_err}
+ 
+ axiom page_length__2__post_axiom :
+  (forall ada__text_io__standard_in   ada__text_io__file_system   ada__text_io__standard_out   ada__text_io__standard_err   ada__text_io__current_in   ada__text_io__current_out   ada__text_io__current_err   : Main.__private [(Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err)].
+   ( true -> (let result = (Ada__text_io__page_length__2.page_length__2 ada__text_io__standard_in ada__text_io__file_system ada__text_io__standard_out ada__text_io__standard_err ada__text_io__current_in ada__text_io__current_out ada__text_io__current_err) in (
+    ( ( true /\ (Ada__text_io__count___axiom.dynamic_invariant result True False True True) )/\true )))
+    ))
+
+end
+
+(* Module giving a program function and a defining axiom for the expression function "reactorcheck" defined at reactor.ads:22, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
 module Reactor__reactorcheck___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3159,7 +3647,80 @@ module Reactor__reactorcheck___axiom
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "removecontrolrod" defined at reactor.ads:21, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module giving a program function and a defining axiom for the expression function "reactoron" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+module Reactor__reactoron___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__reactoron as Reactor__reactoron
+ use        Reactor__power___axiom as Reactor__power___axiom
+
+ val reactoron 
+   (__void_param : unit) : bool
+  requires {  true }
+  ensures {  ( ( (result = (Reactor__reactoron.reactoron Reactor__currentpowerstatus.currentpowerstatus.int__content)) /\ (Reactor__reactoron.reactoron__function_guard result Reactor__currentpowerstatus.currentpowerstatus.int__content) )/\( (result = True) <-> (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) ) }
+  reads {Reactor__currentpowerstatus.currentpowerstatus}
+ 
+ axiom reactoron__post_axiom :
+  (forall reactor__currentpowerstatus   : int [(Reactor__reactoron.reactoron reactor__currentpowerstatus)].
+   ( (Reactor__power___axiom.dynamic_invariant reactor__currentpowerstatus True True True True) -> (let result = (Reactor__reactoron.reactoron reactor__currentpowerstatus) in (
+    (if ((Reactor__reactoron.reactoron__function_guard result reactor__currentpowerstatus)) then (
+     ( ( true /\ true )/\true )) else true)))
+    ))
+ 
+ axiom reactoron__def_axiom :
+  (forall reactor__currentpowerstatus   : int [(Reactor__reactoron.reactoron reactor__currentpowerstatus)].
+   ( (let result = (Reactor__reactoron.reactoron reactor__currentpowerstatus) in (
+    (Reactor__reactoron.reactoron__function_guard result reactor__currentpowerstatus)))
+    -> ( ((Reactor__reactoron.reactoron reactor__currentpowerstatus) = True) <-> (reactor__currentpowerstatus = (0 : int)) ) ))
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "startreactor" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Reactor__startreactor___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__currentrods as Reactor__currentrods
+ use        Reactor__currentwatersupply as Reactor__currentwatersupply
+ use        Reactor__currenttemperature as Reactor__currenttemperature
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__reactorcheck as Reactor__reactorcheck
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+
+ val startreactor 
+   (__void_param : unit) : unit
+  requires {  ( ( [@GP_Pretty_Ada:2898] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((epsilon temp___result_214 : bool.
+   ( (temp___result_214 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_214 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) }
+  ensures {  ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) ) }
+  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperature.currenttemperature, Reactor__currentpowerstatus.currentpowerstatus, Reactor__currentrods.currentrods}
+  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentpowerstatus.currentpowerstatus}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "stopreactor" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Reactor__stopreactor___axiom
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+
+ val stopreactor 
+   (__void_param : unit) : unit
+  requires {  ( [@GP_Pretty_Ada:18504] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18514] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True True True True) ) ) }
+  reads {Reactor__currentpowerstatus.currentpowerstatus}
+  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentpowerstatus.currentpowerstatus}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "removecontrolrod" defined at reactor.ads:37, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__removecontrolrod___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3169,23 +3730,25 @@ module Reactor__removecontrolrod___axiom
  use        Reactor__currenttemperature as Reactor__currenttemperature
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__reactorcheck as Reactor__reactorcheck
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
 
  val removecontrolrod 
    (__void_param : unit) : unit
-  requires {  ( ( ( ( [@GP_Pretty_Ada:2743] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2747] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2751] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2752] ((epsilon temp___result_197 : bool.
-   ( (temp___result_197 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_197 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) }
-  ensures {  ( ( ( [@GP_Pretty_Ada:2759] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2762] ((epsilon temp___result_198 : bool.
-   ( (temp___result_198 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_198 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) /\ ( ( (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
-  reads {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods, Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature}
-  writes {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  requires {  ( ( ( ( [@GP_Pretty_Ada:2963] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2967] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2971] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2972] ((epsilon temp___result_215 : bool.
+   ( (temp___result_215 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_215 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) }
+  ensures {  ( ( ( [@GP_Pretty_Ada:2979] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2982] ((epsilon temp___result_216 : bool.
+   ( (temp___result_216 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_216 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) /\ ( ( ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) ) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
+  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "addcontrolrod" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "addcontrolrod" defined at reactor.ads:42, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__addcontrolrod___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3193,39 +3756,42 @@ module Reactor__addcontrolrod___axiom
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
 
  val addcontrolrod 
    (__void_param : unit) : unit
-  requires {  ( ( ( [@GP_Pretty_Ada:2788] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:2792] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2796] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:3105] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) /\ ( ( (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
+  requires {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3015] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:3019] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18643] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) /\ ( ( ( (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True True True True) /\ (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True True True True) ) /\ (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True True True True) ) /\ (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True True True True) ) ) }
   reads {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
-  writes {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
+  writes {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentreactorpower.currentreactorpower, Reactor__currentrods.currentrods}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "increasetemperature" defined at reactor.ads:31, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "increasetemperature" defined at reactor.ads:47, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__increasetemperature___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        Standard__integer___axiom as Standard__integer___axiom
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currenttemperature as Reactor__currenttemperature
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
 
  val increasetemperature 
    (temp : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:3142] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:3154] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
-  reads {Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currenttemperature.currenttemperature}
+  requires {  ( [@GP_Pretty_Ada:18682] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18694] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
+  reads {Reactor__currenttemperature.currenttemperature, Reactor__currenttemperatureincrease.currenttemperatureincrease, Reactor__currentpowerstatus.currentpowerstatus}
   writes {Reactor__currenttemperature.currenttemperature, temp}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "decreasetemperature" defined at reactor.ads:36, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "decreasetemperature" defined at reactor.ads:52, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__decreasetemperature___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3237,14 +3803,14 @@ module Reactor__decreasetemperature___axiom
 
  val decreasetemperature 
    (temp : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:3191] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:3203] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
+  requires {  ( [@GP_Pretty_Ada:18731] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18743] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant temp.int__content True True True True) /\ (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True True True True) ) ) }
   reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currenttemperature.currenttemperature}
   writes {Reactor__currenttemperature.currenttemperature, temp}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "increaseelectricity" defined at reactor.ads:41, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "increaseelectricity" defined at reactor.ads:57, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__increaseelectricity___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3252,35 +3818,37 @@ module Reactor__increaseelectricity___axiom
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
 
  val increaseelectricity 
    (elec : int__ref) : unit
-  requires {  ( [@GP_Pretty_Ada:3240] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:3252] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant elec.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True True True True) ) ) }
-  reads {Reactor__currentreactorpower.currentreactorpower, Reactor__currentelectricityproduced.currentelectricityproduced}
+  requires {  ( [@GP_Pretty_Ada:18782] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18794] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) /\ ( (Standard__integer___axiom.dynamic_invariant elec.int__content True True True True) /\ (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True True True True) ) ) }
+  reads {Reactor__currentmaxelectricity.currentmaxelectricity, Reactor__currentreactorpower.currentreactorpower, Reactor__currentelectricityproduced.currentelectricityproduced}
   writes {Reactor__currentelectricityproduced.currentelectricityproduced, elec}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "decreasewatersupply" defined at reactor.ads:46, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "decreasewatersupply" defined at reactor.ads:62, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__decreasewatersupply___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
 
  val decreasewatersupply 
    (__void_param : unit) : unit
-  requires {  ( [@GP_Pretty_Ada:3286] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) }
-  ensures {  ( ( [@GP_Pretty_Ada:3298] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) /\ (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) ) }
-  reads {Reactor__currentwatersupply.currentwatersupply}
+  requires {  ( [@GP_Pretty_Ada:18831] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) }
+  ensures {  ( ( [@GP_Pretty_Ada:18843] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) /\ (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True True True True) ) }
+  reads {Reactor__currentwatersupply.currentwatersupply, Reactor__currentpowerstatus.currentpowerstatus}
   writes {Reactor__currentwatersupply.currentwatersupply}
 
 end
 
-(* Module for declaring a program function (and possibly an axiom) for "fillwatersupply" defined at reactor.ads:51, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+(* Module for declaring a program function (and possibly an axiom) for "fillwatersupply" defined at reactor.ads:67, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Reactor__fillwatersupply___axiom
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3295,18 +3863,23 @@ module Reactor__fillwatersupply___axiom
 
 end
 
-(* Module for checking absence of run-time errors and package initial condition on package elaboration of "reactor" defined at reactor.ads:1, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
+(* Module for checking absence of run-time errors and package initial condition on package elaboration of "reactor" defined at reactor.ads:2, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
 module Reactor__package_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Main as Main
  use        Standard__integer___axiom as Standard__integer___axiom
+ use        Ada__text_io__line_length__2 as Ada__text_io__line_length__2
+ use        Ada__text_io__page_length__2 as Ada__text_io__page_length__2
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__currenttemperature as Reactor__currenttemperature
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__inputconst as Reactor__inputconst
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
@@ -3314,6 +3887,35 @@ module Reactor__package_def
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
+ use        Ada__text_io__standard_in as Ada__text_io__standard_in
+ use        Ada__text_io__file_system as Ada__text_io__file_system
+ use        Ada__text_io__standard_out as Ada__text_io__standard_out
+ use        Ada__text_io__standard_err as Ada__text_io__standard_err
+ use        Ada__text_io__current_in as Ada__text_io__current_in
+ use        Ada__text_io__current_out as Ada__text_io__current_out
+ use        Ada__text_io__current_err as Ada__text_io__current_err
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
@@ -3321,82 +3923,107 @@ module Reactor__package_def
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
  use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
  use        Reactor__currenttemperatureincrease___axiom as Reactor__currenttemperatureincrease___axiom
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
  use        Reactor__currentelectricityproduced___axiom as Reactor__currentelectricityproduced___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
  use        Reactor__inputconst___axiom as Reactor__inputconst___axiom
+ use        Ada__text_io__count___axiom as Ada__text_io__count___axiom
+ use        Ada__text_io__line_length__2___axiom as Ada__text_io__line_length__2___axiom
+ use        Ada__text_io__page_length__2___axiom as Ada__text_io__page_length__2___axiom
 
- let def [#"reactor.ads" 1 0 0][@GP_Subp:reactor.ads:1] 
+ let def [#"reactor.ads" 2 0 0][@GP_Subp:reactor.ads:2] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 1 0 0] true }
+  requires { [#"reactor.ads" 2 0 0] true }
    = [@vc:divergent]
-  ( ();
-  ([#"reactor.ads" 1 0 0] ());
-  ([#"reactor.ads" 3 0 0] ());
+  ( [#"reactor.ads" 2 0 0] assume { [#"reactor.ads" 2 0 0] ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
+  ();
+  ([#"reactor.ads" 2 0 0] ());
   ([#"reactor.ads" 4 0 0] ());
   ([#"reactor.ads" 5 0 0] ());
   ([#"reactor.ads" 6 0 0] ());
   ([#"reactor.ads" 7 0 0] ());
   ([#"reactor.ads" 8 0 0] ());
-  ([#"reactor.ads" 10 0 0] ( [#"reactor.ads" 10 0 0] (Reactor__currentrods.currentrods.int__content <- ( (5 : int) ));
-  [#"reactor.ads" 10 0 0] assume { [#"reactor.ads" 10 0 0] (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) } ));
-  ([#"reactor.ads" 11 0 0] ( [#"reactor.ads" 11 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ));
-  [#"reactor.ads" 11 0 0] assume { [#"reactor.ads" 11 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) } ));
-  ([#"reactor.ads" 12 0 0] ( [#"reactor.ads" 12 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ));
-  [#"reactor.ads" 12 0 0] assume { [#"reactor.ads" 12 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) } ));
-  ([#"reactor.ads" 13 0 0] ( [#"reactor.ads" 13 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( (1 : int) ));
-  [#"reactor.ads" 13 0 0] assume { [#"reactor.ads" 13 0 0] (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) } ));
-  ([#"reactor.ads" 14 0 0] ( [#"reactor.ads" 14 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (1 : int) ));
-  [#"reactor.ads" 14 0 0] assume { [#"reactor.ads" 14 0 0] (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) } ));
-  ([#"reactor.ads" 15 0 0] ( [#"reactor.ads" 15 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( (0 : int) ));
-  [#"reactor.ads" 15 0 0] assume { [#"reactor.ads" 15 0 0] (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True False True True) } ));
-  ([#"reactor.ads" 16 0 0] ( [#"reactor.ads" 16 0 0] (Reactor__inputconst.inputconst.int__content <- ( (0 : int) ));
-  [#"reactor.ads" 16 0 0] assume { [#"reactor.ads" 16 0 0] (Standard__integer___axiom.dynamic_invariant Reactor__inputconst.inputconst.int__content True False True True) } ));
-  ([#"reactor.ads" 18 0 0] ());
-  ([#"reactor.ads" 21 0 0] ());
-  ([#"reactor.ads" 24 0 0] ());
-  ([#"reactor.ads" 23 0 0] ());
+  ([#"reactor.ads" 9 0 0] ());
+  ([#"reactor.ads" 10 0 0] ());
+  ([#"reactor.ads" 12 0 0] ());
+  ([#"reactor.ads" 12 0 0] ( [#"reactor.ads" 12 0 0] (Reactor__currentpowerstatus.currentpowerstatus.int__content <- ( (1 : int) ));
+  [#"reactor.ads" 12 0 0] assume { [#"reactor.ads" 12 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) } ));
+  ([#"reactor.ads" 13 0 0] ( [#"reactor.ads" 13 0 0] (Reactor__currentrods.currentrods.int__content <- ( (5 : int) ));
+  [#"reactor.ads" 13 0 0] assume { [#"reactor.ads" 13 0 0] (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) } ));
+  ([#"reactor.ads" 14 0 0] ( [#"reactor.ads" 14 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ));
+  [#"reactor.ads" 14 0 0] assume { [#"reactor.ads" 14 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) } ));
+  ([#"reactor.ads" 15 0 0] ( [#"reactor.ads" 15 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ));
+  [#"reactor.ads" 15 0 0] assume { [#"reactor.ads" 15 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) } ));
+  ([#"reactor.ads" 16 0 0] ( [#"reactor.ads" 16 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( (1 : int) ));
+  [#"reactor.ads" 16 0 0] assume { [#"reactor.ads" 16 0 0] (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) } ));
+  ([#"reactor.ads" 17 0 0] ( [#"reactor.ads" 17 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (1 : int) ));
+  [#"reactor.ads" 17 0 0] assume { [#"reactor.ads" 17 0 0] (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) } ));
+  ([#"reactor.ads" 18 0 0] ( [#"reactor.ads" 18 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( (0 : int) ));
+  [#"reactor.ads" 18 0 0] assume { [#"reactor.ads" 18 0 0] (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True False True True) } ));
+  ([#"reactor.ads" 19 0 0] ( [#"reactor.ads" 19 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (0 : int) ));
+  [#"reactor.ads" 19 0 0] assume { [#"reactor.ads" 19 0 0] (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True False True True) } ));
+  ([#"reactor.ads" 20 0 0] ( [#"reactor.ads" 20 0 0] (Reactor__inputconst.inputconst.int__content <- ( (0 : int) ));
+  [#"reactor.ads" 20 0 0] assume { [#"reactor.ads" 20 0 0] (Standard__integer___axiom.dynamic_invariant Reactor__inputconst.inputconst.int__content True False True True) } ));
   ([#"reactor.ads" 22 0 0] ());
-  ([#"reactor.ads" 26 0 0] ());
-  ([#"reactor.ads" 29 0 0] ());
+  ([#"reactor.ads" 25 0 0] ());
   ([#"reactor.ads" 28 0 0] ());
-  ([#"reactor.ads" 27 0 0] ());
-  ([#"reactor.ads" 31 0 0] ());
+  ([#"reactor.ads" 30 0 0] ());
+  ([#"reactor.ads" 29 0 0] ());
+  ([#"reactor.ads" 32 0 0] ());
+  ([#"reactor.ads" 35 0 0] ());
   ([#"reactor.ads" 34 0 0] ());
   ([#"reactor.ads" 33 0 0] ());
-  ([#"reactor.ads" 32 0 0] ());
-  ([#"reactor.ads" 36 0 0] ());
+  ([#"reactor.ads" 37 0 0] ());
+  ([#"reactor.ads" 40 0 0] ());
   ([#"reactor.ads" 39 0 0] ());
   ([#"reactor.ads" 38 0 0] ());
-  ([#"reactor.ads" 37 0 0] ());
-  ([#"reactor.ads" 41 0 0] ());
+  ([#"reactor.ads" 42 0 0] ());
+  ([#"reactor.ads" 45 0 0] ());
   ([#"reactor.ads" 44 0 0] ());
   ([#"reactor.ads" 43 0 0] ());
-  ([#"reactor.ads" 42 0 0] ());
-  ([#"reactor.ads" 46 0 0] ());
+  ([#"reactor.ads" 47 0 0] ());
+  ([#"reactor.ads" 50 0 0] ());
   ([#"reactor.ads" 49 0 0] ());
   ([#"reactor.ads" 48 0 0] ());
-  ([#"reactor.ads" 47 0 0] ());
-  ([#"reactor.ads" 51 0 0] ());
   ([#"reactor.ads" 52 0 0] ());
-  ([#"reactor.ads" 18 0 0] ());
+  ([#"reactor.ads" 55 0 0] ());
+  ([#"reactor.ads" 54 0 0] ());
+  ([#"reactor.ads" 53 0 0] ());
+  ([#"reactor.ads" 57 0 0] ());
+  ([#"reactor.ads" 60 0 0] ());
+  ([#"reactor.ads" 59 0 0] ());
+  ([#"reactor.ads" 58 0 0] ());
+  ([#"reactor.ads" 62 0 0] ());
+  ([#"reactor.ads" 65 0 0] ());
+  ([#"reactor.ads" 64 0 0] ());
+  ([#"reactor.ads" 63 0 0] ());
+  ([#"reactor.ads" 67 0 0] ());
+  ([#"reactor.ads" 68 0 0] ());
+  ([#"reactor.ads" 22 0 0] ());
+  ([#"reactor.ads" 25 0 0] ());
+   assume {  ( ((Ada__text_io__line_length__2.line_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) /\ ((Ada__text_io__page_length__2.page_length__2 Ada__text_io__standard_in.standard_in.Main.__private__content Ada__text_io__file_system.file_system.Main.__private__content Ada__text_io__standard_out.standard_out.Main.__private__content Ada__text_io__standard_err.standard_err.Main.__private__content Ada__text_io__current_in.current_in.Main.__private__content Ada__text_io__current_out.current_out.Main.__private__content Ada__text_io__current_err.current_err.Main.__private__content) = (0 : int)) ) };
   ();
-  ([#"reactor.adb" 1 0 0] ());
-  ([#"reactor.adb" 3 0 0] ());
-  ([#"reactor.adb" 14 0 0] ());
-  ([#"reactor.adb" 21 0 0] ());
-  ([#"reactor.adb" 31 0 0] ());
-  ([#"reactor.adb" 46 0 0] ());
-  ([#"reactor.adb" 56 0 0] ());
-  ([#"reactor.adb" 61 0 0] ());
+  ([#"reactor.adb" 2 0 0] ());
+  ([#"reactor.adb" 4 0 0] ());
+  ([#"reactor.adb" 12 0 0] ());
+  ([#"reactor.adb" 18 0 0] ());
+  ([#"reactor.adb" 34 0 0] ());
+  ([#"reactor.adb" 42 0 0] ());
+  ([#"reactor.adb" 54 0 0] ());
+  ([#"reactor.adb" 69 0 0] ());
+  ([#"reactor.adb" 81 0 0] ());
+  ([#"reactor.adb" 88 0 0] ());
   ();
-  ( [@GP_Sloc:reactor.adb:67:1] ([#"reactor.adb" 67 0 0] ()) ) )
+  ( [@GP_Sloc:reactor.adb:94:1] ([#"reactor.adb" 94 0 0] ()) ) )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "reactorcheck" defined at reactor.ads:18, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "reactorcheck" defined at reactor.ads:22, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__reactorcheck__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3411,29 +4038,29 @@ module Reactor__reactorcheck__subprogram_def
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
 
- val reactor__reactorcheck__result [@model_projected] [@model_trace:2697@result] [@name:ReactorCheck]  : bool__ref 
+ val reactor__reactorcheck__result [@model_projected] [@model_trace:2837@result] [@name:ReactorCheck]  : bool__ref 
  
- let def [#"reactor.ads" 18 0 0][@GP_Subp:reactor.ads:18] 
+ let def [#"reactor.ads" 22 0 0][@GP_Subp:reactor.ads:22] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 18 0 0] true }
+  requires { [#"reactor.ads" 22 0 0] true }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:18 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:22 *)
   ;
-  [#"reactor.ads" 18 0 0] assume { [#"reactor.ads" 18 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
-  [#"reactor.ads" 18 0 0] assume { [#"reactor.ads" 18 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:18 *)
+  [#"reactor.ads" 22 0 0] assume { [#"reactor.ads" 22 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
+  [#"reactor.ads" 22 0 0] assume { [#"reactor.ads" 22 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:22 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:18 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:22 *)
   ;
-  [#"reactor.ads" 18 0 0] begin ensures {true} let _ = (let _ = True in (
+  [#"reactor.ads" 22 0 0] begin ensures {true} let _ = (let _ = True in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:18 *)
+  () (* Assume Pre of the subprogram reactor.ads:22 *)
   ;
-  [#"reactor.ads" 18 0 0] try
+  [#"reactor.ads" 22 0 0] try
    ( ();
-   ( [@GP_Sloc:reactor.ads:19:33] ([#"reactor.ads" 19 0 0] ( [#"reactor.ads" 19 0 0] (reactor__reactorcheck__result.bool__content <- ( (Boolean.andb((Reactor__currenttemperature.currenttemperature.int__content < (100 : int))) ((Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)))) ));
-   [#"reactor.ads" 19 0 0] raise Return__exc )) );
+   ( [@GP_Sloc:reactor.ads:23:32] ([#"reactor.ads" 23 0 0] ( [#"reactor.ads" 23 0 0] (reactor__reactorcheck__result.bool__content <- ( (Boolean.andb((Reactor__currenttemperature.currenttemperature.int__content < (100 : int))) ((Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)))) ));
+   [#"reactor.ads" 23 0 0] raise Return__exc )) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3444,18 +4071,186 @@ module Reactor__reactorcheck__subprogram_def
   reactor__reactorcheck__result.bool__content )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "removecontrolrod" defined at reactor.ads:21, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "reactoron" defined at reactor.ads:25, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Reactor__reactoron__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
+
+ val reactor__reactoron__result [@name:ReactorOn] [@model_projected] [@model_trace:2854@result]  : bool__ref 
+ 
+ let def [#"reactor.ads" 25 0 0][@GP_Subp:reactor.ads:25] 
+   (__void_param : unit)
+  requires { [#"reactor.ads" 25 0 0] true }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:25 *)
+  ;
+  [#"reactor.ads" 25 0 0] assume { [#"reactor.ads" 25 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:25 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:25 *)
+  ;
+  [#"reactor.ads" 25 0 0] begin ensures {true} let _ = (let _ = True in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram reactor.ads:25 *)
+  ;
+  [#"reactor.ads" 25 0 0] try
+   ( ();
+   ( [@GP_Sloc:reactor.ads:26:27] ([#"reactor.ads" 26 0 0] ( [#"reactor.ads" 26 0 0] (reactor__reactoron__result.bool__content <- ( (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ));
+   [#"reactor.ads" 26 0 0] raise Return__exc )) );
+    raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+   begin ensures {true} let _ = (let _ = True in (
+   ()))
+   in () end ;
+  reactor__reactoron__result.bool__content )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "startreactor" defined at reactor.ads:28, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Reactor__startreactor__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Int_Division as Int_Division
+ use        "_gnatprove_standard".Boolean as Boolean
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__currentrods as Reactor__currentrods
+ use        Reactor__currentwatersupply as Reactor__currentwatersupply
+ use        Reactor__currenttemperature as Reactor__currenttemperature
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__reactorcheck as Reactor__reactorcheck
+ use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
+ use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
+ use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
+ use        Reactor__temperature___axiom as Reactor__temperature___axiom
+ use        Reactor__electricity as Reactor__electricity
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
+ use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
+ use        Reactor__temperature___axiom as Reactor__temperature___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
+ use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
+ use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
+ use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
+ use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
+
+ let def [#"reactor.ads" 28 0 0][@GP_Subp:reactor.ads:28] 
+   (__void_param : unit)
+  requires { [#"reactor.ads" 28 0 0] true }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:28 *)
+  ;
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) };
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:28 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:28 *)
+  ;
+  [#"reactor.ads" 28 0 0] begin ensures {true} let _ = (let _ = (Boolean.andb((Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int))) ((Reactor__reactorcheck___axiom.reactorcheck(())))) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram reactor.ads:28 *)
+  ;
+  [#"reactor.ads" 28 0 0] assume { [#"reactor.ads" 28 0 0] ( ( [@GP_Pretty_Ada:2898] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) /\ ( [@GP_Pretty_Ada:2899] ((epsilon temp___result_217 : bool.
+   ( (temp___result_217 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_217 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) };
+  [#"reactor.ads" 28 0 0] try
+   ( ();
+   ( [@GP_Sloc:reactor.adb:6:10] ([#"reactor.adb" 6 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:6:7] ([#"reactor.adb" 6 0 0] (if (( ([#"reactor.adb" 6 0 0] [#"reactor.adb" 6 0 0] (([@branch_id=2324] Main.spark__branch).bool__content <- ( (Reactor__currentrods.currentrods.int__content = (5 : int)) )));
+   ( [@branch_id=2324] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:reactor.adb:7:10] ([#"reactor.adb" 7 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:7:29] ([#"reactor.adb" 7 0 0] [#"reactor.adb" 7 0 0] (Reactor__currentpowerstatus.currentpowerstatus.int__content <- ( (0 : int) ))) );
+    ( [@GP_Sloc:reactor.adb:8:10] ([#"reactor.adb" 8 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:8:54] ([#"reactor.adb" 8 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:8:32] ([#"reactor.adb" 8 0 0] [#"reactor.adb" 8 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 8 0 0] ( [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:8:52:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:8:52] [@GP_Id:1] (Reactor__electricity.range_check_(([#"reactor.adb" 8 0 0] ( [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:8:52:VC_DIVISION_CHECK] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:8:52] [@GP_Id:0] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) ) )) else (
+    ()))) );
+    raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+   begin ensures {true} let _ = (let _ = True in (
+   ()))
+   in () end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "stopreactor" defined at reactor.ads:32, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Reactor__stopreactor__subprogram_def
+ use        "_gnatprove_standard".Main
+ use        "int".Int
+ use        "int".Int
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
+
+ let def [#"reactor.ads" 32 0 0][@GP_Subp:reactor.ads:32] 
+   (__void_param : unit)
+  requires { [#"reactor.ads" 32 0 0] true }
+  ensures { [#"reactor.ads" 32 0 0] ([#"reactor.ads" 35 0 0] ( [@comment:     Post => currentPowerStatus = Off;              ^ reactor.ads:35:14:VC_POSTCONDITION] [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:35:14] [@model_vc_post] [@GP_Id:2] ( [@GP_Pretty_Ada:18514] [@GP_Sloc:reactor.ads:35:14] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) ) )) }
+   = [@vc:divergent]
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:32 *)
+  ;
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
+   assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content False False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:32 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:32 *)
+  ;
+   begin ensures {true} let _ = (let _ = (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) in (
+   ()))
+   in () end ;
+  () (* Assume Pre of the subprogram reactor.ads:32 *)
+  ;
+   assume {  ( [@GP_Pretty_Ada:18504] (Reactor__currentpowerstatus.currentpowerstatus.int__content = (0 : int)) ) };
+   try
+   ( ();
+   ( [@GP_Sloc:reactor.adb:14:7] ([#"reactor.adb" 14 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:14:26] ([#"reactor.adb" 14 0 0] [#"reactor.adb" 14 0 0] (Reactor__currentpowerstatus.currentpowerstatus.int__content <- ( (1 : int) ))) );
+   ( [@GP_Sloc:reactor.adb:15:7] ([#"reactor.adb" 15 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:15:29] ([#"reactor.adb" 15 0 0] [#"reactor.adb" 15 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (0 : int) ))) );
+    raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+   begin ensures {true} let _ = (let _ = (Reactor__currentpowerstatus.currentpowerstatus.int__content = (1 : int)) in (
+   ()))
+   in () end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "removecontrolrod" defined at reactor.ads:37, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__removecontrolrod__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
+ use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
  use        Reactor__currenttemperature as Reactor__currenttemperature
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__reactorcheck as Reactor__reactorcheck
  use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
  use        Reactor__controlrods as Reactor__controlrods
@@ -3466,60 +4261,75 @@ module Reactor__removecontrolrod__subprogram_def
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower as Reactor__reactorpower
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity as Reactor__electricity
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
  use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
  use        Reactor__currenttemperatureincrease___axiom as Reactor__currenttemperatureincrease___axiom
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
  use        Reactor__reactorcheck___axiom as Reactor__reactorcheck___axiom
 
- let def [#"reactor.ads" 21 0 0][@GP_Subp:reactor.ads:21] 
+ let def [#"reactor.ads" 37 0 0][@GP_Subp:reactor.ads:37] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 21 0 0] true }
-  ensures { [#"reactor.ads" 21 0 0] ([#"reactor.ads" 24 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:24:14] [@comment:     Post => currentRods < currentRods+1 and ReactorCheck;              ^ reactor.ads:24:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:3] [@GP_Shape:pragargs__and] ( ( [@GP_Sloc:reactor.ads:24:14] [@GP_Pretty_Ada:2759] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Sloc:reactor.ads:24:46] [@GP_Pretty_Ada:2762] ((epsilon temp___result_200 : bool.
-   ( (temp___result_200 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_200 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) )) }
+  requires { [#"reactor.ads" 37 0 0] true }
+  ensures { [#"reactor.ads" 37 0 0] ([#"reactor.ads" 40 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentRods < currentRods+1 and ReactorCheck;              ^ reactor.ads:40:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:40:14] [@model_vc_post] [@GP_Shape:pragargs__and] [@GP_Id:8] ( ( [@GP_Sloc:reactor.ads:40:14] [@GP_Pretty_Ada:2979] (Reactor__currentrods.currentrods.int__content < (Reactor__currentrods.currentrods.int__content + (1 : int))) ) /\ ( [@GP_Pretty_Ada:2982] [@GP_Sloc:reactor.ads:40:46] ((epsilon temp___result_219 : bool.
+   ( (temp___result_219 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_219 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:21 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:37 *)
   ;
    assume {  (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) };
    assume {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
    assume {  (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
    assume {  (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) };
    assume {  (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:21 *)
+   assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content False False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:37 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:21 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:37 *)
   ;
    begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Boolean.andb((Reactor__currentrods.currentrods.int__content > (0 : int))) ((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int))))) ((Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int))))) ((Reactor__reactorcheck___axiom.reactorcheck(())))) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:21 *)
+  () (* Assume Pre of the subprogram reactor.ads:37 *)
   ;
-   assume {  ( ( ( ( [@GP_Pretty_Ada:2743] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2747] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2751] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2752] ((epsilon temp___result_199 : bool.
-   ( (temp___result_199 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_199 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) };
+   assume {  ( ( ( ( [@GP_Pretty_Ada:2963] (Reactor__currentrods.currentrods.int__content > (0 : int)) ) /\ ( [@GP_Pretty_Ada:2967] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content < (5 : int)) ) ) /\ ( [@GP_Pretty_Ada:2971] (Reactor__currentreactorpower.currentreactorpower.int__content < (10 : int)) ) ) /\ ( [@GP_Pretty_Ada:2972] ((epsilon temp___result_218 : bool.
+   ( (temp___result_218 = (Reactor__reactorcheck.reactorcheck Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content)) /\ (Reactor__reactorcheck.reactorcheck__function_guard temp___result_218 Reactor__currentwatersupply.currentwatersupply.int__content Reactor__currenttemperature.currenttemperature.int__content) )) = True) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:5:7] ([#"reactor.adb" 5 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:5:22] ([#"reactor.adb" 5 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:5:19] ([#"reactor.adb" 5 0 0] [#"reactor.adb" 5 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 5 0 0] ( [@GP_Shape:currentrods_assign__sub] [@GP_Sloc:reactor.adb:5:33] [@vc:annotation] [@comment:      currentRods := currentRods-1;                                 ^ reactor.adb:5:33:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:0] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content - (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:6:7] ([#"reactor.adb" 6 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:6:37] ([#"reactor.adb" 6 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:6:34] ([#"reactor.adb" 6 0 0] [#"reactor.adb" 6 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 6 0 0] ( [@GP_Shape:currenttemperatureincrease_assign__add] [@vc:annotation] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease+1;                                                               ^ reactor.adb:6:63:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:6:63] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:1] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content + (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:7:10] ([#"reactor.adb" 7 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:7:7] ([#"reactor.adb" 7 0 0] (if (( ([#"reactor.adb" 7 0 0] [#"reactor.adb" 7 0 0] (([@branch_id=2326] Main.spark__branch).bool__content <- ( (Reactor__currentreactorpower.currentreactorpower.int__content < (9 : int)) )));
-   ( [@branch_id=2326] Main.spark__branch ).bool__content )) then (
+   ( [@GP_Sloc:reactor.adb:20:7] ([#"reactor.adb" 20 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:20:22] ([#"reactor.adb" 20 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:20:19] ([#"reactor.adb" 20 0 0] [#"reactor.adb" 20 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 20 0 0] ( [@GP_Shape:currentrods_assign__sub] [@GP_Sloc:reactor.adb:20:33] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:      currentRods := currentRods-1;                                 ^ reactor.adb:20:33:VC_RANGE_CHECK] [@GP_Id:3] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:21:7] ([#"reactor.adb" 21 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:21:37] ([#"reactor.adb" 21 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:21:34] ([#"reactor.adb" 21 0 0] [#"reactor.adb" 21 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 21 0 0] ( [@GP_Shape:currenttemperatureincrease_assign__add] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:21:63] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease+1;                                                               ^ reactor.adb:21:63:VC_RANGE_CHECK] [@GP_Id:4] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content + (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:22:10] ([#"reactor.adb" 22 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:22:7] ([#"reactor.adb" 22 0 0] (if (( ([#"reactor.adb" 22 0 0] [#"reactor.adb" 22 0 0] (([@branch_id=2378] Main.spark__branch).bool__content <- ( (Reactor__currentreactorpower.currentreactorpower.int__content < (9 : int)) )));
+   ( [@branch_id=2378] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:reactor.adb:8:10] ([#"reactor.adb" 8 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:8:33] ([#"reactor.adb" 8 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:8:30] ([#"reactor.adb" 8 0 0] [#"reactor.adb" 8 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 8 0 0] ( [@comment:         currentReactorPower := currentReactorPower+2;                                                    ^ reactor.adb:8:52:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:8:52] [@GP_Id:2] [@GP_Shape:if__currentreactorpower_assign__add] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content + (2 : int)))) )) ))) ) )) else (
+    ( [@GP_Sloc:reactor.adb:23:10] ([#"reactor.adb" 23 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:23:33] ([#"reactor.adb" 23 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:23:30] ([#"reactor.adb" 23 0 0] [#"reactor.adb" 23 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 23 0 0] ( [@comment:         currentReactorPower := currentReactorPower+2;                                                    ^ reactor.adb:23:52:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:23:52] [@GP_Id:5] [@GP_Shape:if__currentreactorpower_assign__add] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content + (2 : int)))) )) ))) ) )) else (
     ( ();
-    ( [@GP_Sloc:reactor.adb:10:10] ([#"reactor.adb" 10 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:10:30] ([#"reactor.adb" 10 0 0] [#"reactor.adb" 10 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (10 : int) ))) ) )))) );
+    ( [@GP_Sloc:reactor.adb:25:10] ([#"reactor.adb" 25 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:25:30] ([#"reactor.adb" 25 0 0] [#"reactor.adb" 25 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( (10 : int) ))) ) )))) );
+   ( [@GP_Sloc:reactor.adb:27:10] ([#"reactor.adb" 27 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:27:7] ([#"reactor.adb" 27 0 0] (if (( ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (([@branch_id=2390] Main.spark__branch).bool__content <- ( (Reactor__currentrods.currentrods.int__content > (0 : int)) )));
+   ( [@branch_id=2390] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:reactor.adb:28:10] ([#"reactor.adb" 28 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:28:54] ([#"reactor.adb" 28 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:28:32] ([#"reactor.adb" 28 0 0] [#"reactor.adb" 28 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 28 0 0] ( [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:28:52:VC_RANGE_CHECK] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:28:52] [@GP_Id:7] (Reactor__electricity.range_check_(([#"reactor.adb" 28 0 0] ( [@comment:         currentMaxElectricity := Electricity'Last / currentRods;                                                    ^ reactor.adb:28:52:VC_DIVISION_CHECK] [@GP_Shape:if__currentmaxelectricity_assign__div] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:28:52] [@GP_Id:6] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) ) )) else (
+    ( ();
+    ( [@GP_Sloc:reactor.adb:30:10] ([#"reactor.adb" 30 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:30:32] ([#"reactor.adb" 30 0 0] [#"reactor.adb" 30 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( (200 : int) ))) ) )))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3529,59 +4339,69 @@ module Reactor__removecontrolrod__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "addcontrolrod" defined at reactor.ads:26, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "addcontrolrod" defined at reactor.ads:42, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__addcontrolrod__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Int_Division as Int_Division
  use        "_gnatprove_standard".Boolean as Boolean
  use        Reactor__currentrods as Reactor__currentrods
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__controlrods as Reactor__controlrods
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease as Reactor__temperatureincrease
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower as Reactor__reactorpower
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity as Reactor__electricity
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
  use        Reactor__controlrods___axiom as Reactor__controlrods___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
+ use        Reactor__electricity___axiom as Reactor__electricity___axiom
  use        Reactor__currentrods___axiom as Reactor__currentrods___axiom
  use        Reactor__currenttemperatureincrease___axiom as Reactor__currenttemperatureincrease___axiom
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
 
- let def [#"reactor.ads" 26 0 0][@GP_Subp:reactor.ads:26] 
+ let def [#"reactor.ads" 42 0 0][@GP_Subp:reactor.ads:42] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 26 0 0] true }
-  ensures { [#"reactor.ads" 26 0 0] ([#"reactor.ads" 29 0 0] ( [@comment:     Post => currentRods > currentRods-1;              ^ reactor.ads:29:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:29:14] [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Id:7] ( [@GP_Sloc:reactor.ads:29:14] [@GP_Pretty_Ada:3105] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) )) }
+  requires { [#"reactor.ads" 42 0 0] true }
+  ensures { [#"reactor.ads" 42 0 0] ([#"reactor.ads" 45 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:14] [@GP_Shape:pragargs__cmp] [@GP_Sloc:reactor.ads:45:14] [@comment:     Post => currentRods > currentRods-1;              ^ reactor.ads:45:14:VC_POSTCONDITION] [@model_vc_post] ( [@GP_Sloc:reactor.ads:45:14] [@GP_Pretty_Ada:18643] (Reactor__currentrods.currentrods.int__content > (Reactor__currentrods.currentrods.int__content - (1 : int))) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:26 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:42 *)
   ;
    assume {  (Reactor__controlrods___axiom.dynamic_invariant Reactor__currentrods.currentrods.int__content True False True True) };
    assume {  (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) };
    assume {  (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:26 *)
+   assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content False False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:42 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:26 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:42 *)
   ;
    begin ensures {true} let _ = (let _ = (Boolean.andb((Boolean.andb((Reactor__currentrods.currentrods.int__content < (5 : int))) ((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int))))) ((Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)))) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:26 *)
+  () (* Assume Pre of the subprogram reactor.ads:42 *)
   ;
-   assume {  ( ( ( [@GP_Pretty_Ada:2788] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:2792] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:2796] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) };
+   assume {  ( ( ( [@GP_Pretty_Ada:3011] (Reactor__currentrods.currentrods.int__content < (5 : int)) ) /\ ( [@GP_Pretty_Ada:3015] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content > (0 : int)) ) ) /\ ( [@GP_Pretty_Ada:3019] (Reactor__currentreactorpower.currentreactorpower.int__content > (0 : int)) ) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:16:7] ([#"reactor.adb" 16 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:16:22] ([#"reactor.adb" 16 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:16:19] ([#"reactor.adb" 16 0 0] [#"reactor.adb" 16 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 16 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:16:33] [@comment:      currentRods := currentRods+1;                                 ^ reactor.adb:16:33:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentrods_assign__add] [@GP_Id:4] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content + (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:17:7] ([#"reactor.adb" 17 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:17:37] ([#"reactor.adb" 17 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:17:34] ([#"reactor.adb" 17 0 0] [#"reactor.adb" 17 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 17 0 0] ( [@GP_Sloc:reactor.adb:17:63] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currenttemperatureincrease_assign__sub] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease-1;                                                               ^ reactor.adb:17:63:VC_RANGE_CHECK] [@GP_Id:5] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content - (1 : int)))) )) ))) );
-   ( [@GP_Sloc:reactor.adb:18:7] ([#"reactor.adb" 18 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:18:30] ([#"reactor.adb" 18 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:18:27] ([#"reactor.adb" 18 0 0] [#"reactor.adb" 18 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 18 0 0] ( [@comment:      currentReactorPower := currentReactorPower-1;                                                 ^ reactor.adb:18:49:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:18:49] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentreactorpower_assign__sub] [@GP_Id:6] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:36:7] ([#"reactor.adb" 36 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:36:22] ([#"reactor.adb" 36 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:36:19] ([#"reactor.adb" 36 0 0] [#"reactor.adb" 36 0 0] (Reactor__currentrods.currentrods.int__content <- ( ([#"reactor.adb" 36 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:36:33] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentrods_assign__add] [@comment:      currentRods := currentRods+1;                                 ^ reactor.adb:36:33:VC_RANGE_CHECK] [@GP_Id:9] (Reactor__controlrods.range_check_((Reactor__currentrods.currentrods.int__content + (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:37:7] ([#"reactor.adb" 37 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:37:37] ([#"reactor.adb" 37 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:37:34] ([#"reactor.adb" 37 0 0] [#"reactor.adb" 37 0 0] (Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content <- ( ([#"reactor.adb" 37 0 0] ( [@GP_Id:10] [@GP_Sloc:reactor.adb:37:63] [@comment:      currentTemperatureIncrease := currentTemperatureIncrease-1;                                                               ^ reactor.adb:37:63:VC_RANGE_CHECK] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currenttemperatureincrease_assign__sub] (Reactor__temperatureincrease.range_check_((Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:38:7] ([#"reactor.adb" 38 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:38:30] ([#"reactor.adb" 38 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:38:27] ([#"reactor.adb" 38 0 0] [#"reactor.adb" 38 0 0] (Reactor__currentreactorpower.currentreactorpower.int__content <- ( ([#"reactor.adb" 38 0 0] ( [@GP_Id:11] [@GP_Sloc:reactor.adb:38:49] [@vc:annotation] [@comment:      currentReactorPower := currentReactorPower-1;                                                 ^ reactor.adb:38:49:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentreactorpower_assign__sub] (Reactor__reactorpower.range_check_((Reactor__currentreactorpower.currentreactorpower.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:39:7] ([#"reactor.adb" 39 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:39:51] ([#"reactor.adb" 39 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:39:29] ([#"reactor.adb" 39 0 0] [#"reactor.adb" 39 0 0] (Reactor__currentmaxelectricity.currentmaxelectricity.int__content <- ( ([#"reactor.adb" 39 0 0] ( [@GP_Id:13] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:39:49] [@comment:      currentMaxElectricity := Electricity'Last / currentRods;                                                 ^ reactor.adb:39:49:VC_RANGE_CHECK] [@GP_Shape:currentmaxelectricity_assign__div] (Reactor__electricity.range_check_(([#"reactor.adb" 39 0 0] ( [@GP_Id:12] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:      currentMaxElectricity := Electricity'Last / currentRods;                                                 ^ reactor.adb:39:49:VC_DIVISION_CHECK] [@GP_Sloc:reactor.adb:39:49] [@GP_Shape:currentmaxelectricity_assign__div] (Int_Division.div_((200 : int)) (Reactor__currentrods.currentrods.int__content)) )))) )) ))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3591,59 +4411,71 @@ module Reactor__addcontrolrod__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "increasetemperature" defined at reactor.ads:31, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "increasetemperature" defined at reactor.ads:47, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__increasetemperature__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
  use        "_gnatprove_standard".Main as Main
  use        Standard__integer___axiom as Standard__integer___axiom
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currenttemperature as Reactor__currenttemperature
  use        Reactor__currenttemperatureincrease as Reactor__currenttemperatureincrease
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__increasetemperature__temp as Reactor__increasetemperature__temp
  use        Reactor__temperature as Reactor__temperature
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Reactor__temperature___axiom as Reactor__temperature___axiom
  use        Reactor__temperatureincrease___axiom as Reactor__temperatureincrease___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
  use        Reactor__currenttemperatureincrease___axiom as Reactor__currenttemperatureincrease___axiom
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__increasetemperature__temp___axiom as Reactor__increasetemperature__temp___axiom
 
- let def [#"reactor.ads" 31 0 0][@GP_Subp:reactor.ads:31] 
+ let def [#"reactor.ads" 47 0 0][@GP_Subp:reactor.ads:47] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 31 0 0] true }
-  ensures { [#"reactor.ads" 31 0 0] ([#"reactor.ads" 34 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@comment:     Post => currentTemperature > currentTemperature-1;              ^ reactor.ads:34:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:34:14] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Id:9] ( [@GP_Sloc:reactor.ads:34:14] [@GP_Pretty_Ada:3154] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) )) }
+  requires { [#"reactor.ads" 47 0 0] true }
+  ensures { [#"reactor.ads" 47 0 0] ([#"reactor.ads" 50 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:16] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@GP_Sloc:reactor.ads:50:14] [@comment:     Post => currentTemperature > currentTemperature-1;              ^ reactor.ads:50:14:VC_POSTCONDITION] ( [@GP_Pretty_Ada:18694] [@GP_Sloc:reactor.ads:50:14] (Reactor__currenttemperature.currenttemperature.int__content > (Reactor__currenttemperature.currenttemperature.int__content - (1 : int))) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:31 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:47 *)
   ;
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
    assume {  (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
    assume {  (Reactor__temperatureincrease___axiom.dynamic_invariant Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content True False True True) };
    assume {  (Standard__integer___axiom.dynamic_invariant Reactor__increasetemperature__temp.temp.int__content False False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:31 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:47 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:31 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:47 *)
   ;
    begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:31 *)
+  () (* Assume Pre of the subprogram reactor.ads:47 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:3142] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) };
+   assume {  ( [@GP_Pretty_Ada:18682] (Reactor__currenttemperature.currenttemperature.int__content < (100 : int)) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:23:15] ([#"reactor.adb" 23 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:23:36] ([#"reactor.adb" 23 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:23:12] ([#"reactor.adb" 23 0 0] [#"reactor.adb" 23 0 0] (Reactor__increasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content + Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content) ))) );
-   ( [@GP_Sloc:reactor.adb:24:7] ([#"reactor.adb" 24 0 0] (if (( ([#"reactor.adb" 24 0 0] [#"reactor.adb" 24 0 0] (([@branch_id=2389] Main.spark__branch).bool__content <- ( (Reactor__increasetemperature__temp.temp.int__content > (100 : int)) )));
-   ( [@branch_id=2389] Main.spark__branch ).bool__content )) then (
+   ( [@GP_Sloc:reactor.adb:44:15] ([#"reactor.adb" 44 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:44:36] ([#"reactor.adb" 44 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:44:12] ([#"reactor.adb" 44 0 0] [#"reactor.adb" 44 0 0] (Reactor__increasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content + Reactor__currenttemperatureincrease.currenttemperatureincrease.int__content) ))) );
+   ( [@GP_Sloc:reactor.adb:45:10] ([#"reactor.adb" 45 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:45:7] ([#"reactor.adb" 45 0 0] (if (( ([#"reactor.adb" 45 0 0] [#"reactor.adb" 45 0 0] (([@branch_id=2464] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
+   ( [@branch_id=2464] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:reactor.adb:25:10] ([#"reactor.adb" 25 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:25:29] ([#"reactor.adb" 25 0 0] [#"reactor.adb" 25 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (100 : int) ))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:27:10] ([#"reactor.adb" 27 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:27:29] ([#"reactor.adb" 27 0 0] [#"reactor.adb" 27 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 27 0 0] ( [@comment:         currentTemperature := temp;                                ^ reactor.adb:27:32:VC_RANGE_CHECK] [@GP_Shape:if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:27:32] [@GP_Id:8] (Reactor__temperature.range_check_(Reactor__increasetemperature__temp.temp.int__content)) )) ))) ) )))) );
+    ( [@GP_Sloc:reactor.adb:46:10] ([#"reactor.adb" 46 0 0] (if (( ([#"reactor.adb" 46 0 0] [#"reactor.adb" 46 0 0] (([@branch_id=2466] Main.spark__branch).bool__content <- ( (Reactor__increasetemperature__temp.temp.int__content > (100 : int)) )));
+    ( [@branch_id=2466] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:47:13] ([#"reactor.adb" 47 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:47:32] ([#"reactor.adb" 47 0 0] [#"reactor.adb" 47 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (100 : int) ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:49:13] ([#"reactor.adb" 49 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:49:32] ([#"reactor.adb" 49 0 0] [#"reactor.adb" 49 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 49 0 0] ( [@comment:            currentTemperature := temp;                                   ^ reactor.adb:49:35:VC_RANGE_CHECK] [@GP_Id:15] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:49:35] (Reactor__temperature.range_check_(Reactor__increasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
+    ()))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3653,7 +4485,7 @@ module Reactor__increasetemperature__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "decreasetemperature" defined at reactor.ads:36, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "decreasetemperature" defined at reactor.ads:52, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__decreasetemperature__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3674,48 +4506,48 @@ module Reactor__decreasetemperature__subprogram_def
  use        Reactor__currenttemperature___axiom as Reactor__currenttemperature___axiom
  use        Reactor__decreasetemperature__temp___axiom as Reactor__decreasetemperature__temp___axiom
 
- let def [#"reactor.ads" 36 0 0][@GP_Subp:reactor.ads:36] 
+ let def [#"reactor.ads" 52 0 0][@GP_Subp:reactor.ads:52] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 36 0 0] true }
-  ensures { [#"reactor.ads" 36 0 0] ([#"reactor.ads" 39 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:13] [@GP_Sloc:reactor.ads:39:14] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@comment:     Post => currentTemperature < currentTemperature+1;              ^ reactor.ads:39:14:VC_POSTCONDITION] ( [@GP_Sloc:reactor.ads:39:14] [@GP_Pretty_Ada:3203] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) )) }
+  requires { [#"reactor.ads" 52 0 0] true }
+  ensures { [#"reactor.ads" 52 0 0] ([#"reactor.ads" 55 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentTemperature < currentTemperature+1;              ^ reactor.ads:55:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:20] [@GP_Sloc:reactor.ads:55:14] ( [@GP_Pretty_Ada:18743] [@GP_Sloc:reactor.ads:55:14] (Reactor__currenttemperature.currenttemperature.int__content < (Reactor__currenttemperature.currenttemperature.int__content + (1 : int))) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:36 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:52 *)
   ;
    assume {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
    assume {  (Reactor__temperature___axiom.dynamic_invariant Reactor__currenttemperature.currenttemperature.int__content True False True True) };
    assume {  (Standard__integer___axiom.dynamic_invariant Reactor__decreasetemperature__temp.temp.int__content False False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:36 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:52 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:36 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:52 *)
   ;
    begin ensures {true} let _ = (let _ = (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:36 *)
+  () (* Assume Pre of the subprogram reactor.ads:52 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:3191] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) };
+   assume {  ( [@GP_Pretty_Ada:18731] (Reactor__currenttemperature.currenttemperature.int__content > (0 : int)) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:33:12] ([#"reactor.adb" 33 0 0] [#"reactor.adb" 33 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (0 : int) ))) );
-   ( [@GP_Sloc:reactor.adb:34:10] ([#"reactor.adb" 34 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:34:7] ([#"reactor.adb" 34 0 0] (if (( ([#"reactor.adb" 34 0 0] [#"reactor.adb" 34 0 0] (([@branch_id=2422] Main.spark__branch).bool__content <- ( (Reactor__currentwatersupply.currentwatersupply.int__content >= (10 : int)) )));
-   ( [@branch_id=2422] Main.spark__branch ).bool__content )) then (
+   ( [@GP_Sloc:reactor.adb:56:12] ([#"reactor.adb" 56 0 0] [#"reactor.adb" 56 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (0 : int) ))) );
+   ( [@GP_Sloc:reactor.adb:57:10] ([#"reactor.adb" 57 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:57:7] ([#"reactor.adb" 57 0 0] (if (( ([#"reactor.adb" 57 0 0] [#"reactor.adb" 57 0 0] (([@branch_id=2499] Main.spark__branch).bool__content <- ( (Reactor__currentwatersupply.currentwatersupply.int__content >= (10 : int)) )));
+   ( [@branch_id=2499] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:reactor.adb:35:18] ([#"reactor.adb" 35 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:35:39] ([#"reactor.adb" 35 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:35:15] ([#"reactor.adb" 35 0 0] [#"reactor.adb" 35 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content - ([#"reactor.adb" 35 0 0] ( [@GP_Id:10] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         temp := currentTemperature - currentWaterSupply/15;                                                         ^ reactor.adb:35:57:VC_DIVISION_CHECK] [@GP_Shape:if__temp_assign__sub__div] [@GP_Sloc:reactor.adb:35:57] (Int_Division.div_(Reactor__currentwatersupply.currentwatersupply.int__content) ((15 : int))) ))) ))) );
-    ( [@GP_Sloc:reactor.adb:36:10] ([#"reactor.adb" 36 0 0] (if (( ([#"reactor.adb" 36 0 0] [#"reactor.adb" 36 0 0] (([@branch_id=2433] Main.spark__branch).bool__content <- ( (Reactor__decreasetemperature__temp.temp.int__content < (0 : int)) )));
-    ( [@branch_id=2433] Main.spark__branch ).bool__content )) then (
+    ( [@GP_Sloc:reactor.adb:58:18] ([#"reactor.adb" 58 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:58:39] ([#"reactor.adb" 58 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:58:15] ([#"reactor.adb" 58 0 0] [#"reactor.adb" 58 0 0] (Reactor__decreasetemperature__temp.temp.int__content <- ( (Reactor__currenttemperature.currenttemperature.int__content - ([#"reactor.adb" 58 0 0] ( [@GP_Sloc:reactor.adb:58:57] [@GP_Id:17] [@vc:annotation] [@GP_Reason:VC_DIVISION_CHECK] [@comment:         temp := currentTemperature - currentWaterSupply/15;                                                         ^ reactor.adb:58:57:VC_DIVISION_CHECK] [@GP_Shape:if__temp_assign__sub__div] (Int_Division.div_(Reactor__currentwatersupply.currentwatersupply.int__content) ((15 : int))) ))) ))) );
+    ( [@GP_Sloc:reactor.adb:59:10] ([#"reactor.adb" 59 0 0] (if (( ([#"reactor.adb" 59 0 0] [#"reactor.adb" 59 0 0] (([@branch_id=2510] Main.spark__branch).bool__content <- ( (Reactor__decreasetemperature__temp.temp.int__content < (0 : int)) )));
+    ( [@branch_id=2510] Main.spark__branch ).bool__content )) then (
      ( ();
-     ( [@GP_Sloc:reactor.adb:37:13] ([#"reactor.adb" 37 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:37:32] ([#"reactor.adb" 37 0 0] [#"reactor.adb" 37 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ))) ) )) else (
+     ( [@GP_Sloc:reactor.adb:60:13] ([#"reactor.adb" 60 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:60:32] ([#"reactor.adb" 60 0 0] [#"reactor.adb" 60 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( (0 : int) ))) ) )) else (
      ( ();
-     ( [@GP_Sloc:reactor.adb:39:13] ([#"reactor.adb" 39 0 0] ()) );
-     ( [@GP_Sloc:reactor.adb:39:32] ([#"reactor.adb" 39 0 0] [#"reactor.adb" 39 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 39 0 0] ( [@GP_Id:11] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentTemperature := temp;                                   ^ reactor.adb:39:35:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:39:35] (Reactor__temperature.range_check_(Reactor__decreasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
+     ( [@GP_Sloc:reactor.adb:62:13] ([#"reactor.adb" 62 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:62:32] ([#"reactor.adb" 62 0 0] [#"reactor.adb" 62 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 62 0 0] ( [@GP_Id:18] [@GP_Sloc:reactor.adb:62:35] [@GP_Shape:if__if__currenttemperature_assign] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@comment:            currentTemperature := temp;                                   ^ reactor.adb:62:35:VC_RANGE_CHECK] (Reactor__temperature.range_check_(Reactor__decreasetemperature__temp.temp.int__content)) )) ))) ) )))) ) )) else (
     ( ();
-    ( [@GP_Sloc:reactor.adb:42:10] ([#"reactor.adb" 42 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:42:32] ([#"reactor.adb" 42 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:42:29] ([#"reactor.adb" 42 0 0] [#"reactor.adb" 42 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 42 0 0] ( [@GP_Id:12] [@comment:         currentTemperature := currentTemperature-1;                                                  ^ reactor.adb:42:50:VC_RANGE_CHECK] [@vc:annotation] [@GP_Sloc:reactor.adb:42:50] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currenttemperature_assign__sub] (Reactor__temperature.range_check_((Reactor__currenttemperature.currenttemperature.int__content - (1 : int)))) )) ))) ) )))) );
+    ( [@GP_Sloc:reactor.adb:65:10] ([#"reactor.adb" 65 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:65:32] ([#"reactor.adb" 65 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:65:29] ([#"reactor.adb" 65 0 0] [#"reactor.adb" 65 0 0] (Reactor__currenttemperature.currenttemperature.int__content <- ( ([#"reactor.adb" 65 0 0] ( [@comment:         currentTemperature := currentTemperature-1;                                                  ^ reactor.adb:65:50:VC_RANGE_CHECK] [@GP_Id:19] [@vc:annotation] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:if__currenttemperature_assign__sub] [@GP_Sloc:reactor.adb:65:50] (Reactor__temperature.range_check_((Reactor__currenttemperature.currenttemperature.int__content - (1 : int)))) )) ))) ) )))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3725,7 +4557,7 @@ module Reactor__decreasetemperature__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "increaseelectricity" defined at reactor.ads:41, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "increaseelectricity" defined at reactor.ads:57, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__increaseelectricity__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3734,6 +4566,7 @@ module Reactor__increaseelectricity__subprogram_def
  use        Standard__integer___axiom as Standard__integer___axiom
  use        Reactor__currentreactorpower as Reactor__currentreactorpower
  use        Reactor__currentelectricityproduced as Reactor__currentelectricityproduced
+ use        Reactor__currentmaxelectricity as Reactor__currentmaxelectricity
  use        Reactor__increaseelectricity__elec as Reactor__increaseelectricity__elec
  use        Reactor__reactorpower___axiom as Reactor__reactorpower___axiom
  use        Reactor__electricity as Reactor__electricity
@@ -3743,41 +4576,50 @@ module Reactor__increaseelectricity__subprogram_def
  use        Reactor__electricity___axiom as Reactor__electricity___axiom
  use        Reactor__currentreactorpower___axiom as Reactor__currentreactorpower___axiom
  use        Reactor__currentelectricityproduced___axiom as Reactor__currentelectricityproduced___axiom
+ use        Reactor__currentmaxelectricity___axiom as Reactor__currentmaxelectricity___axiom
  use        Reactor__increaseelectricity__elec___axiom as Reactor__increaseelectricity__elec___axiom
 
- let def [#"reactor.ads" 41 0 0][@GP_Subp:reactor.ads:41] 
+ let def [#"reactor.ads" 57 0 0][@GP_Subp:reactor.ads:57] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 41 0 0] true }
-  ensures { [#"reactor.ads" 41 0 0] ([#"reactor.ads" 44 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:15] [@comment:     Post => currentElectricityProduced > currentElectricityProduced-1;              ^ reactor.ads:44:14:VC_POSTCONDITION] [@GP_Sloc:reactor.ads:44:14] [@GP_Shape:pragargs__cmp] [@model_vc_post] ( [@GP_Sloc:reactor.ads:44:14] [@GP_Pretty_Ada:3252] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) )) }
+  requires { [#"reactor.ads" 57 0 0] true }
+  ensures { [#"reactor.ads" 57 0 0] ([#"reactor.ads" 60 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:        Post => currentElectricityProduced > currentElectricityProduced-1;                 ^ reactor.ads:60:17:VC_POSTCONDITION] [@model_vc_post] [@GP_Id:22] [@GP_Sloc:reactor.ads:60:17] ( [@GP_Pretty_Ada:18794] [@GP_Sloc:reactor.ads:60:17] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content > (Reactor__currentelectricityproduced.currentelectricityproduced.int__content - (1 : int))) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:41 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:57 *)
   ;
    assume {  (Reactor__reactorpower___axiom.dynamic_invariant Reactor__currentreactorpower.currentreactorpower.int__content True False True True) };
    assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentelectricityproduced.currentelectricityproduced.int__content True False True True) };
+   assume {  (Reactor__electricity___axiom.dynamic_invariant Reactor__currentmaxelectricity.currentmaxelectricity.int__content True False True True) };
    assume {  (Standard__integer___axiom.dynamic_invariant Reactor__increaseelectricity__elec.elec.int__content False False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:41 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:57 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:41 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:57 *)
   ;
    begin ensures {true} let _ = (let _ = (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:41 *)
+  () (* Assume Pre of the subprogram reactor.ads:57 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:3240] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) };
+   assume {  ( [@GP_Pretty_Ada:18782] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content < (1000 : int)) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:48:15] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:44] ([#"reactor.adb" 48 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:48:12] ([#"reactor.adb" 48 0 0] [#"reactor.adb" 48 0 0] (Reactor__increaseelectricity__elec.elec.int__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content + Reactor__currentreactorpower.currentreactorpower.int__content) ))) );
-   ( [@GP_Sloc:reactor.adb:49:7] ([#"reactor.adb" 49 0 0] (if (( ([#"reactor.adb" 49 0 0] [#"reactor.adb" 49 0 0] (([@branch_id=2473] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content > (100 : int)) )));
-   ( [@branch_id=2473] Main.spark__branch ).bool__content )) then (
+   ( [@GP_Sloc:reactor.adb:71:14] ([#"reactor.adb" 71 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:71:43] ([#"reactor.adb" 71 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:71:11] ([#"reactor.adb" 71 0 0] [#"reactor.adb" 71 0 0] (Reactor__increaseelectricity__elec.elec.int__content <- ( (Reactor__currentelectricityproduced.currentelectricityproduced.int__content + Reactor__currentreactorpower.currentreactorpower.int__content) ))) );
+   ( [@GP_Sloc:reactor.adb:72:17] ([#"reactor.adb" 72 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:72:6] ([#"reactor.adb" 72 0 0] (if (( ([#"reactor.adb" 72 0 0] [#"reactor.adb" 72 0 0] (([@branch_id=2550] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content >= Reactor__currentmaxelectricity.currentmaxelectricity.int__content) )));
+   ( [@branch_id=2550] Main.spark__branch ).bool__content )) then (
     ( ();
-    ( [@GP_Sloc:reactor.adb:50:10] ([#"reactor.adb" 50 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:50:37] ([#"reactor.adb" 50 0 0] [#"reactor.adb" 50 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( (100 : int) ))) ) )) else (
-    ( ();
-    ( [@GP_Sloc:reactor.adb:52:10] ([#"reactor.adb" 52 0 0] ()) );
-    ( [@GP_Sloc:reactor.adb:52:37] ([#"reactor.adb" 52 0 0] [#"reactor.adb" 52 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( ([#"reactor.adb" 52 0 0] ( [@GP_Id:14] [@vc:annotation] [@comment:         currentElectricityProduced := elec;                                        ^ reactor.adb:52:40:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Sloc:reactor.adb:52:40] [@GP_Shape:if__currentelectricityproduced_assign] (Reactor__electricity.range_check_(Reactor__increaseelectricity__elec.elec.int__content)) )) ))) ) )))) );
+    ( [@GP_Sloc:reactor.adb:73:9] ([#"reactor.adb" 73 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:73:39] ([#"reactor.adb" 73 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:73:36] ([#"reactor.adb" 73 0 0] [#"reactor.adb" 73 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( Reactor__currentmaxelectricity.currentmaxelectricity.int__content ))) ) )) else (
+    ( [@GP_Sloc:reactor.adb:74:6] (if (( ([#"reactor.adb" 74 0 0] [#"reactor.adb" 74 0 0] (([@branch_id=2558] Main.spark__branch).bool__content <- ( (Reactor__increaseelectricity__elec.elec.int__content > (200 : int)) )));
+    ( [@branch_id=2558] Main.spark__branch ).bool__content )) then (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:75:9] ([#"reactor.adb" 75 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:75:36] ([#"reactor.adb" 75 0 0] [#"reactor.adb" 75 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( (200 : int) ))) ) )) else (
+     ( ();
+     ( [@GP_Sloc:reactor.adb:77:9] ([#"reactor.adb" 77 0 0] ()) );
+     ( [@GP_Sloc:reactor.adb:77:36] ([#"reactor.adb" 77 0 0] [#"reactor.adb" 77 0 0] (Reactor__currentelectricityproduced.currentelectricityproduced.int__content <- ( ([#"reactor.adb" 77 0 0] ( [@GP_Sloc:reactor.adb:77:39] [@vc:annotation] [@comment:        currentElectricityProduced := elec;                                       ^ reactor.adb:77:39:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Id:21] [@GP_Shape:if__currentelectricityproduced_assign] (Reactor__electricity.range_check_(Reactor__increaseelectricity__elec.elec.int__content)) )) ))) ) ))) )))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3787,40 +4629,53 @@ module Reactor__increaseelectricity__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "decreasewatersupply" defined at reactor.ads:46, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "decreasewatersupply" defined at reactor.ads:62, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__decreasewatersupply__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
  use        "int".Int
+ use        "_gnatprove_standard".Main as Main
+ use        Reactor__currentpowerstatus as Reactor__currentpowerstatus
  use        Reactor__currentwatersupply as Reactor__currentwatersupply
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
  use        Reactor__watersupply as Reactor__watersupply
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
+ use        Reactor__power___axiom as Reactor__power___axiom
+ use        Reactor__currentpowerstatus___axiom as Reactor__currentpowerstatus___axiom
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
+ use        Reactor__reactoron___axiom as Reactor__reactoron___axiom
 
- let def [#"reactor.ads" 46 0 0][@GP_Subp:reactor.ads:46] 
+ let def [#"reactor.ads" 62 0 0][@GP_Subp:reactor.ads:62] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 46 0 0] true }
-  ensures { [#"reactor.ads" 46 0 0] ([#"reactor.ads" 49 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Id:17] [@GP_Sloc:reactor.ads:49:14] [@GP_Shape:pragargs__cmp] [@model_vc_post] [@comment:     Post => currentWaterSupply < currentWaterSupply+1;              ^ reactor.ads:49:14:VC_POSTCONDITION] ( [@GP_Sloc:reactor.ads:49:14] [@GP_Pretty_Ada:3298] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) )) }
+  requires { [#"reactor.ads" 62 0 0] true }
+  ensures { [#"reactor.ads" 62 0 0] ([#"reactor.ads" 65 0 0] ( [@GP_Reason:VC_POSTCONDITION] [@GP_Shape:pragargs__cmp] [@comment:     Post => currentWaterSupply < currentWaterSupply+1;              ^ reactor.ads:65:14:VC_POSTCONDITION] [@model_vc_post] [@GP_Sloc:reactor.ads:65:14] [@GP_Id:24] ( [@GP_Pretty_Ada:18843] [@GP_Sloc:reactor.ads:65:14] (Reactor__currentwatersupply.currentwatersupply.int__content < (Reactor__currentwatersupply.currentwatersupply.int__content + (1 : int))) ) )) }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:46 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:62 *)
   ;
+   assume {  (Reactor__power___axiom.dynamic_invariant Reactor__currentpowerstatus.currentpowerstatus.int__content True False True True) };
    assume {  (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content True False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:46 *)
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:62 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:46 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:62 *)
   ;
    begin ensures {true} let _ = (let _ = (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:46 *)
+  () (* Assume Pre of the subprogram reactor.ads:62 *)
   ;
-   assume {  ( [@GP_Pretty_Ada:3286] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) };
+   assume {  ( [@GP_Pretty_Ada:18831] (Reactor__currentwatersupply.currentwatersupply.int__content > (0 : int)) ) };
    try
    ( ();
-   ( [@GP_Sloc:reactor.adb:58:7] ([#"reactor.adb" 58 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:58:29] ([#"reactor.adb" 58 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:58:26] ([#"reactor.adb" 58 0 0] [#"reactor.adb" 58 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( ([#"reactor.adb" 58 0 0] ( [@GP_Id:16] [@GP_Sloc:reactor.adb:58:48] [@vc:annotation] [@comment:      currentWaterSupply := currentWaterSupply -1;                                                ^ reactor.adb:58:48:VC_RANGE_CHECK] [@GP_Reason:VC_RANGE_CHECK] [@GP_Shape:currentwatersupply_assign__sub] (Reactor__watersupply.range_check_((Reactor__currentwatersupply.currentwatersupply.int__content - (1 : int)))) )) ))) );
+   ( [@GP_Sloc:reactor.adb:83:10] ([#"reactor.adb" 83 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:83:7] ([#"reactor.adb" 83 0 0] (if (( ([#"reactor.adb" 83 0 0] [#"reactor.adb" 83 0 0] (([@branch_id=2578] Main.spark__branch).bool__content <- ( (Reactor__reactoron___axiom.reactoron(())) )));
+   ( [@branch_id=2578] Main.spark__branch ).bool__content )) then (
+    ( ();
+    ( [@GP_Sloc:reactor.adb:84:10] ([#"reactor.adb" 84 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:84:32] ([#"reactor.adb" 84 0 0] ()) );
+    ( [@GP_Sloc:reactor.adb:84:29] ([#"reactor.adb" 84 0 0] [#"reactor.adb" 84 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( ([#"reactor.adb" 84 0 0] ( [@vc:annotation] [@GP_Sloc:reactor.adb:84:51] [@GP_Reason:VC_RANGE_CHECK] [@comment:         currentWaterSupply := currentWaterSupply -1;                                                   ^ reactor.adb:84:51:VC_RANGE_CHECK] [@GP_Id:23] [@GP_Shape:if__currentwatersupply_assign__sub] (Reactor__watersupply.range_check_((Reactor__currentwatersupply.currentwatersupply.int__content - (1 : int)))) )) ))) ) )) else (
+    ()))) );
     raise Return__exc )
   with
    Return__exc -> ()
@@ -3830,7 +4685,7 @@ module Reactor__decreasewatersupply__subprogram_def
    in () end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "fillwatersupply" defined at reactor.ads:51, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+(* Module for checking contracts and absence of run-time errors in subprogram "fillwatersupply" defined at reactor.ads:67, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
 module Reactor__fillwatersupply__subprogram_def
  use        "_gnatprove_standard".Main
  use        "int".Int
@@ -3840,26 +4695,26 @@ module Reactor__fillwatersupply__subprogram_def
  use        Reactor__watersupply___axiom as Reactor__watersupply___axiom
  use        Reactor__currentwatersupply___axiom as Reactor__currentwatersupply___axiom
 
- let def [#"reactor.ads" 51 0 0][@GP_Subp:reactor.ads:51] 
+ let def [#"reactor.ads" 67 0 0][@GP_Subp:reactor.ads:67] 
    (__void_param : unit)
-  requires { [#"reactor.ads" 51 0 0] true }
+  requires { [#"reactor.ads" 67 0 0] true }
    = [@vc:divergent]
-  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:51 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 51 0 0] assume { [#"reactor.ads" 51 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content False False True True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:51 *)
+  [#"reactor.ads" 67 0 0] assume { [#"reactor.ads" 67 0 0] (Reactor__watersupply___axiom.dynamic_invariant Reactor__currentwatersupply.currentwatersupply.int__content False False True True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram reactor.ads:67 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram reactor.ads:51 *)
+  () (* Check for RTE in the Pre of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 51 0 0] begin ensures {true} let _ = (let _ = True in (
+  [#"reactor.ads" 67 0 0] begin ensures {true} let _ = (let _ = True in (
    ()))
    in () end ;
-  () (* Assume Pre of the subprogram reactor.ads:51 *)
+  () (* Assume Pre of the subprogram reactor.ads:67 *)
   ;
-  [#"reactor.ads" 51 0 0] try
+  [#"reactor.ads" 67 0 0] try
    ( ();
-   ( [@GP_Sloc:reactor.adb:63:7] ([#"reactor.adb" 63 0 0] ()) );
-   ( [@GP_Sloc:reactor.adb:63:26] ([#"reactor.adb" 63 0 0] [#"reactor.adb" 63 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ))) );
+   ( [@GP_Sloc:reactor.adb:90:7] ([#"reactor.adb" 90 0 0] ()) );
+   ( [@GP_Sloc:reactor.adb:90:26] ([#"reactor.adb" 90 0 0] [#"reactor.adb" 90 0 0] (Reactor__currentwatersupply.currentwatersupply.int__content <- ( (100 : int) ))) );
     raise Return__exc )
   with
    Return__exc -> ()
